@@ -1,7 +1,7 @@
 
 **This Implementation Guide template includes skeleton pages for each part of an IHE supplement. The instructions for how to fill out those sections can be found in the included [Supplement Template](https://github.com/IHE/supplement-template/blob/master/suppl_template.md). This supplement template should not be included in your github repo or publication. It is included here for easy reference.**
 
-**TODO: write your executive overview here. usually one paragraph explanation of what this implementation guide solves.**
+The IHE FHIR Scheduling Profile is a specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/) and specifically the [Schedule](http://hl7.org/fhir/R4/schedule.html), [Slot](http://hl7.org/fhir/R4/slot.html), and [Appointment](http://hl7.org/fhir/R4/appointment.html) resources.
 
 [Open and Closed Issues](issues.html)
 
@@ -14,7 +14,7 @@ This guide is organized into four main sections:
    1. [Actor Required Groupings](volume-1.html#required-groupings)
    1. [Overview](volume-1.html#overview)
    1. [Security Considerations](volume-1.html#security-considerations)
-   1. [Cross Profile Considerations](volume-1.html#grouping)
+   1. [Cross Profile Considerations](volume-1.html#other-grouping)
 
 2. Volume II: Transaction Detail
    1. [FooBar do \[domain-YY\]](domain-YY.html)
@@ -39,4 +39,4 @@ You can also download:
 * the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
 * the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
 
-The source code for this Implementation Guide can be found on **TODO: Put your github repo here**
+The source code for this Implementation Guide can be found on https://github.com/IHE/ITI.Scheduling

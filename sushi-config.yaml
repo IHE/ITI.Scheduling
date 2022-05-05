@@ -2,11 +2,11 @@
 # ───────────────────────────────────────────────────
 # the id should be lowercase made up of "ihe." + {domain acronym} + "." + {profile acronym/short-name}
 # e.g. ihe.iti.mhds, or ihe.iti.basicaudit
-id: ihe.domain.profile
-canonical: https://profiles.ihe.net/Domain/Profile
+id: ihe.iti.scheduling
+canonical: https://profiles.ihe.net/ITI/Scheduling
 version: 0.1.0
-name: IHE_Domain_Profile
-title: "spelled out name of the IHE Profile"
+name: IHE_ITI_Scheduling
+title: "IHE ITI Scheduling"
 description: put the short description of the profile here. it should explain what problem is being solved
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
@@ -25,7 +25,7 @@ license:  CC-BY-SA-4.0
 fhirVersion: 4.0.1
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
-copyrightYear: 2021+
+copyrightYear: 2022+
 
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
@@ -78,7 +78,7 @@ menu:
     Required Groupings: volume-1.html#required-groupings
     Overview: volume-1.html#overview
     Security Considerations: volume-1.html#security-considerations
-    Cross-Profile Considerations: volume-1.html#grouping
+    Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 2:
     "Transaction one [Domain-YY]": domain-YY.html
   Test Plan: testplan.html
