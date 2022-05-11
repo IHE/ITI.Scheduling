@@ -4,7 +4,7 @@
 # e.g. ihe.iti.mhds, or ihe.iti.basicaudit
 id: ihe.iti.scheduling
 canonical: https://profiles.ihe.net/ITI/Scheduling
-version: 0.1.0
+version: 0.1.0-current
 name: IHE_ITI_Scheduling
 title: "IHE ITI Scheduling"
 description: put the short description of the profile here. it should explain what problem is being solved
