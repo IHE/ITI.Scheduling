@@ -1,23 +1,24 @@
 
 # 1:XX FHIR Scheduling
 
-
+The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users, including cross-organizational workflows. This specification is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/), and references the [Schedule](http://hl7.org/fhir/R4/schedule.html), [Slot](http://hl7.org/fhir/R4/slot.html), and [Appointment](http://hl7.org/fhir/R4/appointment.html) resources.
 
 **TODO: Provide an end-user friendly overview of what the profile does for them. Keep it brief (a paragraph or two, up to a page). If extensive detail is needed, it should be included in Section XX.4- Use Cases.**
 
-**TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/). **
+**TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/).**
 
-## 1:X.1 FooBar Actors, Transactions, and Content Modules <a name="actors-and-transactions"> </a>
+## 1:X.1 FHIR Scheduling Actors, Transactions, and Content Modules <a name="actors-and-transactions"> </a>
 
 * Actors
 
-  - [Client](#client)
+  - [Scheduling Client](#client)
 
-  - [Server](#server)
+  - [Scheduling Server](#server)
 
 * Transactions
 
-  - [do domain-Y](domain-YY.html)
+  - [Y1 Find and Book Appointment](ITI-Y1.html).
+  This transaction searches for available slots based on certain search parameters, and books an appointment for the patient.
 
 Actors and transactions are used to achieve this use-case...
 
@@ -69,17 +70,17 @@ if Actor B supports XYZ Option, see Section XX.3.X.*
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
-#### XX.1.1.1 Client <a name="client"> </a>
+#### XX.1.1.1 Scheduling Client <a name="client"> </a>
 
 The Client queries for blah meeting certain criteria and may retrieve selected blah.
 
-FHIR Capability Statement for [Client]{CapabilityStatement-IHE.FooBar.client.html}
+FHIR Capability Statement for [Client]{CapabilityStatement-IHE.Scheduling.client.html}
 
-#### XX.1.1.2 Server <a name="server"> </a>
+#### XX.1.1.2 Scheduling Server <a name="server"> </a>
 
 The Sever processes query request from the Client actor.
 
-FHIR Capability Statement for [Server](CapabilityStatement-IHE.FooBar.server.html)
+FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html)
 
 ### Transaction Descriptions
 The transactions in this profile are summarized in the sections below.
