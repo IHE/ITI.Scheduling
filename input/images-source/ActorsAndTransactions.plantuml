@@ -1,5 +1,5 @@
-@startuml
-agent "Client" as Client
-agent "Server" as Server
-Client -- Server : "go [domain-YY] ↓"
+@startuml ActorsAndTransactions
+agent "Scheduling Client" as Client
+agent "Scheduling Server" as Server
+Client -- Server : "go [ITI-Y1] ↓"
 @enduml

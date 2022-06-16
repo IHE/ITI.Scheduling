@@ -7,7 +7,7 @@ The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHI
 
 **TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/).**
 
-## 1:X.1 FHIR Scheduling Actors, Transactions, and Content Modules <a name="actors-and-transactions"> </a>
+## 1:X.1 FHIR Scheduling Actors and Transactions <a name="actors-and-transactions"> </a>
 
 * Actors
 
@@ -89,7 +89,7 @@ The transactions in this profile are summarized in the sections below.
 
 This transaction is used to **do things**
 
-For more details see the detailed [transaction description](domain-YY.html)
+For more details see the detailed [transaction description](ITI-Y1.html)
 
 ## XX.2 FooBar Actor Options <a name="actor-options"> </a>
 
@@ -362,28 +362,18 @@ Guidance on using the “Grouping Condition” column:
 </table>
 
 
-## XX.4 FooBar Overview <a name="overview"> </a>
+## XX.4 FHIR Scheduling Overview <a name="overview"> </a>
 
-This section shows how the transactions/content modules of the profile
+This section shows how the transactions of the profile
 are combined to address the use cases.
-
-Use cases are informative, not normative, and “SHALL” language is
-not allowed in use cases.
 
 ### XX.4.1 Concepts
 
-If needed, this section provides an overview of the concepts that
-provide necessary background for understanding the profile. If not
-needed, state “Not applicable.” For an example of why/how this section
-may be needed, please see ITI Cross Enterprise Workflow (XDW).
-
-It may be useful in this section but is not necessary, to provide a
-short list of the use cases described below and explain why they are
-different.
+The FHIR specification defines several resources to describe the scheduling-related 
 
 ### XX.4.2 Use Cases
 
-#### XX.4.2.1 Use Case \#1: simple name
+#### XX.4.2.1 Use Case \#1: Provider-facing scheduling client
 
 One or two sentence simple description of this particular use
 case.
@@ -450,6 +440,7 @@ Very briefly (typically one sentence) describe the state of the
 clinical scenario after this content module has been created including
 examples of potential next steps.
 
+#### XX.4.2.1 Use Case \#2: Patient-facing scheduling client
 ## XX.5 FooBar Security Considerations <a name="security-considerations"> </a>
 
 See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)

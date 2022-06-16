@@ -1,11 +1,11 @@
-Instance: IHE.FooBar.client
+Instance: IHE.Scheduling.client
 InstanceOf: CapabilityStatement
 Usage: #definition
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t\tCapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement\r\n\t\t\t<a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html\">FooBar</a>\r\n\t\tThe IHE Profile text is Normative, this conformance resource is Informative.</div>"
-* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.FooBar.client"
-* name = "IHE_FooBar_client"
-* title = "IHE FooBar client"
+* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.Scheduling.client"
+* name = "IHE_Scheduling_client"
+* title = "IHE Scheduling client"
 * status = #active
 * experimental = false
 * date = "2018-04-13"
@@ -83,14 +83,14 @@ Usage: #definition
 * rest.resource.searchParam[=].documentation = "When the resource version last changed"
 * rest.interaction.code = #search-system
 
-Instance: IHE.FooBar.server
+Instance: IHE.Scheduling.server
 InstanceOf: CapabilityStatement
 Usage: #definition
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\nCapabilityStatement for SERVER Actor in the IHE\r\n<a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html\">FooBar</a>.\r\nThe IHE Profile text is Normative, this conformance resource is Informative.</div>"
-* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.FooBar.server"
-* name = "IHE_FooBar_supplier"
-* title = "IHE FooBar Server"
+* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.Scheduling.server"
+* name = "IHE_Scheduling_Server"
+* title = "IHE Scheduling Server"
 * status = #active
 * experimental = false
 * date = "2019-07-05"
