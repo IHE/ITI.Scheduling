@@ -1,5 +1,15 @@
-@startuml ActorsAndTransactions
+@startuml ActorsAndTransactions-1
 agent "Scheduling Client" as Client
 agent "Scheduling Server" as Server
-Client -- Server : "go [ITI-Y1] ↓"
+Client -- Server : "Find Appointment [ITI-Y1] ↓"
+Client -- Server : "Hold Appointment [ITI-Y3] (optional) ↓"
+Client -- Server : "Book Appointment [ITI-Y4] ↓"
 @enduml
+@startuml ActorsAndTransactions-2
+agent "Scheduling Client" as Client
+agent "Scheduling Server" as Server
+Client -- Server : "Pre-fetch Slots [ITI-Y2] ↓"
+Client -- Server : "Hold Appointment [ITI-Y3] (optional) ↓"
+Client -- Server : "Book Appointment [ITI-Y4] ↓"
+@enduml
+

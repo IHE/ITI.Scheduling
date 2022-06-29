@@ -3,6 +3,8 @@
 
 The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users, including cross-organizational workflows. This specification is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/), and references the [Schedule](http://hl7.org/fhir/R4/schedule.html), [Slot](http://hl7.org/fhir/R4/slot.html), and [Appointment](http://hl7.org/fhir/R4/appointment.html) resources.
 
+This workflow profile defines transactions that allow a scheduling client to obtain information about possible appointment opportunities based on specific parameters, and, based on that information, allow the client to book an appointment.
+
 **TODO: Provide an end-user friendly overview of what the profile does for them. Keep it brief (a paragraph or two, up to a page). If extensive detail is needed, it should be included in Section XX.4- Use Cases.**
 
 **TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/).**
@@ -12,60 +14,43 @@ The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHI
 * Actors
 
   - [Scheduling Client](#client)
-
   - [Scheduling Server](#server)
 
 * Transactions
 
-  - [Y1 Find and Book Appointment](ITI-Y1.html).
-  This transaction searches for available slots based on certain search parameters, and books an appointment for the patient.
+  - [Y1 Find Appointments](ITI-Y1.html)
+  - [Y2 Pre-fetch Slots](ITI-Y2.html)
+  - [Y3 Hold Appointment](ITI-Y3.html)
+  - [Y4 Book Appointment](ITI-Y4.html)
 
-Actors and transactions are used to achieve this use-case...
+
+The figure below shows the actors directly involved in the ITI Scheduling Profile and the relevant transactions between them.
 
 <div>
-{%include usecase1-processflow.svg%}
+{%include ActorsAndTransactions-1.svg%}
+{%include ActorsAndTransactions-2.svg%}
 </div>
 <br clear="all">
 
-**Figure: Use Case 1 Process Flow**
-
-This section defines the actors and transactions in this implementation guide.
-
-Figure below shows the actors directly
-involved in the FooBar 
-Profile and the relevant transactions between them.
-
-<div>
-{%include ActorsAndTransactions.svg%}
-</div>
-<br clear="all">
-
-**Figure: FooBar Actor Diagram**
+**Figure XX.1-1: Scheduling Actor Diagram** <a name="actor-diagram"> </a>
 
 Table XX.1-1: Profile Acronym Profile - Actors and Transactions
 
-|         |               |                        |                 |                                   |
-|---------|---------------|------------------------|-----------------|-----------------------------------|
-| Actors  | Transactions  | Initiator or Responder | Optionality     | Reference                         |
-| Actor A | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-|         | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-| Actor F | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-|         | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-| Actor D | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-| Actor E | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-|         | Transaction 3 |                        | O ( See Note 1) | Domain Acronym TF-2: 3.Y3 |
-|         | Transaction 4 |                        | O ( See Note 1) | Domain Acronym TF-2: 3.Y4 |
-| Actor B | Transaction 3 |                        | R               | Domain Acronym TF-2: 3.Y3 |
-|         | Transaction 4 |                        | O ( See Note 2) | Domain Acronym TF-2: 3.Y4 |
+| Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
+|-------------------|----------------------------|------------------------|-----------------|----------------|
+| Scheduling Client | Find Appointments [ITI-Y1] | Initiator              | O (See Note 1)  | ITI TF-2: 3.Y1 |
+|                   | Pre-fetch Slots [ITI-Y2]   | Initiator              | O (See Note 1)  | ITI TF-2: 3.Y2 |
+|                   | Hold Appointment [ITI-Y3]  | Initiator              | O               | ITI TF-2: 3.Y3 |
+|                   | Book Appointment [ITI-Y4]  | Initiator              | R               | ITI TF-2: 3.Y4 |
+| Scheduling Server | Find Appointments [ITI-Y1] | Responder              | O (See Note 2)  | ITI TF-2: 3.Y1 |
+|                   | Pre-fetch Slots [ITI-Y2]   | Responder              | O (See Note 2)  | ITI TF-2: 3.Y2 |
+|                   | Hold Appointment [ITI-Y3]  | Responder              | O               | ITI TF-2: 3.Y3 |
+|                   | Book Appointment [ITI-Y4]  | Responder              | R               | ITI TF-2: 3.Y4 |
 {: .grid}
 
-Note 1: *For example, a note could specify that at least one of the
-transactions shall be supported by an actor or other variations. For
-example: Note: Either Transaction Y3 or Transaction Y4 shall be
-implemented for Actor E. *
+Note 1: *Either Transaction Y1 or Transaction Y2 shall be implemented for the Scheduling Client actor.*
 
-Note 2: *For example, could specify that Transaction Y4 is required
-if Actor B supports XYZ Option, see Section XX.3.X.*
+Note 2: *Either Transaction Y1 or Transaction Y2 shall be implemented for the Scheduling Server actor.*
 
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
@@ -82,12 +67,18 @@ The Sever processes query request from the Client actor.
 
 FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html)
 
-### Transaction Descriptions
+### XX.1.2 Transaction Descriptions <a name="transactions"> </a>
 The transactions in this profile are summarized in the sections below.
 
-#### FooBar do transaction
+#### XX.1.2.1 Find Appointments
 
-This transaction is used to **do things**
+This transaction is used to find the available slots based on the provided parameters.
+
+For more details see the detailed [transaction description](ITI-Y1.html)
+
+#### XX.1.2.2 Book Appointment
+
+This transaction is used to book an appontment based on the available slots known to the client.
 
 For more details see the detailed [transaction description](ITI-Y1.html)
 
