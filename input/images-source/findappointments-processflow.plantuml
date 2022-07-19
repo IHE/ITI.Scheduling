@@ -1,0 +1,17 @@
+@startuml findappointments-processflow
+skinparam svgDimensionStyle false
+hide footbox
+participant "Scheduling Client" as Client
+participant "Scheduling Server" as Server
+note left of Client
+Pre-requisite: 
+Patient identification
+already completed
+end note
+activate "Client"
+"Client" -> "Server" : 1. Find Appointments Query
+activate "Server"
+"Server" --> "Client" : 2. Find Appointments Response
+deactivate "Server"
+deactivate "Client"
+@enduml

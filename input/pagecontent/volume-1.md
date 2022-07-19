@@ -27,8 +27,7 @@ This workflow profile defines transactions that allow a scheduling client to obt
 The figure below shows the actors directly involved in the ITI Scheduling Profile and the relevant transactions between them.
 
 <div>
-{%include ActorsAndTransactions-1.svg%}
-{%include ActorsAndTransactions-2.svg%}
+{%include ActorsAndTransactions.svg%}
 </div>
 <br clear="all">
 
@@ -57,300 +56,79 @@ The actors in this profile are described in more detail in the sections below.
 
 #### XX.1.1.1 Scheduling Client <a name="client"> </a>
 
-The Client queries for blah meeting certain criteria and may retrieve selected blah.
+The Scheduling Client determines an appropriate slot based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
-FHIR Capability Statement for [Client]{CapabilityStatement-IHE.Scheduling.client.html}
+- The client needs a mechanism to properly identify the patient. The details of this capability is out of scope for this profile.
+- The client has two ways to obtain a list of available appointments:
+  - using the Find Appointments transaction, which returns a list of available appointments for the provided parameters (the Find Appointments option)
+  - ising the Pre-fetch Slots transaction, which keeps an updated list of available slots (the Pre-fetch Slots option)
+- The client must deremine which option is supported by the server - Find Appointments and/or Pre-fetch Slots.
+- The client can chose to implement one of the options for obtaining available slots, or chose to implement both. Implementing both options provides a better interoperable environment for the client.
+
+FHIR Capability Statement for [Client](CapabilityStatement-IHE.Scheduling.client.html)
 
 #### XX.1.1.2 Scheduling Server <a name="server"> </a>
 
-The Sever processes query request from the Client actor.
+The Scheduling Server provides services for providing a list of available appointments, and for booking an appointment. The following points apply to the Scheduling Server:
+
+- The server expects that the Patient and Provder/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile.
+- The server can chose to implement one of the options for obtaining available slots or appointments, or chose to implement both. Implementing both options on the server can increase interoperability for scheduling clients, hoever, the types of appointments for a particular server may be better served by one or the other option. Depending on the supported use cases, implementing only one of the Find Appointments or the Pre-fetch Slots options can be a better solution.
+- The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
 FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html)
 
 ### XX.1.2 Transaction Descriptions <a name="transactions"> </a>
 The transactions in this profile are summarized in the sections below.
 
-#### XX.1.2.1 Find Appointments
+#### XX.1.2.1 Find Appointments [ITI-Y1]
 
-This transaction is used to find the available slots based on the provided parameters.
-
-For more details see the detailed [transaction description](ITI-Y1.html)
-
-#### XX.1.2.2 Book Appointment
-
-This transaction is used to book an appontment based on the available slots known to the client.
+This transactions searches for availability for a future appointment(s) within a time period of defined by date range input parameters.
 
 For more details see the detailed [transaction description](ITI-Y1.html)
+
+#### XX.1.2.2 Pre-fetch Slots [ITI-Y2]
+This transaction fetches available free slots for the 'initial load', update and reconciliation steps in the Prefetch Use Case. The server determines which open slots to expose to the application for use in creating new appointments.
+
+For more details see the detailed [transaction description](ITI-Y2.html)
+#### XX.1.2.3 Hold Appointments [ITI-Y3]
+Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments or Pre-fetch Slots option.
+
+For more details see the detailed [transaction description](ITI-Y3.html)
+#### XX.1.2.4 Book Appointment [ITI-Y4]
+
+This transaction is used to book an appontment based on the available slots or appointments known to the client.
+
+For more details see the detailed [transaction description](ITI-Y4.html)
 
 ## XX.2 FooBar Actor Options <a name="actor-options"> </a>
 
 Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies 
 between options when applicable are specified in notes.
 
-|         |             |
-|---------|-------------|
 | Actor   | Option Name |
-| Actor A | Option AB  |
-| Actor B | none |
+|---------|-------------|
+| Scheduling Client | Find Appointments option |
+| Scheduling Client | Pre-fetch Slots option   |
+| Scheduling Server | Find Appointments option |
+| Scheduling Server | Pre-fetch Slots option   |
 {: .grid}
 
-#### XX.2.1 AB Option
+### XX.2.1 Find Appointments Option
+The Find Appointments option allows the client to interrogate the server on the appointment availability based on a given set of parameters. The sequence of events is shown in the following diagram:
+<div>
+{%include findappointments-processflow.svg%}
+</div>
+<br clear="all">
 
-**TODO: describe this option and the Volume 1 requirements for this option
+Figure XX.2.1-1: Process Flow For the Find Appointments operation
+
+Once the list of appointments is available to the Scheduling Client, the user or a corresponding automated process can select a particular appointment to hold or book.
+
+### XX.2.2 Pre-fetch Slots Option
 
 ## XX.3 FooBar Required Actor Groupings <a name="required-groupings"> </a>
+There are no required groupings for this profile.
 
-*Describe any requirements for actors in this profile to be grouped
-with other actors.*
-
-*This section specifies all REQUIRED Actor Groupings (although
-“required” sometimes allows for a selection of one of several). To
-SUGGEST other profile groupings or helpful references for other profiles
-to consider, use Section XX.6 Cross Profile Considerations. Use Section
-X.5 for security profile recommendations.*
-
-An actor from this profile (Column 1) shall implement all of the
-required transactions and/or content modules in this profile ***in
-addition to*** ***<u>all</u>*** of the requirements for the grouped
-actor (Column 2) (Column 3 in alternative 2).
-
-If this is a content profile, and actors from this profile are grouped
-with actors from a workflow or transport profile, the Reference column
-references any specifications for mapping data from the content module
-into data elements from the workflow or transport transactions.
-
-In some cases, required groupings are defined as at least one of an
-enumerated set of possible actors; this is designated by merging column
-one into a single cell spanning multiple potential grouped actors. Notes
-are used to highlight this situation.
-
-Section XX.5 describes some optional groupings that may be of interest
-for security considerations and Section XX.6 describes some optional
-groupings in other related profiles.
-
-Two alternatives for Table XX.3-1 are presented below.
-
--   If there are no required groupings for any actor in this profile,
-    use alternative 1 as a template.
-
--   If an actor in this profile (with no option), has a required
-    grouping, use alternative 1.
-
--   If any required grouping is associated with an actor/option
-    combination in this profile, use alternative 2.
-
-alternative 1 Table XX.3-1: Profile Name - Required Actor
-Groupings
-
-All actors from this profile should be listed in Column 1, even if
-none of the actors has a required groupings. If no required grouping
-exists, “None” should be indicated in Column 2. If an actor in a content
-profile is required to be grouped with an actor in a transport or
-workflow profile, it will be listed **with at least one** required
-grouping. Do not use “XD\*” as an actor name.
-
-In some cases, required groupings are defined as at least one of an
-enumerated set of possible actors; to designate this, create a row for
-each potential actor grouping and merge column one to form a single cell
-containing the profile actor which should be grouped with at least one
-of the actors in the spanned rows. In addition, a note should be
-included to explain the enumerated set. See example below showing
-Document Consumer needing to be grouped with at least one of XDS.b
-Document Consumer, XDR Document Recipient or XDM Portable Media
-Importer
-
-The author should pay special consideration to security profiles in
-this grouping section. Consideration should be given to Consistent Time
-(CT) Client, ATNA Secure Node or Secure Application, as well as other
-profiles. For the sake of clarity and completeness, even if this table
-begins to become long, a line should be added for each actor for each of
-the required grouping for security. Also see the ITI document titled
-‘Cookbook: Preparing the IHE Profile Security Section’ at
-<http://ihe.net/Technical_Frameworks/#IT> for a list of suggested IT and
-security groupings.
-
-<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
-<thead>
-<tr class="header">
-<th>this Profile Acronym Actor</th>
-<th>Actor(s) to be grouped with</th>
-<th>Reference</th>
-<th>Content Bindings Reference</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Actor A</td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p>
-<p><em>e.g., ITI CT / Time Client</em></p></td>
-<td><p><em>TF Reference; typically from Vol 1</em></p>
-<p><em>e.g., ITI-TF-1: 7.1</em></p></td>
-<td>--</td>
-</tr>
-<tr class="even">
-<td>Actor B</td>
-<td>None</td>
-<td>--</td>
-<td>--</td>
-</tr>
-<tr class="odd">
-<td><p>Actor C</p>
-<p><em>In this example, Actor C shall be grouped with all three actors listed in column 2</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td><p>Actor D <em>(See note 1)</em></p>
-<p><em>In this example, the note is used to indicate that the Actor D shall be grouped with one or more of the two actors of the two actors in column 2.</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td><p>Actor E</p>
-<p><em>In rare cases, the actor to be grouped with must implement an option. An example is in column 2.)</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym Actor</em></p>
-<p><em>e.g., ITI RFD Form Filler with the Archive Form Option</em></p></td>
-<td><p><em>TF Reference to the Option definition; typically from Vol 1</em></p>
-<p><em>(e.g., ITI TF-1: 17.3.11)</em></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><em>e.g., Content Consumer (See Note 1)</em></td>
-<td><em>ITI XDS.b / Document Consumer</em></td>
-<td><em>ITI TF-1: 10.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>ITI XDR / Document Recipient</em></td>
-<td><em>ITI TF-1: 15.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>ITI XDM / Portable Media Importer</em></td>
-<td><em>ITI TF-1: 16.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="even">
-<td><em>e.g., Content Consumer</em></td>
-<td><em>ITI CT / Time Client</em></td>
-<td><em>ITI TF-1: 7.1</em></td>
-<td>--</td>
-</tr>
-</tbody>
-</table>
-
-Note 1: *This is a short note. It may be used to describe situations
-where an actor from this profile may be grouped with one of several
-other profiles/actors.*
-
-Note 2: *A note could also be used to explain why the grouping is
-required, if that is still not clear from the text above.*
-
-alternative 2 Table XX.3-1: this Profile Acronym Profile
-- Required Actor Groupings
-
-All actors from this profile should be listed in Column 1. If no
-required grouping exists, “None” should be indicated in Column 3. 
-
-Guidance on using the “Grouping Condition” column:
-
--   If an actor has no required grouping, Column 2 should contain “--“.
-    See Actor A below.
-
--   If an actor has a required grouping that is not associated with a
-    profile option (i.e., it has no condition), column 2 should contain
-    “Required”. See Actor B below.
-
--   Sometimes an option requires that an actor in this profile be
-    grouped with an actor in another profile. That condition is
-    specified in Column 2. See Actor C below.
-
-<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
-<tbody>
-<tr class="odd">
-<td>this Profile Acronym Actor</td>
-<td>Grouping Condition</td>
-<td>Actor(s) to be grouped with</td>
-<td>Reference</td>
-</tr>
-<tr class="even">
-<td>Actor A</td>
-<td>--</td>
-<td>None</td>
-<td>--</td>
-</tr>
-<tr class="odd">
-<td>Actor B</td>
-<td>Required</td>
-<td><p><em>external Domain Acronym or blank profile acronym/Actor</em></p>
-<p><em>e.g., ITI CT / Time Client</em></p></td>
-<td><p><em>TF Reference; typically from Vol 1</em></p>
-<p><em>(e.g., ITI TF-1: 7.1)</em></p></td>
-</tr>
-<tr class="even">
-<td>Actor C</td>
-<td>With the <em>Option name in this profile</em> Option</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>Where the Option is defined in this profile Section XX.3 z</em></td>
-</tr>
-<tr class="odd">
-<td><p>Actor D</p>
-<p><em>if an actor has both required and conditional groupings, list the Required grouping first</em></p></td>
-<td>Required</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>If the <em>Option name in this profile</em> Option is supported.</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>If the <em>other Option name in this profile</em> Option is supported.</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="even">
-<td><p>Actor E</p>
-<p><em>(In rare cases, the actor to be grouped with must implement an option, an example is in column 3)</em></p></td>
-<td>Required</td>
-<td><p><em>external Domain Acronym or blank profile acronym/Actor</em> with the <em>option name</em></p>
-<p><em>e.g. ITI RFD Form Filler with the Archive Form Option</em></p></td>
-<td><p><em>TF Reference to the Option definition; typically from Vol 1</em></p>
-<p><em>(eg ITI TF-1:17.3.11)</em></p></td>
-</tr>
-</tbody>
-</table>
 
 
 ## XX.4 FHIR Scheduling Overview <a name="overview"> </a>
