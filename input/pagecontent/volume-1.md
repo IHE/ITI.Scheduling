@@ -120,7 +120,7 @@ The Find Appointments option allows the client to interrogate the server on the 
 </div>
 <br clear="all">
 
-Figure XX.2.1-1: Process Flow For the Find Appointments operation
+**Figure XX.2.1-1: Process Flow For the Find Appointments operation**
 
 Once the list of appointments is available to the Scheduling Client, the user or a corresponding automated process can select a particular appointment to hold or book.
 
