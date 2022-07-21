@@ -120,7 +120,6 @@ This section shows how the transactions of the profile are combined to address t
 
 ### XX.4.1 Concepts
 
-<<<<<<< HEAD
 The FHIR specification defines several resources to describe scheduling-related information. The  [Schedule](http://hl7.org/fhir/R4/schedule.html), [Slot](http://hl7.org/fhir/R4/slot.html), and [Appointment](http://hl7.org/fhir/R4/appointment.html) resources are intended to be compatible with the [iCalendar specification](https://datatracker.ietf.org/doc/html/rfc5545). A survey of existing implementations, however, showed that there is very little commonality among existing FHIR server implementations, which suggests that an operation-based specification will improve interoperability in this area.
 
 The overall functionality covered by this profile is as follows:
@@ -129,9 +128,7 @@ The overall functionality covered by this profile is as follows:
 3. The Find Appointments transaction is completed.
 4. (Optionally) The Hold Appointment transaction is completed.
 5. The Book Appointment Transaction is completed.
-=======
-The FHIR specification defines several resources to describe the scheduling-related
->>>>>>> 85ad93745e12cb0de195cc315ffc32a20ff85b4e
+
 
 ### XX.4.2 Use Cases
 
