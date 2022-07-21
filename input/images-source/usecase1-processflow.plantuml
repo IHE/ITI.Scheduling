@@ -1,17 +1,23 @@
 @startuml usecase1-processflow
 skinparam svgDimensionStyle false
 hide footbox
+
 participant "Scheduling Client" as Client
 participant "Scheduling Server" as Server
+
 activate "Client"
 "Client" -> "Server" : 1. Find Appointments Query [ITI-Y1]
+
 activate "Server"
 "Server" --> "Client" : 2. Find Appointments Response [ITI-Y1]
 deactivate "Server"
+
 "Client" -> "Client" : 3. Select Appointment
 "Client" -> "Server" : 4. Book Appointment Request [ITI-Y1]
+
 Activate "Server"
 "Server" --> "Client" : 2. Book Appointments Response [ITI-Y1]
 deactivate "Server"
+
 deactivate "Client"
 @enduml
