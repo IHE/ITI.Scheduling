@@ -102,7 +102,7 @@ For more details see the detailed [transaction description](ITI-Y4.html)
 
 ## XX.2 FooBar Actor Options <a name="actor-options"> </a>
 
-Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies 
+Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies
 between options when applicable are specified in notes.
 
 | Actor   | Option Name |
@@ -138,7 +138,7 @@ are combined to address the use cases.
 
 ### XX.4.1 Concepts
 
-The FHIR specification defines several resources to describe the scheduling-related 
+The FHIR specification defines several resources to describe the scheduling-related
 
 ### XX.4.2 Use Cases
 
@@ -157,25 +157,7 @@ maximum of one page of text or consider an appendix.
 
 ##### XX.4.2.1.2 simple name Process Flow
 
-Diagram and describe the process flow(s) covered by this profile in
-order to satisfy the use cases. Demonstrate how the profile transactions
-are combined/sequenced. To provide context and demonstrate how the
-profile interacts with other profiles, feel free to include transactions
-and events that are “external” to this profile (using appropriate
-notation.)
-
-The set of process flows will typically be exemplary, not exhaustive
-(i.e., it will address all the use cases, but will not show all possible
-combinations of actors, or all possible sequencing of transactions).
-
-If there are detailed behavioral rules that apply to a specific process
-flow or multiple process flows, an appendix may be added as needed.
-
-The roles at the top of the swimlane diagram should correspond to
-actor names, include the profile acronym:actor name if referencing an
-actor from a different profile.
-
-Modify the following “Swimlane Diagram”.
+TODO
 
 <div>
 {%include usecase1-processflow.svg%}
@@ -184,43 +166,22 @@ Modify the following “Swimlane Diagram”.
 
 Figure XX.4.2.2-1: Basic Process Flow in Profile Acronym Profile
 
-If process flow “swimlane” diagrams require additional explanation
-to clarify conditional flows, or flow variations need to be described
-where alternate systems may be playing different actor roles, document
-those conditional flows here.
-
-Delete the material below if this is a workflow or transport
-profile. Delete the material above if this profile is a content module
-only profile.
-
-**Pre-conditions**:
-
-Very briefly (typically one sentence) describe the conditions or
-timing when this content module would be used.
-
-**Main Flow**:
-
-Typically in an enumerated list, describe the clinical workflow
-when, where, and how this content module would be used.
-
-**Post-conditions:**
-
-Very briefly (typically one sentence) describe the state of the
-clinical scenario after this content module has been created including
-examples of potential next steps.
 
 #### XX.4.2.1 Use Case \#2: Patient-facing scheduling client
+
+
+
 ## XX.5 FooBar Security Considerations <a name="security-considerations"> </a>
 
 See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
 
-The following is instructions to the editor and this text is not to be included in a publication. 
+The following is instructions to the editor and this text is not to be included in a publication.
 The material initially from [RFC 3552 "Security Considerations Guidelines" July 2003](https://tools.ietf.org/html/rfc3552).
 
 This section should address downstream design considerations, specifically for: Privacy, Security, and Safety. These might need to be individual header sections if they are significant or need to be referenced.
 
-The editor needs to understand Security and Privacy fundamentals. 
-General [Security and Privacy guidance](http://hl7.org/fhir/secpriv-module.html) is provided in the FHIR Specification. 
+The editor needs to understand Security and Privacy fundamentals.
+General [Security and Privacy guidance](http://hl7.org/fhir/secpriv-module.html) is provided in the FHIR Specification.
 The FHIR core specification should be leveraged where possible to inform the reader of your specification.
 
 IHE FHIR based profiles should reference the [ITI Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) section 8 Mobile Security and Privacy Considerations base when appropriate.
@@ -230,9 +191,9 @@ IHE Document Content profiles can reference the security and privacy provided by
    While it is not a requirement that any given specification or system be
    immune to all forms of attack, it is still necessary for authors of specifications to
    consider as many forms as possible.  Part of the purpose of the
-   Security and Privacy Considerations section is to explain what attacks have been 
+   Security and Privacy Considerations section is to explain what attacks have been
    considered and what countermeasures can be applied to defend against them.
-   
+
    There should be a clear description of the kinds of threats on the
    described specification.  This should be approached as an
    effort to perform "due diligence" in describing all known or
@@ -292,7 +253,7 @@ Authors MUST describe:
    There should also be some discussion of potential security risks
    arising from potential misapplications of the specification or technology
    described in the specification.  
-  
+
 This section also include specific considerations regarding Digital Signatures, Provenance, Audit Logging, and De-Identification.
 
 Where audit logging is specified, a StructureDefinition profile(s) should be included, and Examples of those logs might be included.
@@ -318,5 +279,3 @@ other profile acronym - other profile name
 A other profile actor name in other profile name might
 be grouped with a this profile actor name to describe
 benefit/what is accomplished by grouping.
-
-

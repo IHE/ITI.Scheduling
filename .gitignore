@@ -5,6 +5,7 @@ output
 input-cache
 fsh-generated
 .vscode
+.DS_Store
 www
 /_gencontinuous.bat
 /_gencontinuous.sh
