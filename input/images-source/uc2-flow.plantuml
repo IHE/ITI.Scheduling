@@ -1,0 +1,43 @@
+@startuml
+skinparam responseMessageBelowArrow true
+skinparam svgDimensionStyle false
+hide footbox
+
+actor "Mr. White" as User #FFFFFF
+participant "Patient Portal \n (Scheduling Client)" as RequestingActor
+participant "Care Services Selective Supplier \n" as Provider #FFFFFF
+participant "Scheduling Server \n" as RespondingActor
+
+autonumber 1 1 "<b>[00]"
+
+activate "RequestingActor"
+User --> RequestingActor: Open view
+
+|||
+RequestingActor -> Provider: Find Matching Care Services Request [ITI-90]
+activate "Provider"
+Provider --> RequestingActor: Find Matching Care Services Response [ITI-90]
+deactivate "Provider"
+
+User --> RequestingActor: Open view
+
+|||
+RequestingActor -> RespondingActor: Find Appointments Query Request [ITI-Y1]
+activate "RespondingActor"
+RespondingActor --> RequestingActor: Find Appointments Query Response [ITI-Y1]
+deactivate "RespondingActor"
+
+|||
+User --> RequestingActor: Select Appointment
+User --> RequestingActor: Add additional data
+User --> RequestingActor: Confirm booking
+
+|||
+RequestingActor -> RespondingActor: Book Appointment Request [ITI-Y1]
+activate "RespondingActor"
+RespondingActor --> RequestingActor: Book Appointment Response [ITI-Y1]
+deactivate "RespondingActor"
+
+autonumber stop
+
+@enduml
