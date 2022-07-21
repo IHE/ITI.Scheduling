@@ -19,9 +19,8 @@ This workflow profile defines transactions that allow a scheduling client to obt
 * Transactions
 
   - [Y1 Find Appointments](ITI-Y1.html)
-  - [Y2 Pre-fetch Slots](ITI-Y2.html)
-  - [Y3 Hold Appointment](ITI-Y3.html)
-  - [Y4 Book Appointment](ITI-Y4.html)
+  - [Y2 Hold Appointment](ITI-Y2.html)
+  - [Y3 Book Appointment](ITI-Y3.html)
 
 
 The figure below shows the actors directly involved in the ITI Scheduling Profile and the relevant transactions between them.
@@ -37,19 +36,13 @@ Table XX.1-1: Profile Acronym Profile - Actors and Transactions
 
 | Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
 |-------------------|----------------------------|------------------------|-----------------|----------------|
-| Scheduling Client | Find Appointments [ITI-Y1] | Initiator              | O (See Note 1)  | ITI TF-2: 3.Y1 |
-|                   | Pre-fetch Slots [ITI-Y2]   | Initiator              | O (See Note 1)  | ITI TF-2: 3.Y2 |
-|                   | Hold Appointment [ITI-Y3]  | Initiator              | O               | ITI TF-2: 3.Y3 |
-|                   | Book Appointment [ITI-Y4]  | Initiator              | R               | ITI TF-2: 3.Y4 |
-| Scheduling Server | Find Appointments [ITI-Y1] | Responder              | O (See Note 2)  | ITI TF-2: 3.Y1 |
-|                   | Pre-fetch Slots [ITI-Y2]   | Responder              | O (See Note 2)  | ITI TF-2: 3.Y2 |
-|                   | Hold Appointment [ITI-Y3]  | Responder              | O               | ITI TF-2: 3.Y3 |
-|                   | Book Appointment [ITI-Y4]  | Responder              | R               | ITI TF-2: 3.Y4 |
+| Scheduling Client | Find Appointments [ITI-Y1] | Initiator              | R               | ITI TF-2: 3.Y1 |
+|                   | Hold Appointment [ITI-Y2]  | Initiator              | O               | ITI TF-2: 3.Y3 |
+|                   | Book Appointment [ITI-Y3]  | Initiator              | R               | ITI TF-2: 3.Y4 |
+| Scheduling Server | Find Appointments [ITI-Y1] | Responder              | R               | ITI TF-2: 3.Y1 |
+|                   | Hold Appointment [ITI-Y2]  | Responder              | O               | ITI TF-2: 3.Y3 |
+|                   | Book Appointment [ITI-Y3]  | Responder              | R               | ITI TF-2: 3.Y4 |
 {: .grid}
-
-Note 1: *Either Transaction Y1 or Transaction Y2 shall be implemented for the Scheduling Client actor.*
-
-Note 2: *Either Transaction Y1 or Transaction Y2 shall be implemented for the Scheduling Server actor.*
 
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
@@ -59,20 +52,15 @@ The actors in this profile are described in more detail in the sections below.
 The Scheduling Client determines an appropriate slot based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
 - The client needs a mechanism to properly identify the patient. The details of this capability is out of scope for this profile.
-- The client has two ways to obtain a list of available appointments:
-  - using the Find Appointments transaction, which returns a list of available appointments for the provided parameters (the Find Appointments option)
-  - ising the Pre-fetch Slots transaction, which keeps an updated list of available slots (the Pre-fetch Slots option)
-- The client must deremine which option is supported by the server - Find Appointments and/or Pre-fetch Slots.
-- The client can chose to implement one of the options for obtaining available slots, or chose to implement both. Implementing both options provides a better interoperable environment for the client.
-
+- The client needs to determine
 FHIR Capability Statement for [Client](CapabilityStatement-IHE.Scheduling.client.html)
 
 #### XX.1.1.2 Scheduling Server <a name="server"> </a>
 
 The Scheduling Server provides services for providing a list of available appointments, and for booking an appointment. The following points apply to the Scheduling Server:
 
-- The server expects that the Patient and Provder/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile.
-- The server can chose to implement one of the options for obtaining available slots or appointments, or chose to implement both. Implementing both options on the server can increase interoperability for scheduling clients, hoever, the types of appointments for a particular server may be better served by one or the other option. Depending on the supported use cases, implementing only one of the Find Appointments or the Pre-fetch Slots options can be a better solution.
+- The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile.
+- The server can chose to implement one of the options for obtaining available slots or appointments, or chose to implement both. Implementing both options on the server can increase interoperability for scheduling clients, however, the types of appointments for a particular server may be better served by one or the other option. Depending on the supported use cases, implementing only one of the Find Appointments or the Pre-fetch Slots options can be a better solution.
 - The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
 FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html)
@@ -82,70 +70,48 @@ The transactions in this profile are summarized in the sections below.
 
 #### XX.1.2.1 Find Appointments [ITI-Y1]
 
-This transactions searches for availability for a future appointment(s) within a time period of defined by date range input parameters.
+This transactions searches for availability for a future appointment(s) using the Find Appointments operation.
+{%include FindAppointments-note.md%}
 
 For more details see the detailed [transaction description](ITI-Y1.html)
 
-#### XX.1.2.2 Pre-fetch Slots [ITI-Y2]
-This transaction fetches available free slots for the 'initial load', update and reconciliation steps in the Prefetch Use Case. The server determines which open slots to expose to the application for use in creating new appointments.
-
-For more details see the detailed [transaction description](ITI-Y2.html)
-#### XX.1.2.3 Hold Appointments [ITI-Y3]
+#### XX.1.2.2 Hold Appointments [ITI-Y2]
 Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments or Pre-fetch Slots option.
 
+For more details see the detailed [transaction description](ITI-Y2.html)
+#### XX.1.2.3 Book Appointment [ITI-Y3]
+
+This transaction is used to book an appointment based on the available appointments known to the client.
+
 For more details see the detailed [transaction description](ITI-Y3.html)
-#### XX.1.2.4 Book Appointment [ITI-Y4]
 
-This transaction is used to book an appontment based on the available slots or appointments known to the client.
+## XX.2 Scheduling Actor Options <a name="actor-options"> </a>
 
-For more details see the detailed [transaction description](ITI-Y4.html)
+There are currently no options for these actors.
 
-## XX.2 FooBar Actor Options <a name="actor-options"> </a>
-
-Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies 
-between options when applicable are specified in notes.
-
-| Actor   | Option Name |
-|---------|-------------|
-| Scheduling Client | Find Appointments option |
-| Scheduling Client | Pre-fetch Slots option   |
-| Scheduling Server | Find Appointments option |
-| Scheduling Server | Pre-fetch Slots option   |
-{: .grid}
-
-### XX.2.1 Find Appointments Option
-The Find Appointments option allows the client to interrogate the server on the appointment availability based on a given set of parameters. The sequence of events is shown in the following diagram:
-<div>
-{%include findappointments-processflow.svg%}
-</div>
-<br clear="all">
-
-**Figure XX.2.1-1: Process Flow For the Find Appointments operation**
-
-Once the list of appointments is available to the Scheduling Client, the user or a corresponding automated process can select a particular appointment to hold or book.
-
-### XX.2.2 Pre-fetch Slots Option
-
-## XX.3 FooBar Required Actor Groupings <a name="required-groupings"> </a>
+## XX.3 Scheduling Required Actor Groupings <a name="required-groupings"> </a>
 There are no required groupings for this profile.
-
-
 
 ## XX.4 FHIR Scheduling Overview <a name="overview"> </a>
 
-This section shows how the transactions of the profile
-are combined to address the use cases.
+This section shows how the transactions of the profile are combined to address the use cases.
 
 ### XX.4.1 Concepts
 
-The FHIR specification defines several resources to describe the scheduling-related 
+The FHIR specification defines several resources to describe scheduling-related information. The  [Schedule](http://hl7.org/fhir/R4/schedule.html), [Slot](http://hl7.org/fhir/R4/slot.html), and [Appointment](http://hl7.org/fhir/R4/appointment.html) resources are intended to be compatible with the [iCalendar specification](https://datatracker.ietf.org/doc/html/rfc5545). A survey of existing implementations, however, showed that there is very little commonality among existing FHIR server implementations, which suggests that an operation-based specification will improve interoperability in this area.
+
+The overall functionality covered by this profile is as follows:
+1. The Scheduling Client identifies the patient or patients for whom the appointment will be scheduled
+2. The Scheduling Client determines the available parameters for requesting a list of available appointments
+3. The Find Appointments transaction is completed.
+4. (Optionally) The Hold Appointment transaction is completed.
+5. The Book Appointment Transaction is completed.
 
 ### XX.4.2 Use Cases
 
 #### XX.4.2.1 Use Case \#1: Provider-facing scheduling client
 
-One or two sentence simple description of this particular use
-case.
+Post-discharge PCP visit.
 
 Note that Section XX.4.2.1 repeats in its entirety for additional use
 cases (replicate as Section XX.4.2.2, XX.4.2.3, etc.).
@@ -209,7 +175,7 @@ Very briefly (typically one sentence) describe the state of the
 clinical scenario after this content module has been created including
 examples of potential next steps.
 
-#### XX.4.2.1 Use Case \#2: Patient-facing scheduling client
+#### XX.4.2.2 Use Case \#2: Patient-facing scheduling client
 ## XX.5 FooBar Security Considerations <a name="security-considerations"> </a>
 
 See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
