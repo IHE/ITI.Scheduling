@@ -52,8 +52,7 @@ The actors in this profile are described in more detail in the sections below.
 The Scheduling Client determines an appropriate slot based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
 - The client needs a mechanism to properly identify the patient. The details of this capability is out of scope for this profile.
-- The client needs to determine
-FHIR Capability Statement for [Client](CapabilityStatement-IHE.Scheduling.client.html)
+- The client needs to determine FHIR Capability Statement for [Client](CapabilityStatement-IHE.Scheduling.client.html)
 
 #### XX.1.1.2 Scheduling Server <a name="server"> </a>
 
@@ -75,35 +74,12 @@ This transactions searches for availability for a future appointment(s) using th
 
 For more details see the detailed [transaction description](ITI-Y1.html)
 
-#### XX.1.2.2 Hold Appointments [ITI-Y2]
+#### XX.1.2.2 Hold Appointment [ITI-Y2]
+
 Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments or Pre-fetch Slots option.
 
-<<<<<<< HEAD
 For more details see the detailed [transaction description](ITI-Y2.html)
 #### XX.1.2.3 Book Appointment [ITI-Y3]
-=======
-For more details see the detailed [transaction description](ITI-Y3.html)
-#### XX.1.2.4 Book Appointment [ITI-Y4]
-
-This transaction is used to book an appontment based on the available slots or appointments known to the client.
-
-For more details see the detailed [transaction description](ITI-Y4.html)
-
-## XX.2 FooBar Actor Options <a name="actor-options"> </a>
-
-Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies
-between options when applicable are specified in notes.
-
-| Actor   | Option Name |
-|---------|-------------|
-| Scheduling Client | Find Appointments option |
-| Scheduling Client | Pre-fetch Slots option   |
-| Scheduling Server | Find Appointments option |
-| Scheduling Server | Pre-fetch Slots option   |
-{: .grid}
->>>>>>> 85ad93745e12cb0de195cc315ffc32a20ff85b4e
-
-This transaction is used to book an appointment based on the available appointments known to the client.
 
 For more details see the detailed [transaction description](ITI-Y3.html)
 
