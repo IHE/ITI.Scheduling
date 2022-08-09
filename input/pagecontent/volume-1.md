@@ -110,36 +110,58 @@ The overall functionality covered by this profile is as follows:
 
 #### XX.4.2.1 Use Case \#1: Provider-facing scheduling client
 
+##### XX.4.2.1.1 Provider-facing Post-discharge PCP visit
 Post-discharge PCP visit.
 
-Note that Section XX.4.2.1 repeats in its entirety for additional use
-cases (replicate as Section XX.4.2.2, XX.4.2.3, etc.).
+##### XX.4.2.1.2 Provider-facing Specialty Scheduling Use Case Description
+Dr. Brown detects that a radiology examination is recommended to proceed the
+treatment of her Patient Mr. White. Dr. Brown opens the radiology examination
+scheduling in her clinical information systems and selects a radiology facility
+for the examination.
 
-##### XX.4.2.1.1 simple name Use Case Description
+From the list of available time slots presented in the clinical information system Dr. Brown selects an appropriate time slot for the
+examination of Mr. White. Dr. Brown records the booking details
+(e.g., Mr. White demographics, treatment, body part to examine, etc.) in the
+booking details dialog of the clinical information system. Dr. Brown confirms
+the records and books the examination in the confirm dialog in her clinical
+information system.
 
-Describe the key use cases addressed by the profile. Limit to a
-maximum of one page of text or consider an appendix.
-
-##### XX.4.2.1.2 simple name Process Flow
-
-TODO
+##### XX.4.2.1.2 Provider-facing scheduling client Process Flow
 
 <div>
-{%include usecase1-processflow.svg%}
+{%include uc1-flow.svg%}
 </div>
 <br clear="all">
 
-Figure XX.4.2.2-1: Basic Process Flow in Profile Acronym Profile
+Figure XX.4.2.2-1: Provider-facing scheduling client Process Flow
 
 
-#### XX.4.2.1 Use Case \#2: Patient-facing scheduling client
-
-
-
-<<<<<<< HEAD
 #### XX.4.2.2 Use Case \#2: Patient-facing scheduling client
-=======
->>>>>>> 85ad93745e12cb0de195cc315ffc32a20ff85b4e
+
+##### XX.4.2.2.1 Patient-facing scheduling client Use Case Description
+
+Mr. White feels sick on holidays in a foreign country and wants to visit
+a healthcare provider for an examination. Mr. White opens the local patient portal
+and searches for a healthcare provider using search criteria
+(e.g., distance, opening hours, supported languages).
+Mr. White selects a Dr. Browns paractise as healthcare provider and opens the
+appointments view in the patient portal.
+
+From the list of available time slots presented in the patient portal Mr. White
+selects an appropriate time slot for the visit. Mr. White records the booking details
+(e.g., demographics, symptoms, etc.) in the booking details dialog in the patient
+portal. Mr. White confirms the records and books the examination in the confirm
+dialog of the patient portal.
+
+##### XX.4.2.2.2 Patient-facing scheduling client Process Flow
+
+<div>
+{%include uc2-flow.svg%}
+</div>
+<br clear="all">
+
+Figure XX.4.2.2-1: Patient-facing scheduling client Process Flow
+
 ## XX.5 FooBar Security Considerations <a name="security-considerations"> </a>
 
 See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
