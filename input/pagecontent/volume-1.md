@@ -110,10 +110,11 @@ The overall functionality covered by this profile is as follows:
 
 #### XX.4.2.1 Use Case \#1: Provider-facing scheduling client
 
-##### XX.4.2.1.1 Provider-facing Post-discharge PCP visit
-Post-discharge PCP visit.
 
-##### XX.4.2.1.2 Provider-facing Specialty Scheduling Use Case Description
+##### XX.4.2.1.1 Post-discharge PCP Visit
+
+##### XX.4.2.1.2 Specialty Visit Scheduling
+###### XX.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
 Dr. Brown detects that a radiology examination is recommended to proceed the
 treatment of her Patient Mr. White. Dr. Brown opens the radiology examination
 scheduling in her clinical information systems and selects a radiology facility
@@ -126,19 +127,20 @@ booking details dialog of the clinical information system. Dr. Brown confirms
 the records and books the examination in the confirm dialog in her clinical
 information system.
 
-##### XX.4.2.1.2 Provider-facing scheduling client Process Flow
+###### XX.4.2.1.2.2 Provider-facing scheduling client Process Flow
 
 <div>
 {%include uc1-flow.svg%}
 </div>
 <br clear="all">
 
-Figure XX.4.2.2-1: Provider-facing scheduling client Process Flow
+Figure XX.4.2.1-1: Provider-facing scheduling client Process Flow
 
 
 #### XX.4.2.2 Use Case \#2: Patient-facing scheduling client
 
-##### XX.4.2.2.1 Patient-facing scheduling client Use Case Description
+##### XX.4.2.2.1 Foreign Visitor Urgent Visit
+###### XX.4.2.2.1.1 Use Case Description
 
 Mr. White feels sick on holidays in a foreign country and wants to visit
 a healthcare provider for an examination. Mr. White opens the local patient portal
@@ -153,7 +155,7 @@ selects an appropriate time slot for the visit. Mr. White records the booking de
 portal. Mr. White confirms the records and books the examination in the confirm
 dialog of the patient portal.
 
-##### XX.4.2.2.2 Patient-facing scheduling client Process Flow
+###### XX.4.2.2.1.2 Foreign Visitor Urgent Visitor Process Flow
 
 <div>
 {%include uc2-flow.svg%}
