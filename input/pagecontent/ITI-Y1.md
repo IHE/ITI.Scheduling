@@ -1,4 +1,4 @@
-This section corresponds to transaction [ITI-Y] of the IHE Technical Framework. Transaction [ITI-Y] is used by the Client and Server Actors. The go [ITI-Y] transaction is used to query and get back results.
+This section corresponds to transaction [ITI-Y1] of the IHE Technical Framework. Transaction [ITI-Y1] is used by the Scheduling Client and Scheduling Server Actors. The Find Appointments [ITI-Y1] transaction is used to provide a set of parameters to the server, and based on them to get back a list of possible appointments.
 
 ### Scope
 
@@ -36,7 +36,7 @@ This message uses the HTTP GET method on the target Server endpoint to convey th
 
 ##### Message Semantics
 
-''TODO: define the message -- usually with a StructureDefintion''
+''TODO: define the message -- usually with a StructureDefinition''
 
 ##### Expected Actions
 
@@ -50,7 +50,7 @@ This message uses the HTTP GET method on the target Server endpoint to convey th
 
 ##### Message Semantics
 
-''TODO: define the message -- usually with a StructureDefintion''
+''TODO: define the message -- usually with a StructureDefinition''
 
 ##### Expected Actions
 
