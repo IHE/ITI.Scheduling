@@ -10,3 +10,5 @@ The Find Appointments operation describes the following parameters:
 - insurance
 - reason
 - referral
+- return
+

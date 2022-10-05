@@ -69,17 +69,21 @@ The transactions in this profile are summarized in the sections below.
 
 #### XX.1.2.1 Find Appointments [ITI-Y1]
 
-This transactions searches for availability for a future appointment(s) using the Find Appointments operation.
+This transaction searches for availability for a future appointment(s) using the Find Appointments operation.
 {%include FindAppointments-note.md%}
 
 For more details see the detailed [transaction description](ITI-Y1.html)
 
 #### XX.1.2.2 Hold Appointment [ITI-Y2]
 
-Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments or Pre-fetch Slots option.
+Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments operation.
+{%include HoldAppointment-note.md%}
 
 For more details see the detailed [transaction description](ITI-Y2.html)
 #### XX.1.2.3 Book Appointment [ITI-Y3]
+
+This operation books an appointment following the determination of appointment availability using the Find Appointments operation. Using different combination of parameters, this operation can book a new appointment, calncel an already existing appointment, or reschedule an existing appointment.
+{%include BookAppointment-note.md%}
 
 For more details see the detailed [transaction description](ITI-Y3.html)
 
