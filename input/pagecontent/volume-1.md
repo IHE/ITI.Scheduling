@@ -168,111 +168,23 @@ dialog of the patient portal.
 
 Figure XX.4.2.2-1: Patient-facing scheduling client Process Flow
 
-## XX.5 FooBar Security Considerations <a name="security-considerations"> </a>
+## XX.5 FHIR Scheduling Security Considerations <a name="security-considerations"> </a>
 
-See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
+Actors are expected to follow the recommendations and requirements found in [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
-The following is instructions to the editor and this text is not to be included in a publication.
-The material initially from [RFC 3552 "Security Considerations Guidelines" July 2003](https://tools.ietf.org/html/rfc3552).
+The resources exchanged in this profile may contain information which pose a privacy risk, or in some cases, a safety risk, to providers and other personnel, as well as patients. For example, practitioner or patient phone numbers and home addresses may be conveyed. Implementers should determine what data will be exposed by the system and what level of public access there will be if any.
 
-This section should address downstream design considerations, specifically for: Privacy, Security, and Safety. These might need to be individual header sections if they are significant or need to be referenced.
+Implementers should consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc.
 
-The editor needs to understand Security and Privacy fundamentals.
-General [Security and Privacy guidance](http://hl7.org/fhir/secpriv-module.html) is provided in the FHIR Specification.
-The FHIR core specification should be leveraged where possible to inform the reader of your specification.
+There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the FHIR Scheduling Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
 
-IHE FHIR based profiles should reference the [ITI Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) section 8 Mobile Security and Privacy Considerations base when appropriate.
+User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. Implementers should implement the [SMART on FHIR IG](http://hl7.org/fhir/smart-app-launch/) for the corresponding use cases (patient-facing or provider-facing). The network communication security and user authentication are layered in the HTTP transport layer.
 
-IHE Document Content profiles can reference the security and privacy provided by the Document Sharing infrastructure as directly grouped or possibly to be grouped.
+## XX.6 FHIR Scheduling Cross-Profile Considerations <a name="other-grouping"> </a>
+The FHIR Scheduling Profile is intended to be used in varied settings and to satisfy multiple use cases. Some of these uses will benefit from using FHIR Scheduling together with other IHE profiles. The following cross-profile  descriptions are not exclusive or exhaustive, and the list can be update in the future.
 
-   While it is not a requirement that any given specification or system be
-   immune to all forms of attack, it is still necessary for authors of specifications to
-   consider as many forms as possible.  Part of the purpose of the
-   Security and Privacy Considerations section is to explain what attacks have been
-   considered and what countermeasures can be applied to defend against them.
+### XX.6.1 mCSD - Mobile Care Services Discovery
+When a patient needs to schedule an appointment outside their usual care providing environment, they may need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [ITI-90 Find Matching Care Services](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
 
-   There should be a clear description of the kinds of threats on the
-   described specification.  This should be approached as an
-   effort to perform "due diligence" in describing all known or
-   foreseeable risks and threats to potential implementers and users.
-
-Authors MUST describe:
-* which attacks have been considered and addressed in the specification
-* which attacks have been considered but not addressed in the specification
-* what could be done in system design, system deployment, or user training
-
-
-   At least the following forms of attack MUST be considered:
-   eavesdropping, replay, message insertion, deletion, modification, and
-   man-in-the-middle.  Potential denial of service attacks MUST be
-   identified as well.  If the specification incorporates cryptographic
-   protection mechanisms, it should be clearly indicated which portions
-   of the data are protected and what the protections are (i.e.,
-   integrity only, confidentiality, and/or endpoint authentication,
-   etc.).  Some indication should also be given to what sorts of attacks
-   the cryptographic protection is susceptible.  Data which should be
-   held secret (keying material, random seeds, etc.) should be clearly
-   labeled.
-
-   If the specification involves authentication, particularly user-host
-   authentication, the security of the authentication method MUST be
-   clearly specified.  That is, authors MUST document the assumptions
-   that the security of this authentication method is predicated upon.
-
-   The threat environment addressed by the Security and Privacy Considerations
-   section MUST at a minimum include deployment across the global
-   Internet across multiple administrative boundaries without assuming
-   that firewalls are in place, even if only to provide justification
-   for why such consideration is out of scope for the protocol.  It is
-   not acceptable to only discuss threats applicable to LANs and ignore
-   the broader threat environment.  In
-   some cases, there might be an Applicability Statement discouraging
-   use of a technology or protocol in a particular environment.
-   Nonetheless, the security issues of broader deployment should be
-   discussed in the document.
-
-   There should be a clear description of the residual risk to the user
-   or operator of that specification after threat mitigation has been
-   deployed.  Such risks might arise from compromise in a related
-   specification (e.g., IPsec is useless if key management has been
-   compromised), from incorrect implementation, compromise of the
-   security technology used for risk reduction (e.g., a cipher with a
-   40-bit key), or there might be risks that are not addressed by the
-   specification (e.g., denial of service attacks on an
-   underlying link protocol).  Particular care should be taken in
-   situations where the compromise of a single system would compromise
-   an entire protocol.  For instance, in general specification designers
-   assume that end-systems are inviolate and don't worry about physical
-   attack.  However, in cases (such as a certificate authority) where
-   compromise of a single system could lead to widespread compromises,
-   it is appropriate to consider systems and physical security as well.
-
-   There should also be some discussion of potential security risks
-   arising from potential misapplications of the specification or technology
-   described in the specification.  
-
-This section also include specific considerations regarding Digital Signatures, Provenance, Audit Logging, and De-Identification.
-
-Where audit logging is specified, a StructureDefinition profile(s) should be included, and Examples of those logs might be included.
-
-## XX.6 FooBar Cross-Profile Considerations <a name="other-grouping"> </a>
-
-This section is informative, not normative. It is intended to put
-this profile in context with other profiles. Any required groupings
-should have already been described above. Brief descriptions can go
-directly into this section; lengthy descriptions should go into an
-appendix. Examples of this material include ITI Cross Community Access
-(XCA) Grouping Rules (Section 18.2.3), the Radiology associated profiles
-listed at wiki.ihe.net, or ITI Volume 1 Appendix E “Cross Profile
-Considerations”, and the “See Also” sections Radiology Profile
-descriptions on the wiki such as
-<http://wiki.ihe.net/index.php/Scheduled_Workflow#See_Also>. If this
-section is left blank, add “Not applicable.”
-
-Consider using a format such as the following:
-
-other profile acronym - other profile name
-
-A other profile actor name in other profile name might
-be grouped with a this profile actor name to describe
-benefit/what is accomplished by grouping.
+### XX.6.2 360X - 360 Exchange Closed Loop Referral
+The [360X Profile](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_360X.pdf) describes cross-organizations referral workflows, and it has a scheduling option, which is not required. The FHIR Scheduling profile can be used instead of the 360X scheduling option when there are appropriate business agreements that allow cross-organizational scheduling. The referral and patient identifiers used in the 360X transactions must be used in the corresponding parameters of the Find Appointments transaction in order to provide the necessary link between the appointment and the referral.
