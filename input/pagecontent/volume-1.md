@@ -82,7 +82,7 @@ Request for a hold on a selected Appointment in order for the user to complete e
 For more details see the detailed [transaction description](ITI-Y2.html)
 #### XX.1.2.3 Book Appointment [ITI-Y3]
 
-This operation books an appointment following the determination of appointment availability using the Find Appointments operation. Using different combination of parameters, this operation can book a new appointment, calncel an already existing appointment, or reschedule an existing appointment.
+This operation books an appointment following the determination of appointment availability using the Find Appointments operation. Using different combination of parameters, this operation can book a new appointment, cancel an already existing appointment, or reschedule an existing appointment.
 {%include BookAppointment-note.md%}
 
 For more details see the detailed [transaction description](ITI-Y3.html)
