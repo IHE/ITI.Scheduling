@@ -17,7 +17,9 @@ This guide is organized into four main sections:
    1. [Cross Profile Considerations](volume-1.html#other-grouping)
 
 2. Volume II: Transaction Detail
-   1. [FooBar do \[ITI-Y1\]](ITI-Y1.html)
+   1. [Find Appointments \[ITI-Y1\]](ITI-Y1.html)
+   1. [Hold Appointment \[ITI-Y2\]](ITI-Y2.html)
+   1. [Book Appointment \[ITI-Y3\]](ITI-Y3.html)
 
 3. Volume III: Metadata
    1. **TODO: point to your content profiles if you have them**

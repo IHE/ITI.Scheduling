@@ -70,7 +70,7 @@ pages:
     generation: markdown
 
 menu:
-  FooBar Home: index.html
+  FHIR Scheduling Home: index.html
   Volume 1:
     Introduction: volume-1.html
     Actors and Transactions: volume-1.html#actors-and-transactions
@@ -80,6 +80,8 @@ menu:
     Security Considerations: volume-1.html#security-considerations
     Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 2:
-    "Transaction one [ITI-Y1]": ITI-Y1.html
+    Find Appointments [ITI-Y1]: ITI-Y1.html
+    Hold Appointment [ITI-Y2]: ITI-Y2.html
+    Book Appointment [ITI-Y3]: ITI-Y3.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
