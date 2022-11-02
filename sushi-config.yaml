@@ -60,7 +60,13 @@ pages:
     title: 1:XX. Profile Volume 1
     generation: markdown
   ITI-Y1.md:
-    title: 2:3.YY Transaction one [ITI-Y1]
+    title: 2:3.Y1 Transaction one [ITI-Y1]
+    generation: markdown
+  ITI-Y2.md:
+    title: 2:3.Y3 Transaction two [ITI-Y2]
+    generation: markdown
+  ITI-Y3.md:
+    title: 2:3.Y3 Transaction three [ITI-Y3]
     generation: markdown
   testplan.md:
     title: "Test Plan"

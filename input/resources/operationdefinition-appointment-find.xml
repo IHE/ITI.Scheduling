@@ -7,9 +7,9 @@
 			<h2>Appointment Availability Operation</h2>
 			<p>OPERATION: Appointment Availability Operation</p>
 			<p>The official URL for this operation definition is: </p>
-			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find</pre>
+			<pre>https://profiles.ihe.net/ITI/SCHED/OperationDefinition/appointment-find</pre>
 			<div>
-				<p>Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>
+				<p>Searches for availability for a future appointment(s) within a time period defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameters further refine the search and include  practitioner references, specialties, visit type, locations, referral identifier, and patient information. From these criteria, a system determines which schedulable resources (e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>
 			</div>
 			<p>URL: [base]/Appointment/$find</p>
 			<p>Parameters</p>
@@ -64,7 +64,7 @@
 					<td>0..*</td>
 					<td>string (<a href="{{ site.data.fhir.path }}/search.html#token">token</a>)</td>
 					<td>
-						<a href="ValueSet-specialty.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty</a> (Extensible)</td>
+						<a href="ValueSet-specialty.html">hhttps://profiles.ihe.net/ITI/SCHED/ValueSet/specialty</a> (Extensible)</td>
 					<td>
 						<div>
 							<p>The code for which specialty is requested for the appointment. ( e.g., 'Dermatology').   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>specialty=[system]|[code]</code>.   See the examples below for how this is implemented.</p>
@@ -77,7 +77,7 @@
 					<td>0..*</td>
 					<td>string (<a href="{{ site.data.fhir.path }}/search.html#token">token</a>)</td>
 					<td>
-						<a href="ValueSet-visit-type.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> (Extensible)</td>
+						<a href="ValueSet-visit-type.html">https://profiles.ihe.net/ITI/SCHED/ValueSet/visit-type</a> (Extensible)</td>
 					<td>
 						<div>
 							<p>The code for one of the common appointment visit types for scheduling.  ( e.g.,'Echocardiography' or  'Well child visit' ). This list of visit types is extensible and implementers may choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>service-type=[system]|[code]</code>.   See the examples below for how this is implemented.</p>
@@ -160,11 +160,11 @@
 					<td>IN</td>
 					<td>coverage</td>
 					<td>0..*</td>
-					<td>Coverage (<a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>)</td>
+					<td>Coverage (<a href="https://profiles.ihe.net/ITI/SCHED/StructureDefinition/sched-coverage">Coverage Profile</a>)</td>
 					<td/>
 					<td>
 						<div>
-							<p>This parameter uses the Coverage type and is constrained to the the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
+							<p>This parameter uses the Coverage type and is constrained to the the <a href="https://profiles.ihe.net/ITI/SCHED/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
 						</div>
 					</td>
 				</tr>
@@ -178,6 +178,19 @@
 					<td>
 						<div>
 							<p>A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax <code>specialty=[system]|[code]</code>. See the examples below for how this is implemented.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>referralId</td>
+					<td>0..1</td>
+					<td>Identifier (<a href="{{ site.data.fhir.path }}/search.html#token">token</a>)</td>
+					<td></td>
+						
+					<td>
+						<div>
+							<p>When an appointment needs to be made as part of a referral, this parameter can contain the ServiceRequest identifier for the referral.</p>
 						</div>
 					</td>
 				</tr>
@@ -206,7 +219,7 @@
 			</div>
 		</div>
 	</text>
-	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"/>
+	<url value="https://profiles.ihe.net/ITI/SCHED/OperationDefinition/appointment-find"/>
 	<version value="1.0.0"/>
 	<name value="Find_Appointments_Operation"/>
 	<!-- <title value="Appointment Availability Operation"/> -->
@@ -253,7 +266,7 @@
 		<binding>
 			<strength value="extensible"/>
 			<valueSetReference>
-				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
+				<reference value="https://profiles.ihe.net/ITI/SCHED/ValueSet/specialty"/>
 			</valueSetReference>
 		</binding>
 	</parameter>
@@ -268,7 +281,7 @@
 		<binding>
 			<strength value="extensible"/>
 			<valueSetReference>
-				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+				<reference value="https://profiles.ihe.net/ITI/SCHED/ValueSet/visit-type"/>
 			</valueSetReference>
 		</binding>
 	</parameter>
@@ -329,10 +342,10 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="This parameter uses the Coverage type and is constrained to the the [Argonaut Coverage Profile](http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage). It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment."/>
+		<documentation value="This parameter uses the Coverage type and is constrained to the the [Argonaut Coverage Profile](https://profiles.ihe.net/ITI/SCHED/StructureDefinition/sched-coverage). It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment."/>
 		<type value="Coverage"/>
 		<profile>
-			<reference value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage"/>
+			<reference value="https://profiles.ihe.net/ITI/SCHED/StructureDefinition/sched-coverage"/>
 		</profile>
 	</parameter>
 	<parameter>
@@ -349,6 +362,14 @@
 				<reference value="http://hl7.org/fhir/ValueSet/condition-code"/>
 			</valueSetReference>
 		</binding>
+	</parameter>
+	<parameter>
+		<name value="referralId"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="When an appointment needs to be made as part of a referral, this parameter can contain the ServiceRequest identifier for the referral."/>
+		<type value="Identifier"/>
 	</parameter>
 	<parameter>
 		<name value="return"/>

@@ -1,4 +1,4 @@
-This section corresponds to transaction [ITI-Y1] of the IHE Technical Framework. Transaction [ITI-Y1] is used by the Scheduling Client and Scheduling Server Actors. The Find Appointments [ITI-Y1] transaction is used to provide a set of parameters to the server, and based on them to get back a list of possible appointments.
+This section corresponds to transaction [ITI-Y3] of the IHE Technical Framework. Transaction [ITI-Y3] is used by the Scheduling Client and Scheduling Server Actors. The Find Appointments [ITI-Y1] transaction is used to provide a set of parameters to the server, and based on them to get back a list of possible appointments.
 
 ### Scope
 
