@@ -3,7 +3,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t\tCapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement\r\n\t\t\t<a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html\">FooBar</a>\r\n\t\tThe IHE Profile text is Normative, this conformance resource is Informative.</div>"
-* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.Scheduling.client"
+* url = "https://profiles.ihe.net/ITI/Scheduling/CapabilityStatement/IHE.Scheduling.client"
 * name = "IHE_Scheduling_client"
 * title = "IHE Scheduling client"
 * status = #active
@@ -88,7 +88,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\nCapabilityStatement for SERVER Actor in the IHE\r\n<a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html\">FooBar</a>.\r\nThe IHE Profile text is Normative, this conformance resource is Informative.</div>"
-* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.Scheduling.server"
+* url = "https://profiles.ihe.net/ITI/Scheduling/CapabilityStatement/IHE.Scheduling.server"
 * name = "IHE_Scheduling_Server"
 * title = "IHE Scheduling Server"
 * status = #active
