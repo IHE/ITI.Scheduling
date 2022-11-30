@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-	<id value="argo-appt"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+	<id value="ihe-sched-appt"/>
+	<url value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"/>
 	<version value="1.0.0"/>
-	<name value="Argonaut_Appointment_Profile"/>
-	<title value="Argonaut Appointment Profile"/>
+	<name value="IHE_ITI_Appointment_Profile"/>
+	<title value="IHE ITI Appointment Profile"/>
 	<status value="active"/>
-	<date value="2017-06-13"/>
-	<publisher value="Argonaut Project"/>
+	<date value="2022-11-30"/>
+	<publisher value="IHE ITI"/>
 	<contact>
 		<telecom>
 			<system value="url"/>
 			<value value="http://argonautwiki.hl7.org"/>
 		</telecom>
 	</contact>
-	<description value="The Argonaut Appointment Profile is used with the '$find', '$hold', and '$book' operations and when fetching appointments."/>
+	<description value="The IHE ITI Scheduling Appointment Profile is used with the '$find', '$hold', and '$book' operations and when fetching appointments."/>
 	<jurisdiction>
 		<coding>
 			<system value="urn:iso:std:iso:3166"/>
@@ -22,7 +22,7 @@
 			<display value="United States of America"/>
 		</coding>
 	</jurisdiction>
-	<fhirVersion value="3.0.1"/>
+	<fhirVersion value="4.0.1"/>
 	<kind value="resource"/>
 	<abstract value="false"/>
 	<type value="Appointment"/>
@@ -121,11 +121,11 @@
 			</type>
 			<type>
 				<code value="Reference"/>
-				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+				<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
 			</type>
 			<type>
 				<code value="Reference"/>
-				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-practitioner"/>
 			</type>
 			<type>
 				<code value="Reference"/>

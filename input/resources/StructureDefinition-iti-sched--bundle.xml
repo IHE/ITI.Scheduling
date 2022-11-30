@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-	<id value="avail-bundle"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
+	<id value="ihe-sched-avail-bundle"/>
+	<url value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/>
 	<version value="1.0.0"/>
-	<name value="Argonaut_Appointment_Bundle_Profile"/>
-	<title value="Argonaut Appointment Bundle Profile"/>
+	<name value="IHE_ITI_Appointment_Bundle_Profile"/>
+	<title value="IHE ITI Appointment Bundle Profile"/>
 	<status value="active"/>
 	<date value="2018-01-11"/>
-	<publisher value="Argonaut Project"/>
+	<publisher value="IHE ITI"/>
 	<contact>
 		<telecom>
 			<system value="url"/>
 			<value value="http://argonautwiki.hl7.org"/>
 		</telecom>
 	</contact>
-	<description value="The Argonaut Appointment Bundle Profile is returned as a result of the '$find' operation and Appointment search."/>
+	<description value="The IHE ITI Appointment Bundle Profile is returned as a result of the '$find' operation and Appointment search."/>
 	<jurisdiction>
 		<coding>
 			<system value="urn:iso:std:iso:3166"/>
@@ -72,7 +72,7 @@
 			<max value="1"/>
 			<type>
 				<code value="Appointment"/>
-				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+				<profile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"/>
 			</type>
 			<mustSupport value="true"/>
 		</element>
