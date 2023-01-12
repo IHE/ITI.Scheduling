@@ -40,8 +40,8 @@
 			<path value="Appointment"/>
 			<mustSupport value="false"/>
 		</element>
-		<element id="Appointment.id">
-			<path value="Appointment.id"/>
+		<element id="Appointment.identifier">
+			<path value="Appointment.identifier"/>
 			<mustSupport value="true"/>
 		</element>
 		<element id="Appointment.extension:status-reason-extension">
