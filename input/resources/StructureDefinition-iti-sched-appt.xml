@@ -6,12 +6,19 @@
 	<name value="IHE_ITI_Appointment_Profile"/>
 	<title value="IHE ITI Appointment Profile"/>
 	<status value="active"/>
-	<date value="2022-11-30"/>
-	<publisher value="IHE ITI"/>
+	<date value="2023-01-13"/>
+	<publisher value="IHE IT Infrastructure Technical Committee"/>
 	<contact>
 		<telecom>
-			<system value="url"/>
-			<value value="http://argonautwiki.hl7.org"/>
+		<system value="url"/>
+		<value value="https://www.ihe.net/ihe_domains/it_infrastructure/"/>
+		</telecom>
+	</contact>
+	<contact>
+		<name value="IHE IT Infrastructure Technical Committee"/>
+		<telecom>
+		<system value="email"/>
+		<value value="iti@ihe.net"/>
 		</telecom>
 	</contact>
 	<description value="The IHE ITI Scheduling Appointment Profile is used with the '$find', '$hold', and '$book' operations and when fetching appointments."/>
@@ -44,7 +51,7 @@
 			<max value="1"/>
 			<type>
 				<code value="Extension"/>
-				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason"/>
+				<profile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/extension-status-reason"/>
 			</type>
 			<mustSupport value="true"/>
 		</element>
