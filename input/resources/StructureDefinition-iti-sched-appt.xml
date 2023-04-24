@@ -24,11 +24,11 @@
 	<description value="The IHE ITI Scheduling Appointment Profile is used with the '$find', '$hold', and '$book' operations and when fetching appointments."/>
 	<jurisdiction>
 		<coding>
-			<system value="urn:iso:std:iso:3166"/>
-			<code value="US"/>
-			<display value="United States of America"/>
+		<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+		<code value="001"/>
+		<display value="World"/>
 		</coding>
-	</jurisdiction>
+  	</jurisdiction>
 	<fhirVersion value="4.0.1"/>
 	<kind value="resource"/>
 	<abstract value="false"/>
@@ -39,10 +39,6 @@
 		<element id="Appointment">
 			<path value="Appointment"/>
 			<mustSupport value="false"/>
-		</element>
-		<element id="Appointment.identifier">
-			<path value="Appointment.identifier"/>
-			<mustSupport value="true"/>
 		</element>
 		<element id="Appointment.extension:status-reason-extension">
 			<path value="Appointment.extension"/>
@@ -55,10 +51,15 @@
 			</type>
 			<mustSupport value="true"/>
 		</element>
+		<element id="Appointment.identifier">
+			<path value="Appointment.identifier"/>
+			<mustSupport value="true"/>
+		</element>
 		<element id="Appointment.status">
 			<path value="Appointment.status"/>
 			<mustSupport value="true"/>
 		</element>
+		
 		<element id="Appointment.serviceType">
 			<path value="Appointment.serviceType"/>
 			<min value="0"/>
@@ -66,11 +67,10 @@
 			<mustSupport value="true"/>
 			<binding>
 				<strength value="extensible"/>
-				<valueSetReference>
-					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
-				</valueSetReference>
+				<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/sct-services"/>
 			</binding>
 		</element>
+		
 		<element id="Appointment.specialty">
 			<path value="Appointment.specialty"/>
 			<min value="0"/>
@@ -78,11 +78,10 @@
 			<mustSupport value="true"/>
 			<binding>
 				<strength value="extensible"/>
-				<valueSetReference>
-					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
-				</valueSetReference>
+				<valueSet value="http://profiles.ihe.net/ITI/Scheduling/ValueSet/specialty"/>
 			</binding>
 		</element>
+		<!--
 		<element id="Appointment.appointmentType">
 			<path value="Appointment.appointmentType"/>
 			<alias value="`"/>
@@ -91,11 +90,9 @@
 			<mustSupport value="true"/>
 			<binding>
 				<strength value="extensible"/>
-				<valueSetReference>
-					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
-				</valueSetReference>
+				<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
 			</binding>
-		</element>
+		</element> -->
 		<element id="Appointment.start">
 			<path value="Appointment.start"/>
 			<min value="1"/>
@@ -124,7 +121,7 @@
 			<max value="1"/>
 			<type>
 				<code value="Reference"/>
-				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
 			</type>
 			<type>
 				<code value="Reference"/>

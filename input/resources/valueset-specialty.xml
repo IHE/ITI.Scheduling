@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" >
+	<id value="specialty"/>
+	<url value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/specialty"/>
+	<version value="1.0.0"/>
+	<name value="Argonaut_Scheduling_Specialties"/>
+	<title value="Argonaut Scheduling Specialties"/>
+	<status value="active"/>
+	<date value="2017-07-12T19:40:10Z"/>
+	<description value="The specialties offered by providers and  that would be required to perform the service requested in this appointment."/>
+	<copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+	<compose>
+		<include>
+			<system value="http://snomed.info/sct"/>
+			<filter>
+				<property value="concept"/>
+				<op value="is-a"/>
+				<value value="394658006"/>
+			</filter>
+		</include>
+	</compose>
+</ValueSet>

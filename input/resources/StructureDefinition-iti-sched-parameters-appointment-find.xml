@@ -1,0 +1,76 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="parameters-appointment-find-in"/>
+    <url value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-in"/>
+    <version value="1.0.0"/>
+    <name value="IHE_ITI_Scheduling_Find_Appointment_Paramters_in_Profile"/>
+    <title value="IHE ITI Scheduling Find Appointment Paramters in Profile"/>
+    <status value="active"/>
+    <date value="2023-04-23"/>
+    <publisher value="IHE IT Infrastructure Technical Committee"/>
+    <contact>
+        <telecom>
+        <system value="url"/>
+        <value value="https://www.ihe.net/ihe_domains/it_infrastructure/"/>
+        </telecom>
+    </contact>
+    <contact>
+        <name value="IHE IT Infrastructure Technical Committee"/>
+        <telecom>
+        <system value="email"/>
+        <value value="iti@ihe.net"/>
+        </telecom>
+    </contact>
+    <description value="Profile used to validate the parameters that are the input of the 'appointment find' IHE ITI Scheduling operation"/>
+    <jurisdiction>
+        <coding>
+        <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+        <code value="001"/>
+        <display value="World"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Parameters"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Parameters"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Parameters">
+            <path value="Parameters"/>
+			<mustSupport value="false"/>
+        </element>
+        <element id="Parameters.parameter">
+            <path value="Parameters.parameter"/>
+            <slicing>
+                <discriminator>
+                <type value="value"/>
+                <path value="name"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Parameters.parameter:patient-resource">
+            <path value="Parameters.parameter"/>
+            <sliceName value="patient-resource"/>
+        </element>
+        <element id="Parameters.parameter:patient-resource.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="patient-resource"/>
+        </element>
+        <element id="Parameters.parameter:patient-resource.value[x]">
+            <path value="Parameters.parameter.value[x]"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:patient-resource.resource">
+            <path value="Parameters.parameter.resource"/>
+            <type>
+                <code value="Resource"/>
+                <profile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
+            </type>
+        </element>
+        <element id="Parameters.parameter:patient-resource.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+    </differential>
+</StructureDefinition>
