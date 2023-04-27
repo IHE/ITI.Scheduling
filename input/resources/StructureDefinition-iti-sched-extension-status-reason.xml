@@ -61,9 +61,7 @@
 			<binding>
 				<strength value="preferred"/>
 				<description value="The reason for the current state of the Appointment"/>
-				<valueSetReference>
-					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
-				</valueSetReference>
+				<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
 			</binding>
 		</element>
 	</differential>
