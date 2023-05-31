@@ -18,9 +18,10 @@ This workflow profile defines transactions that allow a scheduling client to obt
 
 * Transactions
 
-  - [Y1 Find Appointments](ITI-Y1.html)
+  - [Y1 Find Potential Appointments](ITI-Y1.html)
   - [Y2 Hold Appointment](ITI-Y2.html)
   - [Y3 Book Appointment](ITI-Y3.html)
+  - [Y4 Find Existing Appointments](ITI-Y4.html)
 
 
 The figure below shows the actors directly involved in the ITI Scheduling Profile and the relevant transactions between them.
@@ -67,7 +68,7 @@ FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server
 ### XX.1.2 Transaction Descriptions <a name="transactions"> </a>
 The transactions in this profile are summarized in the sections below.
 
-#### XX.1.2.1 Find Appointments [ITI-Y1]
+#### XX.1.2.1 Find Potential Appointments [ITI-Y1]
 
 This transaction searches for availability for a future appointment(s) using the Find Appointments operation.
 {%include FindAppointments-note.md%}
@@ -86,6 +87,13 @@ This operation books an appointment following the determination of appointment a
 {%include BookAppointment-note.md%}
 
 For more details see the detailed [transaction description](ITI-Y3.html)
+
+#### XX.1.2.1 Find Existing Appointments [ITI-Y4]
+
+This transaction searches for existing appointments for the patient using [FHIR Search](http://hl7.org/fhir/R4/search.html) against the [Appointment resource](StructureDefinition-ihe-sched-appt.html).
+{%include ExistingAppointments-note.md%}
+
+For more details see the detailed [transaction description](ITI-Y4.html)
 
 ## XX.2 Scheduling Actor Options <a name="actor-options"> </a>
 

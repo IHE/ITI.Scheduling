@@ -1,0 +1,1 @@
+The client may search for existing appointments for the patient. The patient and a date range are required search parameters. The [server capability statement](CapabilityStatement-IHE.Scheduling.server.html) has further details on the possible search parameters.
