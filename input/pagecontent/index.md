@@ -1,6 +1,4 @@
 
-**This Implementation Guide template includes skeleton pages for each part of an IHE supplement. The instructions for how to fill out those sections can be found in the included [Supplement Template](https://github.com/IHE/supplement-template/blob/master/suppl_template.md). This supplement template should not be included in your github repo or publication. It is included here for easy reference.**
-
 The IHE FHIR Scheduling Profile is a specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 4.0.1](http://hl7.org/fhir/R4/) and specifically the [Schedule](http://hl7.org/fhir/R4/schedule.html), [Slot](http://hl7.org/fhir/R4/slot.html), and [Appointment](http://hl7.org/fhir/R4/appointment.html) resources.
 
 [Open and Closed Issues](issues.html)
@@ -17,9 +15,10 @@ This guide is organized into four main sections:
    1. [Cross Profile Considerations](volume-1.html#other-grouping)
 
 2. Volume II: Transaction Detail
-   1. [Find Appointments \[ITI-Y1\]](ITI-Y1.html)
-   1. [Hold Appointment \[ITI-Y2\]](ITI-Y2.html)
-   1. [Book Appointment \[ITI-Y3\]](ITI-Y3.html)
+   1. [Find Potential Appointments \[ITI-114\]](ITI-114.html)
+   1. [Hold Appointment \[ITI-115\]](ITI-115.html)
+   1. [Book Appointment \[ITI-116\]](ITI-116.html)
+   1. [Search Patient Appointments \[ITI-117\]](ITI-117.html)
 
 3. Volume III: Metadata
    1. **TODO: point to your content profiles if you have them**

@@ -1,11 +1,11 @@
-@startuml ITI-Y1-seq
+@startuml ITI-114-seq
 hide footbox
 participant "Scheduling Client" as Client
 participant "Scheduling Server" as Server
 activate "Client"
 activate "Server"
-"Client" -> "Server" : 1. Find Appointments Query [ITI-Y1]
-"Server" --> "Client" : 2. Find Appointments Response [ITI-Y1]
+"Client" -> "Server" : 1. Find Potential Appointments Query [ITI-114]
+"Server" --> "Client" : 2. Find Potential Appointments Response [ITI-114]
 deactivate "Client"
 deactivate "Server"
 @enduml

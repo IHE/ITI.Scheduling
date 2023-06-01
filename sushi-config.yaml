@@ -56,22 +56,22 @@ resources:
 pages:
 # itemize here each narrative page. Include assigned section numbers when appropriate
   index.md:
-    title: 1:XX. Profile Home
+    title: 1:55. Profile Home
     generation: markdown
   volume-1.md:
-    title: 1:XX. Profile Volume 1
+    title: 1:55. Profile Volume 1
     generation: markdown
-  ITI-Y1.md:
-    title: 2:3.Y1 Transaction one [ITI-Y1]
+  ITI-114.md:
+    title: 2:3.114 Transaction one [ITI-114]
     generation: markdown
-  ITI-Y2.md:
-    title: 2:3.Y3 Transaction two [ITI-Y2]
+  ITI-115.md:
+    title: 2:3.115 Transaction two [ITI-115]
     generation: markdown
-  ITI-Y3.md:
-    title: 2:3.Y3 Transaction three [ITI-Y3]
+  ITI-116.md:
+    title: 2:3.116 Transaction three [ITI-116]
     generation: markdown
-  ITI-Y4.md:
-    title: 2:3.Y4 Transaction three [ITI-Y4]
+  ITI-117.md:
+    title: 2:3.117 Transaction three [ITI-117]
     generation: markdown
   testplan.md:
     title: "Test Plan"
@@ -91,8 +91,8 @@ menu:
     Security Considerations: volume-1.html#security-considerations
     Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 2:
-    Find Appointments [ITI-Y1]: ITI-Y1.html
-    Hold Appointment [ITI-Y2]: ITI-Y2.html
-    Book Appointment [ITI-Y3]: ITI-Y3.html
+    Find Appointments [ITI-114]: ITI-114.html
+    Hold Appointment [ITI-115]: ITI-115.html
+    Book Appointment [ITI-116]: ITI-116.html
   Test Plan: testplan.html
   Artifacts: artifacts.html

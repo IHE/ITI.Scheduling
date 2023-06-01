@@ -22,9 +22,9 @@ deactivate "Provider"
 User --> RequestingActor: Open view
 
 |||
-RequestingActor -> RespondingActor: Find Appointments Query Request [ITI-Y1]
+RequestingActor -> RespondingActor: Find Appointments Query Request [ITI-114]
 activate "RespondingActor"
-RespondingActor --> RequestingActor: Find Appointments Query Response [ITI-Y1]
+RespondingActor --> RequestingActor: Find Appointments Query Response [ITI-114]
 deactivate "RespondingActor"
 
 |||
@@ -33,9 +33,9 @@ User --> RequestingActor: Add additional data
 User --> RequestingActor: Confirm booking
 
 |||
-RequestingActor -> RespondingActor: Book Appointment Request [ITI-Y3]
+RequestingActor -> RespondingActor: Book Appointment Request [ITI-116]
 activate "RespondingActor"
-RespondingActor --> RequestingActor: Book Appointment Response [ITI-Y3]
+RespondingActor --> RequestingActor: Book Appointment Response [ITI-116]
 deactivate "RespondingActor"
 
 autonumber stop
