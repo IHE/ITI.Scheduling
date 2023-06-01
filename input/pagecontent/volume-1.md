@@ -88,7 +88,7 @@ This operation books an appointment following the determination of appointment a
 
 For more details see the detailed [transaction description](ITI-Y3.html)
 
-#### XX.1.2.1 Find Existing Appointments [ITI-Y4]
+#### XX.1.2.4 Find Existing Appointments [ITI-Y4]
 
 This transaction searches for existing appointments for the patient using [FHIR Search](http://hl7.org/fhir/R4/search.html) against the [Appointment resource](StructureDefinition-ihe-sched-appt.html).
 {%include ExistingAppointments-note.md%}

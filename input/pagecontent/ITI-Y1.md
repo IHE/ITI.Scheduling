@@ -2,7 +2,7 @@ This section corresponds to transaction [ITI-Y1] of the IHE Technical Framework.
 
 ### Scope
 
-The Client [ITI-Y] transaction passes a go Request from a Client to a Server.
+The Client [ITI-Y] transaction requests a list of available slots for potential appointments from a Server.
 
 ### Actors Roles
 
@@ -24,10 +24,10 @@ The Client [ITI-Y] transaction passes a go Request from a Client to a Server.
 </div>
 <br clear="all">
 
-**Figure: Go Interactions**
+**Figure: Find Potential Appointments Interactions**
 
 
-#### go Query Message
+#### Find Potential Appointments Query Message
 This message uses the HTTP GET method on the target Server endpoint to convey the query parameters FHIR query.
 
 ##### Trigger Events
