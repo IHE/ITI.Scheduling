@@ -70,6 +70,9 @@ pages:
   ITI-Y3.md:
     title: 2:3.Y3 Transaction three [ITI-Y3]
     generation: markdown
+  ITI-Y4.md:
+    title: 2:3.Y4 Transaction three [ITI-Y4]
+    generation: markdown
   testplan.md:
     title: "Test Plan"
     generation: markdown
