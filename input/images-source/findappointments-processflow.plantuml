@@ -9,9 +9,9 @@ Patient identification
 already completed
 end note
 activate "Client"
-"Client" -> "Server" : 1. Find Appointments Query
+"Client" -> "Server" : 1. Find Potential Appointments Query
 activate "Server"
-"Server" --> "Client" : 2. Find Appointments Response
+"Server" --> "Client" : 2. Find Potential Appointments Response
 deactivate "Server"
 deactivate "Client"
 @enduml

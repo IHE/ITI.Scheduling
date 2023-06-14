@@ -64,7 +64,7 @@
 					<td>0..*</td>
 					<td>string (<a href="https://hl7.org/fhir/R4/search.html#token">token</a>)</td>
 					<td>
-						<a href="ValueSet-specialty.html">hhttps://profiles.ihe.net/ITI/SCHED/ValueSet/specialty</a> (Extensible)</td>
+						<a href="ValueSet-specialty.html">https://profiles.ihe.net/ITI/SCHED/ValueSet/specialty</a> (Extensible)</td>
 					<td>
 						<div>
 							<p>The code for which specialty is requested for the appointment. ( e.g., 'Dermatology').   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>specialty=[system]|[code]</code>.   See the examples below for how this is implemented.</p>
@@ -372,6 +372,6 @@
 		<max value="1"/>
 		<documentation value="An [IHE Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and may also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
 		<type value="Bundle"/>
-		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/>
+		<!-- <targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/> -->
 	</parameter>
 </OperationDefinition>

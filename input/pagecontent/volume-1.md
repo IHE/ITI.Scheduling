@@ -9,7 +9,7 @@ This workflow profile defines transactions that allow a scheduling client to obt
 
 **TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/).**
 
-## 1:X.1 FHIR Scheduling Actors and Transactions <a name="actors-and-transactions"> </a>
+## 1:55.1 FHIR Scheduling Actors and Transactions <a name="actors-and-transactions"> </a>
 
 * Actors
 
