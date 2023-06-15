@@ -37,12 +37,14 @@ Table 55.1-1: Profile Acronym Profile - Actors and Transactions
 
 | Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
 |-------------------|----------------------------|------------------------|-----------------|----------------|
-| Scheduling Client | Find Appointments [ITI-114] | Initiator              | R               | ITI TF-2: 3.114 |
+| Scheduling Client | Find Potential Appointments [ITI-114] | Initiator              | R               | ITI TF-2: 3.114 |
 |                   | Hold Appointment [ITI-115]  | Initiator              | O               | ITI TF-2: 3.115 |
 |                   | Book Appointment [ITI-116]  | Initiator              | R               | ITI TF-2: 3.116 |
+|                   | Find Existing Appointment [ITI-117]  | Initiator              | O               | ITI TF-2: 3.117 |
 | Scheduling Server | Find Appointments [ITI-114] | Responder              | R               | ITI TF-2: 3.114 |
 |                   | Hold Appointment [ITI-115]  | Responder              | O               | ITI TF-2: 3.115 |
 |                   | Book Appointment [ITI-116]  | Responder              | R               | ITI TF-2: 3.116 |
+|                   | Find Existing Appointment [ITI-117]  | Responder              | O               | ITI TF-2: 3.117 |
 {: .grid}
 
 ### 55.1.1 Actors
@@ -127,10 +129,10 @@ The overall functionality covered by this profile is as follows:
 
 ##### 55.4.2.1.2 Specialty Visit Scheduling
 ###### 55.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
-Dr. Brown detects that a radiology examination is recommended to proceed the
+Dr. Brown detects that a radiology examination is recommended to proceed with the
 treatment of her Patient Mr. White. Dr. Brown opens the radiology examination
 scheduling in her clinical information systems and selects a radiology facility
-for the examination.
+for the examination. She asks the system to show the existing appointments for the patient, and then asks for potential appointment slots for the radiology procedure.
 
 From the list of available time slots presented in the clinical information system Dr. Brown selects an appropriate time slot for the
 examination of Mr. White. Dr. Brown records the booking details
