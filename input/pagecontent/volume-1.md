@@ -160,7 +160,7 @@ Mr. White feels sick on holidays in a foreign country and wants to visit
 a healthcare provider for an examination. Mr. White opens the local patient portal
 and searches for a healthcare provider using search criteria
 (e.g., distance, opening hours, supported languages).
-Mr. White selects a Dr. Browns paractise as healthcare provider and opens the
+Mr. White selects a Dr. Brown's practice as healthcare provider and opens the
 appointments view in the patient portal.
 
 From the list of available time slots presented in the patient portal Mr. White
