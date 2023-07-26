@@ -1,0 +1,11 @@
+@startuml ITI-117-seq
+hide footbox
+participant "Scheduling Client" as Client
+participant "Scheduling Server" as Server
+activate "Client"
+activate "Server"
+"Client" -> "Server" : 1. Book Appointment Request [ITI-117]
+"Server" --> "Client" : 2. Book Appointment Response [ITI-117]
+deactivate "Client"
+deactivate "Server"
+@enduml

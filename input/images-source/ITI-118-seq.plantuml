@@ -1,0 +1,11 @@
+@startuml ITI-116-seq
+hide footbox
+participant "Scheduling Client" as Client
+participant "Scheduling Server" as Server
+activate "Client"
+activate "Server"
+"Client" -> "Server" : 1. Find Existing Appointments Query [ITI-118]
+"Server" --> "Client" : 2. Find Existing Appointments Response [ITI-118]
+deactivate "Client"
+deactivate "Server"
+@enduml

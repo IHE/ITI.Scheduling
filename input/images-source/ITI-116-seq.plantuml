@@ -1,0 +1,11 @@
+@startuml ITI-116-seq
+hide footbox
+participant "Scheduling Client" as Client
+participant "Scheduling Server" as Server
+activate "Client"
+activate "Server"
+"Client" -> "Server" : 1. Hold Appointment Request [ITI-116]
+"Server" --> "Client" : 2. Hold Appointment Response [ITI-116]
+deactivate "Client"
+deactivate "Server"
+@enduml
