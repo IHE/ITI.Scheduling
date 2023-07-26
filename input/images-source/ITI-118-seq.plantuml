@@ -1,4 +1,4 @@
-@startuml ITI-116-seq
+@startuml ITI-118-seq
 hide footbox
 participant "Scheduling Client" as Client
 participant "Scheduling Server" as Server
