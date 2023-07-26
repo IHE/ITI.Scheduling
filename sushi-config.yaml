@@ -61,17 +61,17 @@ pages:
   volume-1.md:
     title: 1:55. Profile Volume 1
     generation: markdown
-  ITI-114.md:
-    title: 2:3.114 Transaction one [ITI-114]
-    generation: markdown
   ITI-115.md:
-    title: 2:3.115 Transaction two [ITI-115]
+    title: 2:3.115 Transaction one [ITI-115]
     generation: markdown
   ITI-116.md:
-    title: 2:3.116 Transaction three [ITI-116]
+    title: 2:3.116 Transaction two [ITI-116]
     generation: markdown
   ITI-117.md:
     title: 2:3.117 Transaction three [ITI-117]
+    generation: markdown
+  ITI-118.md:
+    title: 2:3.118 Transaction three [ITI-118]
     generation: markdown
   testplan.md:
     title: "Test Plan"
@@ -91,8 +91,8 @@ menu:
     Security Considerations: volume-1.html#555-fhir-scheduling-security-considerations--
     Cross-Profile Considerations: volume-1.html#556-fhir-scheduling-cross-profile-considerations--
   Volume 2:
-    Find Appointments [ITI-114]: ITI-114.html
-    Hold Appointment [ITI-115]: ITI-115.html
-    Book Appointment [ITI-116]: ITI-116.html
+    Find Appointments [ITI-115]: ITI-115.html
+    Hold Appointment [ITI-116]: ITI-116.html
+    Book Appointment [ITI-117]: ITI-117.html
   Test Plan: testplan.html
   Artifacts: artifacts.html

@@ -15,10 +15,10 @@ This guide is organized into four main sections:
    1. [Cross Profile Considerations](volume-1.html#other-grouping)
 
 2. Volume II: Transaction Detail
-   1. [Find Potential Appointments \[ITI-114\]](ITI-114.html)
-   1. [Hold Appointment \[ITI-115\]](ITI-115.html)
-   1. [Book Appointment \[ITI-116\]](ITI-116.html)
-   1. [Search Patient Appointments \[ITI-117\]](ITI-117.html)
+   1. [Find Potential Appointments \[ITI-115\]](ITI-115.html)
+   1. [Hold Appointment \[ITI-116\]](ITI-116.html)
+   1. [Book Appointment \[ITI-117\]](ITI-117.html)
+   1. [Search Patient Appointments \[ITI-118\]](ITI-118.html)
 
 3. Volume III: Metadata
    1. **TODO: point to your content profiles if you have them**

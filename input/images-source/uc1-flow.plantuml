@@ -13,15 +13,15 @@ activate "RequestingActor"
 User --> RequestingActor: Open view
 
 |||
-RequestingActor -> RespondingActor: Find Existing Appointments Query Request [ITI-117]
+RequestingActor -> RespondingActor: Find Existing Appointments Query Request [ITI-118]
 activate "RespondingActor"
-RespondingActor --> RequestingActor: Find Existing Appointments Query Response [ITI-117]
+RespondingActor --> RequestingActor: Find Existing Appointments Query Response [ITI-118]
 deactivate "RespondingActor"
 
 |||
-RequestingActor -> RespondingActor: Find Potential Appointments Query Request [ITI-114]
+RequestingActor -> RespondingActor: Find Potential Appointments Query Request [ITI-115]
 activate "RespondingActor"
-RespondingActor --> RequestingActor: Find Potential Appointments Query Response [ITI-114]
+RespondingActor --> RequestingActor: Find Potential Appointments Query Response [ITI-115]
 deactivate "RespondingActor"
 
 |||
@@ -30,9 +30,9 @@ User --> RequestingActor: Add additional data
 User --> RequestingActor: Confirm booking
 
 |||
-RequestingActor -> RespondingActor: Book Appointment Request [ITI-116]
+RequestingActor -> RespondingActor: Book Appointment Request [ITI-117]
 activate "RespondingActor"
-RespondingActor --> RequestingActor: Book Appointment Response [ITI-116]
+RespondingActor --> RequestingActor: Book Appointment Response [ITI-117]
 deactivate "RespondingActor"
 
 autonumber stop

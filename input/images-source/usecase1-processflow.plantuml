@@ -6,17 +6,17 @@ participant "Scheduling Client" as Client
 participant "Scheduling Server" as Server
 
 activate "Client"
-"Client" -> "Server" : 1. Find Potential Appointments Query [ITI-114]
+"Client" -> "Server" : 1. Find Potential Appointments Query [ITI-115]
 
 activate "Server"
-"Server" --> "Client" : 2. Find Potential Appointments Response [ITI-114]
+"Server" --> "Client" : 2. Find Potential Appointments Response [ITI-115]
 deactivate "Server"
 
 "Client" -> "Client" : 3. Select Appointment
-"Client" -> "Server" : 4. Book Appointment Request [ITI-114]
+"Client" -> "Server" : 4. Book Appointment Request [ITI-115]
 
 Activate "Server"
-"Server" --> "Client" : 2. Book Appointments Response [ITI-114]
+"Server" --> "Client" : 2. Book Appointments Response [ITI-115]
 deactivate "Server"
 
 deactivate "Client"

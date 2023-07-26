@@ -18,10 +18,10 @@ This workflow profile defines transactions that allow a scheduling client to obt
 
 * Transactions
 
-  - [114 Find Potential Appointments](ITI-114.html)
-  - [115 Hold Appointment](ITI-115.html)
-  - [116 Book Appointment](ITI-116.html)
-  - [117 Find Existing Appointments](ITI-117.html)
+  - [115 Find Potential Appointments](ITI-115.html)
+  - [116 Hold Appointment](ITI-116.html)
+  - [117 Book Appointment](ITI-117.html)
+  - [118 Find Existing Appointments](ITI-118.html)
 
 
 The figure below shows the actors directly involved in the ITI Scheduling Profile and the relevant transactions between them.
@@ -37,14 +37,14 @@ Table 55.1-1: Profile Acronym Profile - Actors and Transactions
 
 | Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
 |-------------------|----------------------------|------------------------|-----------------|----------------|
-| Scheduling Client | Find Potential Appointments [ITI-114] | Initiator              | R               | ITI TF-2: 3.114 |
-|                   | Hold Appointment [ITI-115]  | Initiator              | O               | ITI TF-2: 3.115 |
-|                   | Book Appointment [ITI-116]  | Initiator              | R               | ITI TF-2: 3.116 |
-|                   | Find Existing Appointment [ITI-117]  | Initiator              | O               | ITI TF-2: 3.117 |
-| Scheduling Server | Find Appointments [ITI-114] | Responder              | R               | ITI TF-2: 3.114 |
-|                   | Hold Appointment [ITI-115]  | Responder              | O               | ITI TF-2: 3.115 |
-|                   | Book Appointment [ITI-116]  | Responder              | R               | ITI TF-2: 3.116 |
-|                   | Find Existing Appointment [ITI-117]  | Responder              | O               | ITI TF-2: 3.117 |
+| Scheduling Client | Find Potential Appointments [ITI-115] | Initiator              | R               | ITI TF-2: 3.115 |
+|                   | Hold Appointment [ITI-116]  | Initiator              | O               | ITI TF-2: 3.116 |
+|                   | Book Appointment [ITI-117]  | Initiator              | R               | ITI TF-2: 3.117 |
+|                   | Find Existing Appointment [ITI-118]  | Initiator              | O               | ITI TF-2: 3.118 |
+| Scheduling Server | Find Appointments [ITI-115] | Responder              | R               | ITI TF-2: 3.115 |
+|                   | Hold Appointment [ITI-116]  | Responder              | O               | ITI TF-2: 3.116 |
+|                   | Book Appointment [ITI-117]  | Responder              | R               | ITI TF-2: 3.117 |
+|                   | Find Existing Appointment [ITI-118]  | Responder              | O               | ITI TF-2: 3.118 |
 {: .grid}
 
 ### 55.1.1 Actors
@@ -70,32 +70,32 @@ FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server
 ### 55.1.2 Transaction Descriptions <a name="transactions"> </a>
 The transactions in this profile are summarized in the sections below.
 
-#### 55.1.2.1 Find Potential Appointments [ITI-114]
+#### 55.1.2.1 Find Potential Appointments [ITI-115]
 
 This transaction searches for availability for a future appointment(s) using the Find Appointments operation.
 {%include FindAppointments-note.md%}
 
-For more details see the detailed [transaction description](ITI-114.html)
+For more details see the detailed [transaction description](ITI-115.html)
 
-#### 55.1.2.2 Hold Appointment [ITI-115]
+#### 55.1.2.2 Hold Appointment [ITI-116]
 
 Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments operation.
 {%include HoldAppointment-note.md%}
 
-For more details see the detailed [transaction description](ITI-115.html)
-#### 55.1.2.3 Book Appointment [ITI-116]
+For more details see the detailed [transaction description](ITI-116.html)
+#### 55.1.2.3 Book Appointment [ITI-117]
 
 This operation books an appointment following the determination of appointment availability using the Find Appointments operation. Using different combination of parameters, this operation can book a new appointment, cancel an already existing appointment, or reschedule an existing appointment.
 {%include BookAppointment-note.md%}
 
-For more details see the detailed [transaction description](ITI-116.html)
+For more details see the detailed [transaction description](ITI-117.html)
 
-#### 55.1.2.4 Find Existing Appointments [ITI-117]
+#### 55.1.2.4 Find Existing Appointments [ITI-118]
 
 This transaction searches for existing appointments for the patient using [FHIR Search](http://hl7.org/fhir/R4/search.html) against the [Appointment resource](StructureDefinition-ihe-sched-appt.html).
 {%include ExistingAppointments-note.md%}
 
-For more details see the detailed [transaction description](ITI-117.html)
+For more details see the detailed [transaction description](ITI-118.html)
 
 ## 55.2 Scheduling Actor Options <a name="actor-options"> </a>
 

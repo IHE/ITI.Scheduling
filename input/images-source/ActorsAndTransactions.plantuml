@@ -1,9 +1,9 @@
 @startuml ActorsAndTransactions
 agent "Scheduling Client" as Client
 agent "Scheduling Server" as Server
-Client -- Server : "Find Potential Appointments [ITI-114] ↓"
-Client -- Server : "Hold Appointment [ITI-115] ↓"
-Client -- Server : "Book Appointment [ITI-116] ↓"
-Client -- Server : "Find Existing Appointments [ITI-117] ↓"
+Client -- Server : "Find Potential Appointments [ITI-115] ↓"
+Client -- Server : "Hold Appointment [ITI-116] ↓"
+Client -- Server : "Book Appointment [ITI-117] ↓"
+Client -- Server : "Find Existing Appointments [ITI-118] ↓"
 @enduml
 
