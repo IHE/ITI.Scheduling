@@ -78,7 +78,7 @@
 			<mustSupport value="true"/>
 			<binding>
 				<strength value="extensible"/>
-				<valueSet value="http://profiles.ihe.net/ITI/Scheduling/ValueSet/specialty"/>
+				<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/specialty"/>
 			</binding>
 		</element>
 		<!--
@@ -116,14 +116,14 @@
 		</element>
 		<element id="Appointment.participant:actor">
 			<path value="Appointment.participant.actor"/>
-			 <!-- <slicing>  
+			 <slicing>  
           		<discriminator> 
             		<type value="type"/>
             		<path value="actor"/>
           		</discriminator>
           		<ordered value="true"/>
           		<rules value="closed"/>
-         	</slicing> -->
+         	</slicing>
 			<min value="1"/>
 			<max value="1"/>
 			<type>
