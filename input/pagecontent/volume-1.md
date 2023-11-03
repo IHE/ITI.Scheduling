@@ -54,7 +54,7 @@ The actors in this profile are described in more detail in the sections below.
 
 The Scheduling Client determines an appropriate slot based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
-- The client needs a mechanism to properly identify the patient. The details of this capability is out of scope for this profile.
+- The client needs a mechanism to properly identify the patient. Although the details of this capability is out of scope for this profile, it is strongly recommended that the Scheduling Client is grouped with the Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile.
 - The client needs to determine FHIR Capability Statement for [Client](CapabilityStatement-IHE.Scheduling.client.html)
 
 #### 55.1.1.2 Scheduling Server <a name="server"> </a>
