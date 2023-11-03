@@ -1,0 +1,130 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "appointment-find",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"> ** TODO: reference ITI-115 table **t</div>"
+  },
+  "url" : "https://profiles.ihe.net/ITI/Scheduling/OperationDefinition/appointment-find",
+  "version" : "0.1.0-current",
+  "name" : "Find_Appointments_Operation",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2017-10-31T00:00:00-07:00",
+  "publisher" : "IHE IT Infrastructure Technical Committee",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.ihe.net/ihe_domains/it_infrastructure/"
+    }]
+  },
+  {
+    "telecom" : [{
+      "system" : "email",
+      "value" : "iti@ihe.net"
+    }]
+  },
+  {
+    "name" : "IHE IT Infrastructure Technical Committee",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "iti@ihe.net"
+    }]
+  }],
+  "description" : "See IHE Scheduling Profile, ITI-115",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "code" : "find",
+  "comment" : "See IHE ITI Scheduling, ITI-115",
+  "resource" : ["Appointment"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "inputProfile" : "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-in",
+  "parameter" : [{
+    "name" : "start",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "dateTime"
+  },
+  {
+    "name" : "end",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "dateTime"
+  },
+  {
+    "name" : "specialty",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "",
+    "type" : "string",
+    "searchType" : "token",
+    "binding" : {
+      "strength" : "extensible",
+      "valueSet" : "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+    }
+  },
+  {
+    "name" : "appointmentType",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "string",
+    "searchType" : "token",
+    "binding" : {
+      "strength" : "extensible",
+      "valueSet" : "https://terminology.hl7.org/5.2.0/ValueSet-v2-0276.html"
+    }
+  },
+  {
+    "name" : "practitioner",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "reference"
+  },
+  {
+    "name" : "organization",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "reference"
+  },
+  {
+    "name" : "location",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "reference"
+  },
+  {
+    "name" : "patient",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that may be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment.",
+    "type" : "reference"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "See IHE ITI Scheduling, ITI-115",
+    "type" : "Bundle"
+  }]
+}
