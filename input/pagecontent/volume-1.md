@@ -61,7 +61,7 @@ The Scheduling Client determines an appropriate slot based on the parameters it 
 
 The Scheduling Server provides services for providing a list of available appointments, and for booking an appointment. The following points apply to the Scheduling Server:
 
-- The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile.
+- The server expects that the Patient and Provider/ProviderRole resources are properly identified. Although the details of this capability is out of scope for this profile, it is strongly recommended that the Scheduling Server is grouped with the Patient Demographics Supplier actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile.
 - The server can chose to implement one of the options for obtaining available slots or appointments, or chose to implement both. Implementing both options on the server can increase interoperability for scheduling clients, however, the types of appointments for a particular server may be better served by one or the other option. Depending on the supported use cases, implementing only one of the Find Appointments or the Pre-fetch Slots options can be a better solution.
 - The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
