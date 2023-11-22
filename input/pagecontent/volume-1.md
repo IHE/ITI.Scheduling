@@ -52,20 +52,22 @@ The actors in this profile are described in more detail in the sections below.
 
 #### 55.1.1.1 Scheduling Client <a name="client"> </a>
 
-The Scheduling Client determines an appropriate slot based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
+The Scheduling Client determines an appropriate potential appointment based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
-- The client needs a mechanism to properly identify the patient. The details of this capability is out of scope for this profile.
-- The client needs to determine FHIR Capability Statement for [Client](CapabilityStatement-IHE.Scheduling.client.html)
+- The client needs a mechanism to properly identify the patient. Although the details of this capability is out of scope for this profile, it is recommended that the Scheduling Client is grouped with the Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile.
+- The client should determine the FHIR Capability Statement for the [Server](CapabilityStatement-IHE.Scheduling.server.html)
+
+Please see the FHIR Capability Statement for the [Client](CapabilityStatement-IHE.Scheduling.client.html).
 
 #### 55.1.1.2 Scheduling Server <a name="server"> </a>
 
 The Scheduling Server provides services for providing a list of available appointments, and for booking an appointment. The following points apply to the Scheduling Server:
 
-- The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile.
+- The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile. In the case that the Scheduling Client is grouped with a Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile, it is recommended that the Scheduling Server is grouped the Patient Demographics Supplier actor from the same profile. 
 - The server can chose to implement one of the options for obtaining available slots or appointments, or chose to implement both. Implementing both options on the server can increase interoperability for scheduling clients, however, the types of appointments for a particular server may be better served by one or the other option. Depending on the supported use cases, implementing only one of the Find Appointments or the Pre-fetch Slots options can be a better solution.
 - The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
-FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html)
+Please see the FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html).
 
 ### 55.1.2 Transaction Descriptions <a name="transactions"> </a>
 The transactions in this profile are summarized in the sections below.
