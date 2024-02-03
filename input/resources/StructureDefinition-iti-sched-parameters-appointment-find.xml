@@ -2,8 +2,8 @@
     <id value="parameters-appointment-find-in"/>
     <url value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-in"/>
     <version value="1.0.0"/>
-    <name value="IHE_ITI_Scheduling_Find_Appointment_Paramters_in_Profile"/>
-    <title value="IHE ITI Scheduling Find Appointment Paramters in Profile"/>
+    <name value="IHE_ITI_Scheduling_Find_Appointment_Parameters_in_Profile"/>
+    <title value="IHE ITI Scheduling Find Appointment Parameters in Profile"/>
     <status value="active"/>
     <date value="2023-04-23"/>
     <publisher value="IHE IT Infrastructure Technical Committee"/>
@@ -20,7 +20,7 @@
         <value value="iti@ihe.net"/>
         </telecom>
     </contact>
-    <description value="Profile used to validate the parameters that are the input of the 'appointment find' IHE ITI Scheduling operation"/>
+    <description value="Profile used to validate the parameters that are the input of the `appointment find` IHE ITI Scheduling operation"/>
     <jurisdiction>
         <coding>
         <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -49,6 +49,79 @@
                 <rules value="open"/>
             </slicing>
         </element>
+        <!-- Parameter start -->
+        <element id="Parameters.parameter:start">
+            <path value="Parameters.parameter"/>
+            <sliceName value="start"/>
+        </element>
+        <element id="Parameters.parameter:start.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="start"/>
+        </element>
+        <element id="Parameters.parameter:start.valueDateTime">
+            <path value="Parameters.parameter.valueDateTime"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:start.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:start.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter end -->
+        <element id="Parameters.parameter:end">
+            <path value="Parameters.parameter"/>
+            <sliceName value="end"/>
+        </element>
+        <element id="Parameters.parameter:end.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="end"/>
+        </element>
+        <element id="Parameters.parameter:end.valueDateTime">
+            <path value="Parameters.parameter.valueDateTime"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:end.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:end.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter specialty -->
+        <element id="Parameters.parameter:specialty">
+            <path value="Parameters.parameter"/>
+            <sliceName value="specialty"/>
+        </element>
+        <element id="Parameters.parameter:specialty.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="specialty"/>
+        </element>
+        <element id="Parameters.parameter:specialty.valueString">
+            <path value="Parameters.parameter.valueString"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:specialty.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:specialty.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter patient-resource -->
         <element id="Parameters.parameter:patient-resource">
             <path value="Parameters.parameter"/>
             <sliceName value="patient-resource"/>
@@ -64,9 +137,10 @@
         <element id="Parameters.parameter:patient-resource.resource">
             <path value="Parameters.parameter.resource"/>
             <type>
-                <code value="Resource"/>
+                <code value="Patient"/>
                 <profile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
             </type>
+            <min value="1"/>
         </element>
         <element id="Parameters.parameter:patient-resource.part">
             <path value="Parameters.parameter.part"/>
