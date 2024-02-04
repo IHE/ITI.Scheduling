@@ -48,7 +48,7 @@
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
-			<strength value="extensible"/>
+			<strength value="example"/>
 			<valueSet value="https://profiles.ihe.net/ITI/SCHED/ValueSet/specialty"/>
 		</binding>
 	</parameter>
@@ -61,7 +61,7 @@
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
-			<strength value="extensible"/>
+			<strength value="example"/>
 			<valueSet value="https://profiles.ihe.net/ITI/SCHED/ValueSet/visit-type"/>
 		</binding>
 	</parameter>
@@ -114,18 +114,6 @@
 		<documentation value="This parameter uses the Patient resource type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [IPA Patient Profile](http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Patient"/>
 	</parameter>
-	<!--
-	<parameter>
-		<name value="coverage"/>
-		<use value="in"/>
-		<min value="0"/>
-		<max value="*"/>
-		<documentation value="This parameter uses the Coverage type and is constrained to the the [Argonaut Coverage Profile](https://profiles.ihe.net/ITI/SCHED/StructureDefinition/sched-coverage). It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment."/>
-		<type value="Coverage"/>
-		<profile>
-			<reference value="https://profiles.ihe.net/ITI/SCHED/StructureDefinition/sched-coverage"/>
-		</profile>
-	</parameter> -->
 	<parameter>
 		<name value="reason"/>
 		<use value="in"/>
@@ -140,7 +128,7 @@
 		</binding>
 	</parameter>
 	<parameter>
-		<name value="referralId"/>
+		<name value="referral-identifier"/>
 		<use value="in"/>
 		<min value="0"/>
 		<max value="1"/>

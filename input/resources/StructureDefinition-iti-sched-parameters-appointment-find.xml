@@ -121,6 +121,150 @@
             <path value="Parameters.parameter.part"/>
             <max value="0"/>
         </element>
+        <!-- Parameter visit-type -->
+        <element id="Parameters.parameter:visit-type">
+            <path value="Parameters.parameter"/>
+            <sliceName value="visit-type"/>
+        </element>
+        <element id="Parameters.parameter:visit-type.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="visit-type"/>
+        </element>
+        <element id="Parameters.parameter:visit-type.valueString">
+            <path value="Parameters.parameter.valueString"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:visit-type.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:visit-type.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter practitioner -->
+        <element id="Parameters.parameter:practitioner">
+            <path value="Parameters.parameter"/>
+            <sliceName value="practitioner"/>
+        </element>
+        <element id="Parameters.parameter:practitioner.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="practitioner"/>
+        </element>
+        <element id="Parameters.parameter:practitioner.valueUri">
+            <path value="Parameters.parameter.valueUri"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:practitioner.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:practitioner.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter organization -->
+        <element id="Parameters.parameter:organization">
+            <path value="Parameters.parameter"/>
+            <sliceName value="organization"/>
+        </element>
+        <element id="Parameters.parameter:organization.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="organization"/>
+        </element>
+        <element id="Parameters.parameter:organization.valueUri">
+            <path value="Parameters.parameter.valueUri"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:organization.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:organization.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter location-string -->
+        <element id="Parameters.parameter:location-string">
+            <path value="Parameters.parameter"/>
+            <sliceName value="location-string"/>
+        </element>
+        <element id="Parameters.parameter:location-string.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="location-string"/>
+        </element>
+        <element id="Parameters.parameter:location-string.valueString">
+            <path value="Parameters.parameter.valueString"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:location-string.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:location-string.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter location-reference -->
+        <element id="Parameters.parameter:location-reference">
+            <path value="Parameters.parameter"/>
+            <sliceName value="location-reference"/>
+        </element>
+        <element id="Parameters.parameter:location-reference.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="location-reference"/>
+        </element>
+        <element id="Parameters.parameter:location-reference.valueUri">
+            <path value="Parameters.parameter.valueUri"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:location-reference.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:location-reference.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter patient-reference -->
+        <element id="Parameters.parameter:patient-reference">
+            <path value="Parameters.parameter"/>
+            <sliceName value="patient-reference"/>
+        </element>
+        <element id="Parameters.parameter:patient-referencen.name">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="patient-reference"/>
+        </element>
+        <element id="Parameters.parameter:patient-reference.valueUri">
+            <path value="Parameters.parameter.valueUri"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:patient-reference.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:patient-reference.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
         <!-- Parameter patient-resource -->
         <element id="Parameters.parameter:patient-resource">
             <path value="Parameters.parameter"/>
@@ -143,6 +287,54 @@
             <min value="1"/>
         </element>
         <element id="Parameters.parameter:patient-resource.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter reason -->
+        <element id="Parameters.parameter:reason">
+            <path value="Parameters.parameter"/>
+            <sliceName value="reason"/>
+        </element>
+        <element id="Parameters.parameter:reason">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="reason"/>
+        </element>
+        <element id="Parameters.parameter:reason.valueString">
+            <path value="Parameters.parameter.valueString"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:reason.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:reason.part">
+            <path value="Parameters.parameter.part"/>
+            <max value="0"/>
+        </element>
+        <!-- Parameter referral-identifier -->
+        <element id="Parameters.parameter:referral-identifier">
+            <path value="Parameters.parameter"/>
+            <sliceName value="referral-identifier"/>
+        </element>
+        <element id="Parameters.parameter:referral-identifier">
+            <path value="Parameters.parameter.name"/>
+            <fixedString value="referral-identifier"/>
+        </element>
+        <element id="Parameters.parameter:referral-identifier.valueIdentifier">
+            <path value="Parameters.parameter.valueIdentifier"/>
+            <type>
+                <code value="Identifier"/>
+            </type>
+            <min value="1"/>
+        </element>
+        <element id="Parameters.parameter:referral-identifier.resource">
+            <path value="Parameters.parameter.resource"/>
+            <max value="0"/>
+        </element>
+        <element id="Parameters.parameter:referral-identifier.part">
             <path value="Parameters.parameter.part"/>
             <max value="0"/>
         </element>
