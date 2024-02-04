@@ -7,22 +7,24 @@
 	<!-- <title value="Appointment Availability Operation"/> -->
 	<status value="active"/>
 	<kind value="operation"/>
-	<date value="2017-10-31T00:00:00-07:00"/>
+	<date value="2024-02-05"/>
 	<publisher value="IHE ITI"/>
-	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
+	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, patient and referral information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
 	<jurisdiction>
 		<coding>
-			<system value="urn:iso:std:iso:3166"/>
-			<code value="US"/>
+			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+			<code value="001"/>
+			<display value="World"/>
 		</coding>
 	</jurisdiction>
 	<code value="find"/>
-	<comment value="- For input parameters that are codes, the simple FHIR [token](https://hl7.org/fhir/R4/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown below.&#xA;&#xA; -  If more than one actor type is present, the response SHOULD contain appointments with *all* of these actors (i.e, this is a logical 'AND').  If an actor type is repeated, the response SHOULD contain appointments with *any* of these actors and SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations) Ultimately the server is responsible for determining the first/best available appointment options to return..&#xD;-   References can be to an absolute URL, but servers only perform operations on their own resources.&#xD;- To set the upper limit on the total number of available appointment options to return use the standard [`_count`](https://hl7.org/fhir/R4/search.html#count) search parameter.  See the examples below for how this is implemented."/>
+	<comment value="- For input parameters that are codes, the simple FHIR [token](https://hl7.org/fhir/R4/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown below.\n-  If more than one actor type is present, the response SHOULD contain appointments with *all* of these actors (i.e, this is a logical 'AND').  If an actor type is repeated, the response SHOULD contain appointments with *any* of these actors and SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations) Ultimately the server is responsible for determining the first/best available appointment options to return.\n-   References can be to an absolute URL, but servers only perform operations on their own resources.\n- To set the upper limit on the total number of available appointment options to return use the standard [`_count`](https://hl7.org/fhir/R4/search.html#count) search parameter.  See the examples below for how this is implemented."/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>
 	<instance value="false"/>
 	<inputProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-in"/>
+	<outputProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-out"/>
 	<parameter>
 		<name value="start"/>
 		<use value="in"/>

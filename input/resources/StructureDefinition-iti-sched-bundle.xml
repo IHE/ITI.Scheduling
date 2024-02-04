@@ -3,17 +3,18 @@
 	<id value="ihe-sched-avail-bundle"/>
 	<url value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/>
 	<version value="1.0.0"/>
-	<name value="IHE_ITI_Appointment_Bundle_Profile"/>
-	<title value="IHE ITI Appointment Bundle Profile"/>
+	<name value="IHE_ITI_Scheduling_Bundle_Profile"/>
+	<title value="IHE ITI Scheduling Bundle Profile"/>
 	<status value="active"/>
-	<date value="2018-01-11"/>
+	<date value="2024-02-05"/>
 	<publisher value="IHE ITI"/>
 	<contact>
-		<telecom>
-			<system value="url"/>
-			<value value="http://argonautwiki.hl7.org"/>
-		</telecom>
-	</contact>
+        <name value="IHE IT Infrastructure Technical Committee"/>
+        <telecom>
+        	<system value="email"/>
+        	<value value="iti@ihe.net"/>
+        </telecom>
+    </contact>
 	<description value="The IHE ITI Appointment Bundle Profile is returned as a result of the '$find' operation and Appointment search."/>
 	<jurisdiction>
 		<coding>
