@@ -115,6 +115,7 @@
 		<max value="*"/>
 		<documentation value="This parameter uses the Patient resource type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [IPA Patient Profile](http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Patient"/>
+		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
 	</parameter>
 	<parameter>
 		<name value="reason"/>
