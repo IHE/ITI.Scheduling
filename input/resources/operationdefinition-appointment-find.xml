@@ -23,8 +23,9 @@
 	<system value="false"/>
 	<type value="true"/>
 	<instance value="false"/>
+	<!--
 	<inputProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-in"/>
-	<outputProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-out"/>
+	<outputProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/parameters-appointment-find-out"/> -->
 	<parameter>
 		<name value="start"/>
 		<use value="in"/>
@@ -145,6 +146,6 @@
 		<max value="1"/>
 		<documentation value="An [IHE Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and may also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
 		<type value="Bundle"/>
-		<!-- <targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/> -->
+		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/>
 	</parameter>
 </OperationDefinition>
