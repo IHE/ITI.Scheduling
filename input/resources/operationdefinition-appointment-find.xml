@@ -74,7 +74,8 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. 'Practitioner/123'.   If multiple practitioner references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
-		<type value="uri"/>
+		<type value="Reference"/>
+		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-practitioner" />
 	</parameter>
 	<parameter>
 		<name value="organization"/>
@@ -82,7 +83,8 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. 'Organization/abc'.  If multiple organization references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
-		<type value="uri"/>
+		<type value="Reference"/>
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
 	</parameter>
 	<parameter>
 		<name value="location-string"/>
@@ -99,7 +101,8 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="A Location reference when performing an operation where the Location resource `id` is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)"/>
-		<type value="uri"/>
+		<type value="Reference"/>
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/Location" />
 	</parameter>
 	<parameter>
 		<name value="patient-reference"/>
@@ -107,7 +110,8 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that may be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
-		<type value="uri"/>
+		<type value="Reference"/>
+		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient" />
 	</parameter>
 	<parameter>
 		<name value="patient-resource"/>
