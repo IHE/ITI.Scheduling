@@ -28,7 +28,7 @@
 	<parameter>
 		<name value="appointment-reference"/>
 		<use value="in"/>
-		<min value="0"/>
+		<min value="1"/>
 		<max value="1"/>
 		<documentation value="A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
 		<type value="Reference"/>

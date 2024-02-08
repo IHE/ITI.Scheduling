@@ -3,7 +3,7 @@
 	<id value="appointment-book"/>
 	<url value="https://profiles.ihe.net/ITI/Scheduling/OperationDefinition/appointment-book"/>
 	<version value="1.0.0"/>
-	<name value="Hold_Appointment_Operation"/>
+	<name value="Book_Appointment_Operation"/>
 	<!-- <title value="Appointment Availability Operation"/> -->
 	<status value="active"/>
 	<kind value="operation"/>
@@ -39,7 +39,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;pending&quot; if the book is approved or  &quot;cancelled&quot; if the book is rejected."/>
+		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;booked&quot; if the book is approved or  &quot;cancelled&quot; if the book is rejected."/>
 		<type value="Bundle"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle" />
 	</parameter>
