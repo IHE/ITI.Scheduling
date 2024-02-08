@@ -9,7 +9,7 @@
 	<kind value="operation"/>
 	<date value="2024-02-05"/>
 	<publisher value="IHE ITI"/>
-	<description value="Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/>
+	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/>
 	<jurisdiction>
 		<coding>
 			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -17,7 +17,7 @@
 			<display value="World"/>
 		</coding>
 	</jurisdiction>
-	<code value="hold"/>
+	<code value="book"/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>
@@ -39,7 +39,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected."/>
+		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;pending&quot; if the book is approved or  &quot;cancelled&quot; if the book is rejected."/>
 		<type value="Bundle"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle" />
 	</parameter>
