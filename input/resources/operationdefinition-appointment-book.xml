@@ -9,7 +9,7 @@
 	<kind value="operation"/>
 	<date value="2024-02-05"/>
 	<publisher value="IHE ITI"/>
-	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/>
+	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/>
 	<jurisdiction>
 		<coding>
 			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
