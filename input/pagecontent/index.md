@@ -20,13 +20,10 @@ This guide is organized into four main sections:
    1. [Book Appointment \[ITI-117\]](ITI-117.html)
    1. [Search Patient Appointments \[ITI-118\]](ITI-118.html)
 
-3. Volume III: Metadata
-   1. **TODO: point to your content profiles if you have them**
-
-4. National Extensions
+3. Volume IV: National Extensions
     1. **TODO: point at your national extensions if you have them**
 
-5. Appendix
+4. Appendix
    1. [Test Plan](testplan.html)
 	1. **TODO: point to your appendix if you have them**
 
