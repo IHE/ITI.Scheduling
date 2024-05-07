@@ -61,7 +61,7 @@
 			<binding>
 				<strength value="preferred"/>
 				<description value="The reason for the current state of the Appointment"/>
-				<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/status-reason"/>
+				<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/iti-sched-status-reason"/>
 			</binding>
 		</element>
 	</differential>

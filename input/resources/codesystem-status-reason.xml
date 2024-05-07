@@ -11,7 +11,7 @@
 	<description value="The reason for the current state of the Appointment."/>
 	<caseSensitive value="true"/>
 	<!-- https://terminology.hl7.org/CodeSystem-appointment-cancellation-reason.html -->
-	<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/status-reason"/>
+	<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/iti-sched-status-reason"/>
 	<content value="complete"/>
 	<concept>
 		<code value="abnormal-results"/>
@@ -105,8 +105,8 @@
 	</concept>
 	<concept>
 		<code value="personal"/>
-		<display value="Provider Personal Reason?"/>
-		<definition value="??"/>
+		<display value="Provider Personal Reason"/>
+		<definition value="An appointment for a patient was cancelled by the provider for personal reasons"/>
 	</concept>
 	<concept>
 		<code value="plan-changes"/>
@@ -120,13 +120,13 @@
 	</concept>
 	<concept>
 		<code value="prep-incomplete"/>
-		<display value="Prep? Medications Incomplete"/>
-		<definition value="An appointment for a patient was cancelled by the provider because a  eeded preparatory insructions and/or medications not completed."/>
+		<display value="Preparatory Requirements or Medications Incomplete"/>
+		<definition value="An appointment for a patient was cancelled by the provider because needed preparatory insructions and/or medications not completed."/>
 	</concept>
 	<concept>
 		<code value="prep-unavail"/>
-		<display value="Prep? or Medication or Test Results Unavailable"/>
-		<definition value="An appointment for a patient was cancelled by the provider because a  needed diagnostic test or medications were not available."/>
+		<display value="Preparatory Requirements or Medication or Test Results Unavailable"/>
+		<definition value="An appointment for a patient was cancelled by the provider because a needed diagnostic test or medications were not available."/>
 	</concept>
 	<concept>
 		<code value="refused"/>
