@@ -28,11 +28,29 @@
 	<parameter>
 		<name value="appointment-reference"/>
 		<use value="in"/>
-		<min value="1"/>
+		<min value="0"/>
 		<max value="1"/>
 		<documentation value="A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
 		<type value="Reference"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt" />
+	</parameter>
+	<parameter>
+		<name value="appointment-resource"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="The full appointment resource is needed for appontment change requests"/>
+		<type value="Appointment"/>
+		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt" />
+	</parameter>
+	<parameter>
+		<name value="patient-resource"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="*"/>
+		<documentation value="The Patient resource type is used to provide the patient information as known to the SHecduling client at the time of booking of the appointment."/>
+		<type value="Patient"/>
+		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
 	</parameter>
 	<parameter>
 		<name value="return"/>
