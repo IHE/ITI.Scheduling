@@ -5,9 +5,6 @@ The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHI
 
 This workflow profile defines transactions that allow a scheduling client to obtain information about possible appointment opportunities based on specific parameters, and, based on that information, allow the client to book an appointment.
 
-**TODO: Provide an end-user friendly overview of what the profile does for them. Keep it brief (a paragraph or two, up to a page). If extensive detail is needed, it should be included in Section 55.4- Use Cases.**
-
-**TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/).**
 
 ## 1:55.1 FHIR Scheduling Actors and Transactions <a name="actors-and-transactions"> </a>
 

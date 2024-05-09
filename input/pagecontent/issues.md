@@ -2,7 +2,7 @@
 
 #### Open Issues
 
-* FooBar_001: this is open issue 1
+* ITI-Scheduling-001: $book only, or $book and $modify
 
 #### Closed Issues
 
