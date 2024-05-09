@@ -53,6 +53,14 @@
 		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
 	</parameter>
 	<parameter>
+		<name value="comment"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="The optional comment can be added for additional notes that may be useful for booking, canceling, or modfying an appointment" />
+		<type value="string"/>
+	</parameter>
+	<parameter>
 		<name value="return"/>
 		<use value="out"/>
 		<min value="0"/>
