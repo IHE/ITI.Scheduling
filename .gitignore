@@ -12,3 +12,6 @@ www
 /_genonce.bat
 /_genonce.sh
 /input/data/ImplementationGuide-ihe.iti.scheduling.json
+/node_modules
+/package-lock.json
+/package.json
