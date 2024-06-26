@@ -71,10 +71,9 @@ The transactions in this profile are summarized in the sections below.
 
 #### 55.1.2.1 Find Potential Appointments [ITI-115]
 
-This transaction searches for availability for a future appointment(s) using the Find Appointments operation.
-{%include FindAppointments-note.md%}
+This transaction searches for availability for one or more future appointments using the Find Appointments operation.
 
-For more details see the detailed [transaction description](ITI-115.html)
+For more details see the [transaction description](ITI-115.html) and the corresponding [operation definition](./OperationDefinition-appointment-find.html).
 
 #### 55.1.2.2 Hold Appointment [ITI-116]
 
