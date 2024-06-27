@@ -79,6 +79,12 @@ pages:
   issues.md:
     title: Open and Closed issues
     generation: markdown
+  other.md:
+    title: Changes to Other IHE Specifications
+    generation: markdown
+  download.md:
+    title: Download and Analysis
+    generation: markdown
 
 menu:
   FHIR Scheduling Home: index.html
