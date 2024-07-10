@@ -5,6 +5,18 @@ The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHI
 
 This workflow profile defines transactions that allow a scheduling client to obtain information about possible appointment opportunities based on specific parameters, and, based on that information, allow the client to book an appointment.
 
+<blockquote class="impl-note">
+<p><strong>Acknowledgement:</strong></p>
+<p>
+This IHE profile is based on the <a href="https://fhir.org/guides/argonaut/scheduling/release1/" target="_blank">Argonaut Scheduling Implementation Guide</a>. The following are some of the major differences from the Argonaut IG:
+</p>
+<ul>
+    <li>The IHE Profile is based on FHIR R4</li>
+    <li>The operations described are $find, $hold, and $book</li>
+    <li>A separate transaction describes the use of FHIR Search for the Appointment resource</li>
+    <li>The operation parameters use explicit data types, and support only POST transactions</li>
+</ul>
+</blockquote>
 
 ## 1:55.1 FHIR Scheduling Actors and Transactions <a name="actors-and-transactions"> </a>
 
