@@ -9,7 +9,7 @@
 	<kind value="operation"/>
 	<date value="2024-02-05"/>
 	<publisher value="IHE ITI"/>
-	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, patient and referral information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
+	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameters further refine the search and include  practitioner references, specialties, visit type, locations, patient and referral information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equipment) are needed for the visit, and provides proposed appointments for the time slots where all required resources are available."/>
 	<jurisdiction>
 		<coding>
 			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

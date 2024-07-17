@@ -16,7 +16,7 @@ Usage: #definition
 * contact[=].telecom.system = #email
 * contact[=].telecom.value = "JohnMoehrke@gmail.com"
 * jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
-* description = "CapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement IHE FHIR Scheduling. See https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html. The IHE Profile text is Normative, this conformance resource is Informative."
+* description = "CapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement IHE FHIR Scheduling. See https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html."
 * copyright = "IHE http://www.ihe.net/Governance/#Intellectual_Property"
 * kind = #requirements
 * fhirVersion = #4.0.1
@@ -215,7 +215,7 @@ Usage: #definition
 * contact[+].name = "John Moehrke"
 * contact[=].telecom.system = #email
 * contact[=].telecom.value = "JohnMoehrke@gmail.com"
-* description = "CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement IHE FHIR Scheduling. See https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html. The IHE Profile text is Normative, this conformance resource is Informative."
+* description = "CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement IHE FHIR Scheduling. See https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html."
 * copyright = "IHE http://www.ihe.net/Governance/#Intellectual_Property"
 * kind = #requirements
 * fhirVersion = #4.0.1
