@@ -90,12 +90,12 @@ menu:
   FHIR Scheduling Home: index.html
   Volume 1:
     Introduction: volume-1.html
-    Actors and Transactions: volume-1.html#1551-fhir-scheduling-actors-and-transactions--
-    Actor Options: volume-1.html#552-scheduling-actor-options--
-    Required Groupings: volume-1.html#553-scheduling-required-actor-groupings--
-    Overview: volume-1.html#554-fhir-scheduling-overview--
-    Security Considerations: volume-1.html#555-fhir-scheduling-security-considerations--
-    Cross-Profile Considerations: volume-1.html#556-fhir-scheduling-cross-profile-considerations--
+    Actors and Transactions: volume-1.html#actors-and-transactions
+    Actor Options: volume-1.html#actor-options
+    Required Groupings: volume-1.html#actor-groupings
+    Overview: volume-1.html#overview
+    Security Considerations: volume-1.html#security-considerations
+    Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 2:
     Find Potential Appointments [ITI-115]: ITI-115.html
     Hold Appointment [ITI-116]: ITI-116.html

@@ -17,6 +17,8 @@ This IHE profile is based on the <a href="https://fhir.org/guides/argonaut/sched
 </ul>
 </blockquote>
 
+<a name="actors-and-transactions"> </a>
+
 ## 1:55.1 FHIR Scheduling Actors and Transactions
 
 * Actors
@@ -115,6 +117,8 @@ For more details see the detailed [transaction description](ITI-118.html)
 ## 1:55.2 Scheduling Actor Options
 
 There are currently no options for these actors.
+
+<a name="actor-groupings"> </a>
 
 ## 1:55.3 Scheduling Required Actor Groupings
 There are no required groupings for this profile.
