@@ -6,6 +6,7 @@
 	<name value="Argonaut_Slot_BundleType_Codes"/>
 	<title value="Argonaut Slot BundleType Codes"/>
 	<status value="active"/>
+	<experimental value="false"/>
 	<date value="2017-01-10T07:40:10Z"/>
 	<description value="Slot Bundle Profile types constrained to 'history' and 'searchset'."/>
 	<compose>

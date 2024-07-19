@@ -6,6 +6,7 @@
 	<name value="IHE_ITI_Slot_Status_Codes"/>
 	<title value="IHE ITI Slot Status Codes"/>
 	<status value="active"/>
+	<experimental value="false"/>
 	<date value="2018-03-19"/>
 	<description value="The free/busy status of the slot. This value set is a subset of the the FHIR core Slot value set excluding the 'busy-tentative' concept."/>
 	<compose>

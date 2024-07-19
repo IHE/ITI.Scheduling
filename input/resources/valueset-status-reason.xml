@@ -6,6 +6,7 @@
 	<name value="IHE_ITI_Sched_Status_Reason_Codes"/>
 	<title value="IHE ITI Sched Status Reason Codes"/>
 	<status value="active"/>
+	<experimental value="false"/>
 	<date value="2018-03-19"/>
 	<description value="This value set is the full expansion of the ITI Scheduking Status Reason code system."/>
 		<compose>

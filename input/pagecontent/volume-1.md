@@ -118,7 +118,7 @@ For more details see the detailed [transaction description](ITI-118.html)
 
 There are currently no options for these actors.
 
-<a name="actor-groupings"> </a>
+<a name="required-groupings"> </a>
 
 ## 1:55.3 Scheduling Required Actor Groupings
 There are no required groupings for this profile.
