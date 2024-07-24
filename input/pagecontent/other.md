@@ -10,8 +10,8 @@ This section contains modifications to other IHE publications and profiles and i
 
 | Actor                         | Definition                                                                                |
 | ----------------------------- | ------------------------------------------------------------------------------------------|
-| Scheduling Client |  |
-| Scheduling Server |  |
+| Scheduling Client | A system which can request information about existing appointments, about potential appointments, and can request the creation, modification or cancellation of an appointment |
+| Scheduling Server | A system which manages existing appointments, and provides an API for clients to query, create, modify, of cancel an appointment |
 {:.grid .table-striped}
 
 
@@ -24,10 +24,10 @@ This section contains modifications to other IHE publications and profiles and i
 
 | Transaction                              | Definition                                                                              |
 | ---------------------------------------- | --------------------------------------------------------------------------------------- |
-| Mobile Patient Demographics Query \[ITI-115\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. 
-| Patient Demographics Match \[ITI-116\] | Requests that a patient demographics supplier using the FHIR $match operation.|
-|  \[ITI-117\] |  |
-|  \[ITI-118\] |  |
+| Find Potential Appointments \[ITI-115\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. 
+| Hold Appointment \[ITI-116\] | Requests that a patient demographics supplier using the FHIR $match operation.|
+| Book Appointment \[ITI-117\] |  |
+| Find Existing Appointments \[ITI-118\] |  |
 {:.grid .table-striped}
 
 
