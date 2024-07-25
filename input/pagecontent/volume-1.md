@@ -78,7 +78,7 @@ Please see the FHIR Capability Statement for the [Client](CapabilityStatement-IH
 The Scheduling Server provides services for providing a list of available appointments, and for booking an appointment. The following points apply to the Scheduling Server:
 
 - The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile. In the case that the Scheduling Client is grouped with a Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile, it is recommended that the Scheduling Server is grouped the Patient Demographics Supplier actor from the same profile. 
-- The server can chose to implement one of the options for obtaining available slots or appointments, or chose to implement both. Implementing both options on the server can increase interoperability for scheduling clients, however, the types of appointments for a particular server may be better served by one or the other option. Depending on the supported use cases, implementing only one of the Find Appointments or the Pre-fetch Slots options can be a better solution.
+- The server decides on the types of appointments that are possible to make using the transactions of this profile. Such business rules are specific to the type of appointment, and other contexts surrounding the provision of care.
 - The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
 Please see the FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html).
