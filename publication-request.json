@@ -1,0 +1,14 @@
+{
+    "package-id" : "ihe.iti.scheduling",
+    "version" : "1.0.0",
+    "path" : "https://profiles.ihe.net/ITI/Scheduling/1.0.0",
+    "mode" : "milestone",
+    "status" : "ballot",
+    "sequence" : "Releases",
+    "descmd" : "@[includes/intro-desc.md]",
+    "first" : true,
+    "title" : "IHE ITI Scheduling",
+    "ci-build" : "https://build.fhir.org/ig/IHE/ITI.Scheduling/",
+    "category" : "Administration",
+    "introduction" : "@[includes/intro-desc.md]"
+   }

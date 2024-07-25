@@ -1,5 +1,4 @@
-
-The IHE FHIR Scheduling Profile is a specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 4.0.1]({{site.data.fhir.path}}) and specifically the [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources, and on the previous work of the [Argonaut Project](https://fhir.org/guides/argonaut/scheduling/release1/).
+{%include intro-desc.md%}
 
 [Open and Closed Issues](issues.html)
 
