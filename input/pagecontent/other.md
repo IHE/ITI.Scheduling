@@ -1,5 +1,5 @@
 <div markdown="1" class="stu-note">
-This section contains modifications to other IHE publications and profiles and is not a part of the ITI Scheduling Profile. The content here will be incorporated into the target narrative at a future time, usually when ITI Scheduling goes final text.
+This section contains modifications to other IHE publications and profiles and is not a part of the ITI Scheduling Profile. The content here will be incorporated into the target narrative at a future time, usually when Scheduling goes final text.
 </div>
 
 ## IHE Technical Frameworks General Introduction Appendix A – Actor Summary Definitions
@@ -10,8 +10,8 @@ This section contains modifications to other IHE publications and profiles and i
 
 | Actor                         | Definition                                                                                |
 | ----------------------------- | ------------------------------------------------------------------------------------------|
-| Scheduling Client | A system which can request information about existing appointments, about potential appointments, and can request the creation, modification or cancellation of an appointment |
-| Scheduling Server | A system which manages existing appointments, and provides an API for clients to query, create, modify, of cancel an appointment |
+| Scheduling Client | A system which can request information about existing appointments, about potential appointments, and can request the creation, modification or cancellation of an appointment. |
+| Scheduling Server | A system which manages existing appointments and provides an API for clients to query, create, modify, or cancel an appointment. |
 {:.grid .table-striped}
 
 
@@ -30,4 +30,13 @@ This section contains modifications to other IHE publications and profiles and i
 | Find Existing Appointments \[ITI-118\] |  |
 {:.grid .table-striped}
 
+## IHE Technical Frameworks General Introduction Appendix D: Glossary
 
+|------------------------------------------------|
+| Editor, add the following new or modified terms to the [IHE Technical Frameworks General Introduction Appendix D](https://profiles.ihe.net/GeneralIntro/ch-D.html): |
+{:.grid .bg-info}
+
+| Term                         | Definition                                                    | Acronyms/Abbreviations | Synonyms    |
+| ---------------------------- | --------------------------------------------------------------| -----------------------| ------------|
+| none |  |
+{:.grid .table-striped}
