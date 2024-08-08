@@ -6,7 +6,7 @@ id: ihe.iti.scheduling
 canonical: https://profiles.ihe.net/ITI/Scheduling
 version: 0.8.0-current
 name: IHE_ITI_Scheduling
-title: "IHE ITI Scheduling"
+title: "Scheduling"
 description: put the short description of the profile here. it should explain what problem is being solved
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
@@ -56,10 +56,10 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 pages:
 # itemize here each narrative page. Include assigned section numbers when appropriate
   index.md:
-    title: IHE FHIR Scheduling Home
+    title: Scheduling Home
     generation: markdown
   volume-1.md:
-    title: 1:55 IHE FHIR Scheduling
+    title: 1:55 Scheduling
     generation: markdown
   ITI-115.md:
     title: 2:3.115 Find Potential Appointments [ITI-115]
@@ -87,7 +87,7 @@ pages:
     generation: markdown
 
 menu:
-  FHIR Scheduling Home: index.html
+  Scheduling Home: index.html
   Volume 1:
     Introduction: volume-1.html
     Actors and Transactions: volume-1.html#actors-and-transactions
