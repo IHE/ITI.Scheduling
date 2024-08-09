@@ -155,7 +155,7 @@
 		<name value="insurance-reference"/>
 		<use value="in"/>
 		<min value="0"/>
-		<max value="1"/>
+		<max value="*"/>
 		<documentation value="Reference to the insurance information for the patient for whom the potential appointment is about to be made."/>
 		<type value="Reference"/>
 		<targetProfile value="http://hl7.org/fhir/StructureDefinition/InsurancePlan" />
