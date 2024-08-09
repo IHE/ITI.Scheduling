@@ -152,6 +152,15 @@
 		<type value="Timing"/>
 	</parameter>
 	<parameter>
+		<name value="insurance-reference"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="Reference to the insurance information for the patient for whom the potential appointment is about to be made."/>
+		<type value="Reference"/>
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/InsurancePlan" />
+	</parameter>
+	<parameter>
 		<name value="return"/>
 		<use value="out"/>
 		<min value="0"/>
