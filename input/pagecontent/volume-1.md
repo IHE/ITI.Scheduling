@@ -1,10 +1,10 @@
 
-The IHE FHIR Scheduling profile is a vendor agnostic specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users, including cross-organizational workflows. This specification is based on [FHIR Version 4.0.1](https://hl7.org/fhir/R4/), and references the [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources.
+The Scheduling Profile is a vendor agnostic specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users, including cross-organizational workflows. This specification is based on [FHIR Version 4.0.1](https://hl7.org/fhir/R4/), and references the [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources.
 
 This workflow profile defines transactions that allow a scheduling client to obtain information about possible appointment opportunities based on specific parameters, and, based on that information, allow the client to book an appointment.
 
 <blockquote class="impl-note">
-<p><strong>History and Acknowledgement:</strong></p>
+<p><strong>History and Acknowledgment:</strong></p>
 <p>
 This IHE profile is based on the <a href="https://fhir.org/guides/argonaut/scheduling/release1/" target="_blank">Argonaut Scheduling Implementation Guide</a>. The following are some of the major differences from the Argonaut IG:
 </p>
@@ -19,31 +19,36 @@ This IHE profile is based on the <a href="https://fhir.org/guides/argonaut/sched
 
 <a name="actors-and-transactions"> </a>
 
-## 1:55.1 FHIR Scheduling Actors and Transactions
+## 1:55.1 Scheduling Actors, Transactions and Content Modules
 
-* Actors
+This section defines the actors, transactions, and/or content modules in this profile. General
+definitions of actors are given in the Technical Frameworks General Introduction [Appendix A](https://profiles.ihe.net/GeneralIntro/ch-A.html).
+IHE Transactions can be found in the Technical Frameworks General Introduction [Appendix B](https://profiles.ihe.net/GeneralIntro/ch-B.html).
+Both appendices are located at <https://profiles.ihe.net/GeneralIntro/>.
+
+- Actors
 
   - [Scheduling Client](#client)
   - [Scheduling Server](#server)
 
-* Transactions
+- Transactions
 
-  - [115 Find Potential Appointments](ITI-115.html)
-  - [116 Hold Appointment](ITI-116.html)
-  - [117 Book Appointment](ITI-117.html)
-  - [118 Find Existing Appointments](ITI-118.html)
+  - Find Potential Appointments [ITI_115](ITI-115.html)
+  - Hold Appointment [ITI-116](ITI-116.html)
+  - Book Appointment [ITI-177](ITI-117.html)
+  - Find Existing Appointments [ITI-118](ITI-118.html)
 
 
-The figure below shows the actors directly involved in the ITI Scheduling Profile and the relevant transactions between them.
+The figure below shows the actors directly involved in the Scheduling Profile and the relevant transactions between them.
 
 <div>
 {%include ActorsAndTransactions.svg%}
 </div>
 <br clear="all">
 
-**Figure 55.1-1: Scheduling Actor Diagram**
+**Figure 1:55.1-1: Scheduling Actor Diagram**
 
-Table 55.1-1: Profile Acronym Profile - Actors and Transactions
+Table 1:55.1-1: Profile Acronym Profile - Actors and Transactions
 
 | Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
 |-------------------|----------------------------|------------------------|-----------------|----------------|
@@ -66,8 +71,8 @@ The actors in this profile are described in more detail in the sections below.
 
 The Scheduling Client determines an appropriate potential appointment based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
-- The client needs a mechanism to properly identify the patient. Although the details of this capability is out of scope for this profile, it is recommended that the Scheduling Client is grouped with the Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile.
-- The client should determine the FHIR Capability Statement for the [Server](CapabilityStatement-IHE.Scheduling.server.html)
+- The client needs a mechanism to properly identify the patient. Although the details of this capability is out of scope for this profile, it is recommended that the Scheduling Client is grouped with the Patient Demographics Consumer from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) Profile.
+- The client should determine the FHIR Capability Statement for the [Server](CapabilityStatement-IHE.Scheduling.server.html).
 
 Please see the FHIR Capability Statement for the [Client](CapabilityStatement-IHE.Scheduling.client.html).
 
@@ -77,7 +82,7 @@ Please see the FHIR Capability Statement for the [Client](CapabilityStatement-IH
 
 The Scheduling Server provides services for providing a list of available appointments, and for booking an appointment. The following points apply to the Scheduling Server:
 
-- The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile. In the case that the Scheduling Client is grouped with a Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) profile, it is recommended that the Scheduling Server is grouped the Patient Demographics Supplier actor from the same profile. 
+- The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile. In the case that the Scheduling Client is grouped with a Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) Profile, it is recommended that the Scheduling Server is grouped the Patient Demographics Supplier from the same profile. 
 - The server decides on the types of appointments that are possible to make using the transactions of this profile. Such business rules are specific to the type of appointment, and other contexts surrounding the provision of care.
 - The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
@@ -97,20 +102,21 @@ For more details see the [transaction description](ITI-115.html) and the corresp
 Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment. This operation precedes the booking and follows the determination of appointment availability using the Find Appointments operation.
 {%include HoldAppointment-note.md%}
 
-For more details see the detailed [transaction description](ITI-116.html)
+For more details see the detailed [transaction description](ITI-116.html).
+
 #### 1:55.1.2.3 Book Appointment [ITI-117]
 
 This operation books an appointment following the determination of appointment availability using the Find Appointments operation. Using different combination of parameters, this operation can book a new appointment, cancel an already existing appointment, or reschedule an existing appointment.
 {%include BookAppointment-note.md%}
 
-For more details see the detailed [transaction description](ITI-117.html)
+For more details see the detailed [transaction description](ITI-117.html).
 
 #### 1:55.1.2.4 Find Existing Appointments [ITI-118]
 
 This transaction searches for existing appointments for the patient using [FHIR Search]({{site.data.fhir.path}}search.html) against the [Appointment resource](StructureDefinition-ihe-sched-appt.html).
 {%include ExistingAppointments-note.md%}
 
-For more details see the detailed [transaction description](ITI-118.html)
+For more details see the detailed [transaction description](ITI-118.html).
 
 <a name="actor-options"> </a>
 
@@ -125,11 +131,11 @@ There are no required groupings for this profile.
 
 <a name="overview"> </a>
 
-## 1:55.4 FHIR Scheduling Overview
+## 1:55.4 Scheduling Overview
 
 This section shows how the transactions of the profile are combined to address the use cases.
 
-### 55.4.1 Concepts
+### 1:55.4.1 Concepts
 
 The FHIR specification defines several resources to describe scheduling-related information. The  [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources are intended to be compatible with the [iCalendar specification](https://datatracker.ietf.org/doc/html/rfc5545). A survey of existing implementations, however, showed that there is very little commonality among existing FHIR server implementations, which suggests that an operation-based specification will improve interoperability in this area.
 
@@ -140,16 +146,15 @@ The overall functionality covered by this profile is as follows:
 4. (Optionally) The Hold Appointment transaction is completed.
 5. The Book Appointment Transaction is completed.
 
+### 1:55.4.2 Use Cases
 
-### 55.4.2 Use Cases
+#### 1:55.4.2.1 Use Case \#1: Provider-facing Scheduling Client
 
-#### 55.4.2.1 Use Case \#1: Provider-facing scheduling client
+##### 1:55.4.2.1.1 Post-discharge PCP Visit
 
+##### 1:55.4.2.1.2 Specialty Visit Scheduling
 
-##### 55.4.2.1.1 Post-discharge PCP Visit
-
-##### 55.4.2.1.2 Specialty Visit Scheduling
-###### 55.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
+###### 1:55.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
 Dr. Brown detects that a radiology examination is recommended to proceed with the
 treatment of her Patient Mr. White. Dr. Brown opens the radiology examination
 scheduling in her clinical information systems and selects a radiology facility
@@ -162,20 +167,20 @@ booking details dialog of the clinical information system. Dr. Brown confirms
 the records and books the examination in the confirm dialog in her clinical
 information system.
 
-###### 55.4.2.1.2.2 Provider-facing scheduling client Process Flow
+###### 1:55.4.2.1.2.2 Provider-facing Scheduling Client Process Flow
 
 <div>
 {%include uc1-flow.svg%}
 </div>
 <br clear="all">
 
-Figure 55.4.2.1-1: Provider-facing scheduling client Process Flow
+Figure 1:55.4.2.1-1: Provider-facing Scheduling Client Process Flow
 
+#### 1:55.4.2.2 Use Case \#2: Patient-facing Scheduling Client
 
-#### 55.4.2.2 Use Case \#2: Patient-facing scheduling client
+##### 1:55.4.2.2.1 Foreign Visitor Urgent Visit
 
-##### 55.4.2.2.1 Foreign Visitor Urgent Visit
-###### 55.4.2.2.1.1 Use Case Description
+###### 1:55.4.2.2.1.1 Use Case Description
 
 Mr. White feels sick on holidays in a foreign country and wants to visit
 a healthcare provider for an examination. Mr. White opens the local patient portal
@@ -190,18 +195,18 @@ selects an appropriate time slot for the visit. Mr. White records the booking de
 portal. Mr. White confirms the records and books the examination in the confirm
 dialog of the patient portal.
 
-###### 55.4.2.2.1.2 Foreign Visitor Urgent Visitor Process Flow
+###### 1:55.4.2.2.1.2 Foreign Visitor Urgent Visitor Process Flow
 
 <div>
 {%include uc2-flow.svg%}
 </div>
 <br clear="all">
 
-Figure 55.4.2.2-1: Patient-facing scheduling client Process Flow
+Figure 1:55.4.2.2-1: Patient-facing scheduling client Process Flow
 
 <a name="security-considerations"> </a>
 
-## 1:55.5 FHIR Scheduling Security Considerations
+## 1:55.5 Scheduling Security Considerations
 
 Actors are expected to follow the recommendations and requirements found in [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
@@ -209,17 +214,17 @@ The resources exchanged in this profile may contain information which pose a pri
 
 Implementers should consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc.
 
-There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the FHIR Scheduling Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
+There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the Scheduling Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
 
 User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. Implementers should implement the [SMART on FHIR IG](http://hl7.org/fhir/smart-app-launch/) for the corresponding use cases (patient-facing or provider-facing). The network communication security and user authentication are layered in the HTTP transport layer.
 
 <a name="other-grouping"> </a>
 
-## 55.6 FHIR Scheduling Cross-Profile Considerations
-The FHIR Scheduling Profile is intended to be used in varied settings and to satisfy multiple use cases. Some of these uses will benefit from using FHIR Scheduling together with other IHE profiles. The following cross-profile  descriptions are not exclusive or exhaustive, and the list can be update in the future.
+## 1:55.6 Scheduling Cross-Profile Considerations
+The Scheduling Profile is intended to be used in varied settings and to satisfy multiple use cases. Some of these uses will benefit from using the Scheduling Profile together with other IHE profiles. The following cross-profile descriptions are not exclusive or exhaustive, and the list can be updated in the future.
 
-### 55.6.1 mCSD - Mobile Care Services Discovery
+### 1:55.6.1 mCSD - Mobile Care Services Discovery
 When a patient needs to schedule an appointment outside their usual care providing environment, they may need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [ITI-90 Find Matching Care Services](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
 
-### 55.6.2 360X - 360 Exchange Closed Loop Referral
-The [360X Profile](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_360X.pdf) describes cross-organizations referral workflows, and it has a scheduling option, which is not required. The FHIR Scheduling profile can be used instead of the 360X scheduling option when there are appropriate business agreements that allow cross-organizational scheduling. The referral and patient identifiers used in the 360X transactions must be used in the corresponding parameters of the Find Appointments transaction in order to provide the necessary link between the appointment and the referral.
+### 1:55.6.2 360X - 360 Exchange Closed Loop Referral
+The [360X Profile](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_360X.pdf) describes cross-organizations referral workflows, and it has a scheduling option, which is not required. The R Scheduling Profile can be used instead of the 360X Scheduling Option when there are appropriate business agreements that allow cross-organizational scheduling. The referral and patient identifiers used in the 360X transactions must be used in the corresponding parameters of the Find Appointments transaction in order to provide the necessary link between the appointment and the referral.
