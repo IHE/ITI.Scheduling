@@ -72,7 +72,7 @@ The actors in this profile are described in more detail in the sections below.
 The Scheduling Client determines an appropriate potential appointment based on the parameters it supplies to the Scheduling Server, and then books an appointment for a given patient. The following points apply to the Scheduling Client:
 
 - The client needs a mechanism to properly identify the patient. Although the details of this capability is out of scope for this profile, it is recommended that the Scheduling Client is grouped with the Patient Demographics Consumer from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) Profile.
-- The client should determine the FHIR Capability Statement for the [Server](CapabilityStatement-IHE.Scheduling.server.html).
+- The client SHOULD determine the FHIR Capability Statement for the [Server](CapabilityStatement-IHE.Scheduling.server.html).
 
 Please see the FHIR Capability Statement for the [Client](CapabilityStatement-IHE.Scheduling.client.html).
 
@@ -84,7 +84,7 @@ The Scheduling Server provides services for providing a list of available appoin
 
 - The server expects that the Patient and Provider/ProviderRole resources are properly identified. The exact mechanisms for making sure that the client has this correct information is out of scope for this profile. In the case that the Scheduling Client is grouped with a Patient Demographics Consumer actor from the [IHE PDQm](https://profiles.ihe.net/ITI/PDQm/index.html) Profile, it is recommended that the Scheduling Server is grouped the Patient Demographics Supplier from the same profile. 
 - The server decides on the types of appointments that are possible to make using the transactions of this profile. Such business rules are specific to the type of appointment, and other contexts surrounding the provision of care.
-- The server may chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
+- The server MAY chose to implement the Hold Appointment transaction, if the supported use cases have such a need.
 
 Please see the FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html).
 
@@ -210,13 +210,13 @@ Figure 1:55.4.2.2-1: Patient-facing scheduling client Process Flow
 
 Actors are expected to follow the recommendations and requirements found in [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
-The resources exchanged in this profile may contain information which pose a privacy risk, or in some cases, a safety risk, to providers and other personnel, as well as patients. For example, practitioner or patient phone numbers and home addresses may be conveyed. Implementers should determine what data will be exposed by the system and what level of public access there will be if any.
+The resources exchanged in this profile could contain information which pose a privacy risk, or in some cases, a safety risk, to providers and other personnel, as well as patients. For example, practitioner or patient phone numbers and home addresses could be conveyed. Implementers need to determine what data will be exposed by the system and what level of public access there will be if any.
 
-Implementers should consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc.
+Implementers need to consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc.
 
 There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the Scheduling Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
 
-User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. Implementers should implement the [SMART on FHIR IG](http://hl7.org/fhir/smart-app-launch/) for the corresponding use cases (patient-facing or provider-facing). The network communication security and user authentication are layered in the HTTP transport layer.
+User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. Implementers SHOULD implement the [SMART on FHIR IG](http://hl7.org/fhir/smart-app-launch/) for the corresponding use cases (patient-facing or provider-facing). The network communication security and user authentication are layered in the HTTP transport layer.
 
 <a name="other-grouping"> </a>
 
@@ -224,7 +224,7 @@ User authentication on mobile devices and browsers is typically handled by more 
 The Scheduling Profile is intended to be used in varied settings and to satisfy multiple use cases. Some of these uses will benefit from using the Scheduling Profile together with other IHE profiles. The following cross-profile descriptions are not exclusive or exhaustive, and the list can be updated in the future.
 
 ### 1:55.6.1 mCSD - Mobile Care Services Discovery
-When a patient needs to schedule an appointment outside their usual care providing environment, they may need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [ITI-90 Find Matching Care Services](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
+When a patient needs to schedule an appointment outside their usual care providing environment, they could need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [ITI-90 Find Matching Care Services](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
 
 ### 1:55.6.2 360X - 360 Exchange Closed Loop Referral
 The [360X Profile](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_360X.pdf) describes cross-organizations referral workflows, and it has a scheduling option, which is not required. The R Scheduling Profile can be used instead of the 360X Scheduling Option when there are appropriate business agreements that allow cross-organizational scheduling. The referral and patient identifiers used in the 360X transactions must be used in the corresponding parameters of the Find Appointments transaction in order to provide the necessary link between the appointment and the referral.

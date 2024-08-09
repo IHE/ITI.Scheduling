@@ -57,7 +57,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="The optional comment can be added for additional notes that may be useful for booking, canceling, or modfying an appointment" />
+		<documentation value="The optional comment can be added for additional notes that could be useful for booking, canceling, or modfying an appointment" />
 		<type value="string"/>
 	</parameter>
 	<parameter>
@@ -65,7 +65,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;booked&quot; if a new appointmet is booked or an existing appointment is modified, or status of &quot;cancelled&quot; if an appointment is cancelled or not created."/>
+		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and MAY also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;booked&quot; if a new appointmet is booked or an existing appointment is modified, or status of &quot;cancelled&quot; if an appointment is cancelled or not created."/>
 		<type value="Bundle"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle" />
 	</parameter>

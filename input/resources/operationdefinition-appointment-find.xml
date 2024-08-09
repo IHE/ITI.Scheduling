@@ -31,7 +31,7 @@
 		<use value="in"/>
 		<min value="1"/>
 		<max value="1"/>
-		<documentation value="The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no start date is provided,  all available appointments prior to the end date are in scope (subject to limits imposed by local business rules)."/>
+		<documentation value="The period of time that SHOULD be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no start date is provided,  all available appointments prior to the end date are in scope (subject to limits imposed by local business rules)."/>
 		<type value="dateTime"/>
 	</parameter>
 	<parameter>
@@ -39,7 +39,7 @@
 		<use value="in"/>
 		<min value="1"/>
 		<max value="1"/>
-		<documentation value="The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no end date is provided, all available appointments after the start date are in scope (subject to limits imposed by local business rules)."/>
+		<documentation value="The period of time that SHOULD be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no end date is provided, all available appointments after the start date are in scope (subject to limits imposed by local business rules)."/>
 		<type value="dateTime"/>
 	</parameter>
 	<parameter>
@@ -60,7 +60,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The code for one of the common appointment visit types for scheduling.  ( e.g.,'Echocardiography' or  'Well child visit' ). This list of visit types is extensible and implementers may choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
+		<documentation value="The code for one of the common appointment visit types for scheduling.  ( e.g.,'Echocardiography' or  'Well child visit' ). This list of visit types is extensible and implementers MAY choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -109,7 +109,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that may be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
+		<documentation value="A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that could be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Reference"/>
 		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient" />
 	</parameter>
@@ -118,7 +118,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="This parameter uses the Patient resource type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [IPA Patient Profile](http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
+		<documentation value="This parameter uses the Patient resource type instead of a simple reference because it is possible for the patient record to not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It is based on the [IPA Patient Profile](http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient) and includes demographics and patient preferences that could be important for availaiblilty searches. If the appointment is for a new patient, the patient record SHOULD NOT be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Patient"/>
 		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
 	</parameter>
@@ -127,7 +127,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax `specialty=[system]|[code]`. See the examples below for how this is implemented."/>
+		<documentation value="A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This MAY is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason could drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax `specialty=[system]|[code]`. See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -165,7 +165,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [IHE Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and may also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
+		<documentation value="An [IHE Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and MAY also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
 		<type value="Bundle"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"/>
 	</parameter>
