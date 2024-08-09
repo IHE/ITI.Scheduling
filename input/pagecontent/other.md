@@ -24,10 +24,10 @@ This section contains modifications to other IHE publications and profiles and i
 
 | Transaction                              | Definition                                                                              |
 | ---------------------------------------- | --------------------------------------------------------------------------------------- |
-| Find Potential Appointments \[ITI-115\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. 
-| Hold Appointment \[ITI-116\] | Requests that a patient demographics supplier using the FHIR $match operation.|
-| Book Appointment \[ITI-117\] |  |
-| Find Existing Appointments \[ITI-118\] |  |
+| Find Potential Appointments \[ITI-115\]   | Request a list of potential appointments with availability based on a given set of criteria | 
+| Hold Appointment \[ITI-116\] | Request to hold a potential appointment for a specific patient |
+| Book Appointment \[ITI-117\] | Request to book an appointment for a specific patient |
+| Find Existing Appointments \[ITI-118\] | Find existing appointments for a given patient |
 {:.grid .table-striped}
 
 ## IHE Technical Frameworks General Introduction Appendix D: Glossary
