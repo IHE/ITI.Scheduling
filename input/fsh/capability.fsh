@@ -32,6 +32,9 @@ Usage: #definition
 * implementationGuide[+] = "http://hl7.org/fhir/uv/ipa/ImplementationGuide/hl7.fhir.uv.ipa"
 * implementationGuide[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * implementationGuide[=].extension.valueCode = #SHOULD
+* implementationGuide[+] = "https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp"
+* implementationGuide[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* implementationGuide[=].extension.valueCode = #SHOULD
 * rest.mode = #client
 * rest.documentation = "IHE Scheduling client will 
 1. query for Patient resources matching the IPA Patient resource query parameters, 
@@ -220,7 +223,20 @@ Usage: #definition
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
+* format[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* format[=].extension.valueCode = #SHALL
 * format[+] = #application/fhir+json
+* format[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* format[=].extension.valueCode = #SHALL
+* implementationGuide[0] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch"
+* implementationGuide[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* implementationGuide[=].extension.valueCode = #SHOULD
+* implementationGuide[+] = "http://hl7.org/fhir/uv/ipa/ImplementationGuide/hl7.fhir.uv.ipa"
+* implementationGuide[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* implementationGuide[=].extension.valueCode = #SHOULD
+* implementationGuide[+] = "https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp"
+* implementationGuide[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* implementationGuide[=].extension.valueCode = #SHOULD
 * rest.mode = #server
 * rest.documentation = "FooBar server provides capability to query for Patient resources matching a sub-set of the FHIR core Patient resource query parameters"
 * rest.security.cors = false
