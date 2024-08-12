@@ -1,14 +1,15 @@
 {
     "package-id" : "ihe.iti.scheduling",
-    "version" : "1.0.0",
-    "path" : "https://profiles.ihe.net/ITI/Scheduling/1.0.0",
+    "version" : "1.0.0-comment",
+    "path" : "https://profiles.ihe.net/ITI/Scheduling/1.0.0-comment",
     "mode" : "milestone",
     "status" : "ballot",
-    "sequence" : "Releases",
-    "descmd" : "@[includes/intro-desc.md]",
+    "sequence" : "Publication",
+    "desc" : "Public Comment",
+    "descmd" : "Public Comment",
     "first" : true,
     "title" : "IHE ITI Scheduling",
     "ci-build" : "https://build.fhir.org/ig/IHE/ITI.Scheduling/",
     "category" : "Administration",
-    "introduction" : "@[includes/intro-desc.md]"
+    "introduction" : "The IHE FHIR Scheduling Profile is a specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on FHIR Version 4 and specifically the Schedule, Slot, and Appointment resources, and on the previous work of the [Argonaut Project](https://fhir.org/guides/argonaut/scheduling/release1/)"
    }
