@@ -17,6 +17,9 @@ It is important to note that as soon as a Change Proposal is approved, it carrie
 * ITI-Scheduling-001: `$book` only, or `$book` and `$modify`? The current approach is to provide three distinct uses for the `$book` operation. See the [`$book` operation](./OperationDefinition-appointment-book.html) for details.
 * ITI-Scheduling-002: Should there be a named option for supporting the [Appointment Hold \[ITI-16\]](./ITI-116.html) transaction?
 * ITI-Scheduling-003: Should there be a named option for supporting the [Find Existing Appointments \[ITI-18\]](./ITI-118.html) transaction?
+* Need to add Resource Examples \([Issue 26](https://github.com/IHE/ITI.Scheduling/issues/26)\)
+* Need a Test Plan \([Issue 20](https://github.com/IHE/ITI.Scheduling/issues/20)\)
+* Need Audit Events for \[ITI-115\], \[ITI-116\], and \[ITI-118\] \([Issue 20](https://github.com/IHE/ITI.Scheduling/issues/30)\)
 
 #### Closed Issues
 No closed issues.
