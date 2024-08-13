@@ -1,6 +1,9 @@
 == Suppressed Messages ==
 # instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
 # IHE valueset that is not yet a real valueset
-Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
-
-
+A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
+# See Issue 26 https://github.com/IHE/ITI.Scheduling/issues/26 
+The Implementation Guide contains no examples for this profile
+The Implementation Guide contains no examples for this extension
+# Missing capability for this extension, see https://jira.hl7.org/browse/FHIR-34397
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.1.0

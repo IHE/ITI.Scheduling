@@ -22,9 +22,6 @@
 		<include>
 			<system value="http://snomed.info/sct"/>
 			<concept>
-				<code value="11529006"/>
-			</concept>
-			<concept>
 				<code value="241686001"/>
 			</concept>
 			<concept>
@@ -67,9 +64,6 @@
 				<code value="310058008"/>
 			</concept>
 			<concept>
-				<code value="11529006"/>
-			</concept>
-			<concept>
 				<code value="5880005"/>
 			</concept>
 			<concept>
@@ -85,9 +79,6 @@
 				<code value="71388002"/>
 			</concept>
 			<concept>
-				<code value="11529006"/>
-			</concept>
-			<concept>
 				<code value="76746007"/>
 			</concept>
 			<concept>
@@ -98,9 +89,6 @@
 			</concept>
 			<concept>
 				<code value="127785005"/>
-			</concept>
-			<concept>
-				<code value="11529006"/>
 			</concept>
 			<concept>
 				<code value="410620009"/>
