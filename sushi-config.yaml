@@ -4,14 +4,14 @@
 # e.g. ihe.iti.mhds, or ihe.iti.basicaudit
 id: ihe.iti.scheduling
 canonical: https://profiles.ihe.net/ITI/Scheduling
-version: 1.0.0-comment
+version: 1.0.0-current
 name: IHE_ITI_Scheduling
 title: "Scheduling"
 description: The IHE FHIR Scheduling Profile is a specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on FHIR Version 4 and specifically the Schedule, Slot, and Appointment resources, and on the previous work of the [Argonaut Project](https://fhir.org/guides/argonaut/scheduling/release1/).
-#releaseLabel: ci-build
-releaseLabel: ballot
+releaseLabel: ci-build
+#releaseLabel: ballot
 #releaseLabel: Trial-Implementation
-date: 2024-08-13
+#date: 2024-08-13
 status: active
 publisher:
   - name: IHE IT Infrastructure Technical Committee
