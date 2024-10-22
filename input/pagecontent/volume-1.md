@@ -133,11 +133,19 @@ There are no required groupings for this profile.
 
 ## 1:55.4 Scheduling Overview
 
-This section shows how the transactions of the profile are combined to address the use cases.
+This profile is intended to address use cases for cross-organizational or patient initiated scheduling of healthcare appointments.
+
+The following subsections show how the transactions of the profile are combined to address the use cases.
 
 ### 1:55.4.1 Concepts
 
 The FHIR specification defines several resources to describe scheduling-related information. The  [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources are intended to be compatible with the [iCalendar specification](https://datatracker.ietf.org/doc/html/rfc5545). A survey of existing implementations, however, showed that there is very little commonality among existing FHIR server implementations, which suggests that an operation-based specification will improve interoperability in this area.
+
+#### 1:55.4.1.1 Scope
+
+There is wide variety of appointments that pertain to the healthcare domain. A core assumption of this profile is that the Scheduling Server actor is responsible for all the business logic for determining the type, duration, sequencing, and all other attributes an appointment may have. This is the reason that the response to the search for potential appointments only contains Appointment resources. The management of Schedule and Slot resources is out of scope for this profile.
+
+For example, the Scheduling server may modify existing appointments in order to free up time for an urgent appointment. While this may change the existing ```Schedule``` and ```Slot``` resources, the Scheduling Client that is attempting to book the urgent appointment only needs to know that a new appointment can be booked. Any changes to existing appointments can be detected using [\[ITI-118\]](./ITI-118.html), or, if the ITI Scheduling profile is implemented in an environment with an existing FHIR Subscription infrastructure, via a ```SubscriptionNotification``` for the changed appointment(s).
 
 The overall functionality covered by this profile is as follows:
 1. The Scheduling Client identifies the patient or patients for whom the appointment will be scheduled
