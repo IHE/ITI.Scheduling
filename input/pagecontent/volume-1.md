@@ -145,6 +145,8 @@ The FHIR specification defines several resources to describe scheduling-related 
 
 There is wide variety of appointments that pertain to the healthcare domain. A core assumption of this profile is that the Scheduling Server actor is responsible for all the business logic for determining the type, duration, sequencing, and all other attributes an appointment may have. This is the reason that the response to the search for potential appointments only contains Appointment resources. The management of Schedule and Slot resources is out of scope for this profile.
 
+For example, the Scheduling server may modify existing appointments in order to free up time for an urgent appointment. While this may change the existing ```Schedule``` and ```Slot``` resources, the Scheduling Client that is attempting to book the urgent appointment only needs to know that a new appointment can be booked. Any changes to existing appointments can be detected using [\[ITI-118\]](./ITI-118.html), or, if the ITI Scheduling profile is implemented in an environment with an existing FHIR Subscription infrastructure, via a ```SubscriptionNotification``` for the changed appointment(s).
+
 The overall functionality covered by this profile is as follows:
 1. The Scheduling Client identifies the patient or patients for whom the appointment will be scheduled
 2. The Scheduling Client determines the available parameters for requesting a list of available appointments
