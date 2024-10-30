@@ -160,6 +160,9 @@ The overall functionality covered by this profile is as follows:
 
 ##### 1:55.4.2.1.1 Post-discharge PCP Visit
 
+###### 1:55.4.2.1.1.1 Post-discharge PCP Visit Use Case Description
+Ms. Philips is being discharged from Green Valley General Hospital. As 
+
 ##### 1:55.4.2.1.2 Specialty Visit Scheduling
 
 ###### 1:55.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
