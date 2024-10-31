@@ -3,8 +3,9 @@ skinparam responseMessageBelowArrow true
 skinparam svgDimensionStyle false
 hide footbox
 
-actor "Dr. Brown" as User #FFFFFF
-participant "Clinical Information Systen \n (Scheduling Client)" as RequestingActor
+actor "Mr. White" as User #FFFFFF
+participant "Patient Portal \n (Scheduling Client)" as RequestingActor
+participant "Care Services Selective Supplier \n" as Provider #FFFFFF
 participant "Scheduling Server \n" as RespondingActor
 
 autonumber 1 1 "<b>[00]"
@@ -13,15 +14,17 @@ activate "RequestingActor"
 User --> RequestingActor: Open view
 
 |||
-RequestingActor -> RespondingActor: Find Existing Appointments Query Request [ITI-118]
-activate "RespondingActor"
-RespondingActor --> RequestingActor: Find Existing Appointments Query Response [ITI-118]
-deactivate "RespondingActor"
+RequestingActor -> Provider: Find Matching Care Services Request [ITI-90]
+activate "Provider"
+Provider --> RequestingActor: Find Matching Care Services Response [ITI-90]
+deactivate "Provider"
+
+User --> RequestingActor: Open view
 
 |||
-RequestingActor -> RespondingActor: Find Potential Appointments Query Request [ITI-115]
+RequestingActor -> RespondingActor: Find Appointments Query Request [ITI-115]
 activate "RespondingActor"
-RespondingActor --> RequestingActor: Find Potential Appointments Query Response [ITI-115]
+RespondingActor --> RequestingActor: Find Appointments Query Response [ITI-115]
 deactivate "RespondingActor"
 
 |||
