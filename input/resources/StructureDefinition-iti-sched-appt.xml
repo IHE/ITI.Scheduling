@@ -105,6 +105,7 @@
 			<max value="1"/>
 			<mustSupport value="true"/>
 		</element>
+		<!--
 		<element id="Appointment.participant">
 			<path value="Appointment.participant"/>
 			<min value="1"/>
@@ -114,12 +115,13 @@
 			</type>
 			<mustSupport value="true"/>
 		</element>
+		-->
 		<element id="Appointment.participant:actor">
 			<path value="Appointment.participant.actor"/>
 			 <slicing>  
           		<discriminator> 
             		<type value="type"/>
-            		<path value="actor"/>
+            		<path value="resolve()"/>
           		</discriminator>
           		<ordered value="true"/>
           		<rules value="closed"/>
@@ -129,8 +131,9 @@
 			<type>
 				<code value="Reference"/>
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
-				<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
-				<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
 				<targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService"/>
 			</type>
 			<!--
