@@ -81,18 +81,6 @@
 				<valueSet value="https://profiles.ihe.net/ITI/Scheduling/ValueSet/specialty"/>
 			</binding>
 		</element>
-		<!--
-		<element id="Appointment.appointmentType">
-			<path value="Appointment.appointmentType"/>
-			<alias value="`"/>
-			<min value="0"/>
-			<max value="1"/>
-			<mustSupport value="true"/>
-			<binding>
-				<strength value="extensible"/>
-				<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
-			</binding>
-		</element> -->
 		<element id="Appointment.start">
 			<path value="Appointment.start"/>
 			<min value="1"/>
@@ -118,6 +106,7 @@
 		-->
 		<element id="Appointment.participant:actor">
 			<path value="Appointment.participant.actor"/>
+			 <!--
 			 <slicing>  
           		<discriminator> 
             		<type value="type"/>
@@ -125,7 +114,7 @@
           		</discriminator>
           		<ordered value="true"/>
           		<rules value="closed"/>
-         	</slicing>
+         	</slicing> -->
 			<min value="1"/>
 			<max value="1"/>
 			<type>
