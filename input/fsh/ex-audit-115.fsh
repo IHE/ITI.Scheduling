@@ -1,6 +1,6 @@
-Instance: ex-auditSchedulingBook-recipient
-InstanceOf: IHE.Scheduling.Book.Audit.Recipient
-Title: "Audit Example of ITI-117 at recipient"
+Instance: ex-auditSchedulingFindPotential-recipient
+InstanceOf: IHE.Scheduling.FindPotential.Audit.Recipient
+Title: "Audit Example of ITI-115 at recipient"
 Description: "Audit Example for a Book Appointment Transaction as recorded at the recipient"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
@@ -27,9 +27,9 @@ Usage: #example
 * entity[data].what = Reference(Appointment/appt1-1)
 
 
-Instance: ex-auditSchedulingBook-source
-InstanceOf: IHE.Scheduling.Book.Audit.Source
-Title: "Audit Example of ITI-1017 at source"
+Instance: ex-auditSchedulingFindPotential-source
+InstanceOf: IHE.Scheduling.FindPotential.Audit.Source
+Title: "Audit Example of ITI-115 at source"
 Description: "Audit Example for a Simplified Publish Transaction from source perspective"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST

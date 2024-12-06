@@ -3,7 +3,10 @@
 # IHE valueset that is not yet a real valueset
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
 # See Issue 26 https://github.com/IHE/ITI.Scheduling/issues/26 
-The Implementation Guide contains no examples for this profile
 The Implementation Guide contains no examples for this extension
 # Missing capability for this extension, see https://jira.hl7.org/browse/FHIR-34397
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.1.0
+# Inherited property
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+# Searchset Bundles that are a result of an operation don't have a valid self link
+SearchSet Bundles should have a self link that specifies what the search was
