@@ -41,12 +41,12 @@ Both appendices are located at <https://profiles.ihe.net/GeneralIntro/>.
 
 The figure below shows the actors directly involved in the Scheduling Profile and the relevant transactions between them.
 
-<div>
+<figure>
 {%include ActorsAndTransactions.svg%}
-</div>
+<figcaption><strong>Figure 1:55.1-1: Scheduling Actor Diagram</strong></figcaption>
+</figure>
 <br clear="all">
 
-**Figure 1:55.1-1: Scheduling Actor Diagram**
 
 Table 1:55.1-1: Profile Acronym Profile - Actors and Transactions
 
@@ -145,7 +145,7 @@ The FHIR specification defines several resources to describe scheduling-related 
 
 There is wide variety of appointments that pertain to the healthcare domain. A core assumption of this profile is that the Scheduling Server actor is responsible for all the business logic for determining the type, duration, sequencing, and all other attributes an appointment may have. This is the reason that the response to the search for potential appointments only contains Appointment resources. The management of Schedule and Slot resources is out of scope for this profile.
 
-For example, the Scheduling server may modify existing appointments in order to free up time for an urgent appointment. While this may change the existing ```Schedule``` and ```Slot``` resources on the server, the Scheduling Client that is attempting to book the urgent appointment only needs to know that a new appointment can be booked. Any changes to existing appointments can be detected using [\[ITI-118\]](./ITI-118.html), or, if the ITI Scheduling profile is implemented in an environment with an existing FHIR Subscription infrastructure, via a ```SubscriptionNotification``` for the changed appointment(s).
+For example, the Scheduling server may modify existing appointments in order to free up time for an urgent appointment. While this may change the existing `Schedule` and `Slot` resources on the server, the Scheduling Client that is attempting to book the urgent appointment only needs to know that a new appointment can be booked. Any changes to existing appointments can be detected using the [\[ITI-118\]](./ITI-118.html) transaction, or, if the ITI Scheduling profile is implemented in an environment with an existing FHIR Subscription infrastructure, via a `SubscriptionNotification` for the changed appointment(s).
 
 The overall functionality covered by this profile is as follows:
 1. The Scheduling Client identifies the patient or patients for whom the appointment will be scheduled
@@ -160,7 +160,20 @@ The overall functionality covered by this profile is as follows:
 
 ##### 1:55.4.2.1.1 Post-discharge PCP Visit
 
-##### 1:55.4.2.1.2 Specialty Visit Scheduling
+###### 1:55.4.2.1.1.1 Post-discharge PCP Visit Use Case Description
+Ms. Philips is being discharged from Green Valley General Hospital. One of the steps of the discharge process incudes scheduling a follow-up appointment with Dr. Spears, Ms. Philip's primary care provider. Dr. Spears' practice is part of a different healthcare organization, which necessitates cross-organizational scheduling of the follow-up appointment.
+
+Without the availability of the ITI Scheduling functionality, the hospital staff would have to contact Dr. Spears' practice to negotiate an appointment for the patient, or leave it to Ms. Philips to schedule the appointment by herself. This makes it likely that the follow-up appointment may not occur in a timely manner, or at all.
+
+The ITI Scheduling profile would allow the two systems to communicate the request for an appointment, get a list of possible times, coordinate with the patient the best time for the appointment, and book the appointment with Dr. Spears. This will ensure the follow-up visit will happen on time, and that Ms. Philips will get the proper care.
+
+###### 1:55.4.2.1.1.2 Specialty Visit Scheduling Process Flow
+
+<figure>
+{%include uc1-flow.svg%}
+<figcaption><strong>1:55.4.2.1.2 Specialty Visit Scheduling</strong></figcaption>
+</figure>
+<br clear="all">
 
 ###### 1:55.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
 Dr. Brown detects that a radiology examination is recommended to proceed with the
@@ -175,14 +188,13 @@ booking details dialog of the clinical information system. Dr. Brown confirms
 the records and books the examination in the confirm dialog in her clinical
 information system.
 
-###### 1:55.4.2.1.2.2 Provider-facing Scheduling Client Process Flow
+###### 1:55.4.2.1.2.2 Specialty Visit Scheduling Process Flow
 
-<div>
-{%include uc1-flow.svg%}
-</div>
+<figure>
+{%include uc2-flow.svg%}
+<figcaption><strong>Figure 1:55.4.2.1-1: Specialty Visit Scheduling Process Flow</strong></figcaption>
+</figure>
 <br clear="all">
-
-Figure 1:55.4.2.1-1: Provider-facing Scheduling Client Process Flow
 
 #### 1:55.4.2.2 Use Case \#2: Patient-facing Scheduling Client
 
@@ -205,12 +217,11 @@ dialog of the patient portal.
 
 ###### 1:55.4.2.2.1.2 Foreign Visitor Urgent Visitor Process Flow
 
-<div>
-{%include uc2-flow.svg%}
-</div>
+<figure>
+{%include uc3-flow.svg%}
+<figcaption><strong>Figure 1:55.4.2.2-1: Patient-facing scheduling client Process Flow</strong></figcaption>
+</figure>
 <br clear="all">
-
-Figure 1:55.4.2.2-1: Patient-facing scheduling client Process Flow
 
 <a name="security-considerations"> </a>
 
