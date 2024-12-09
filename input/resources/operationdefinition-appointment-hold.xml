@@ -7,7 +7,7 @@
 	<!-- <title value="Appointment Availability Operation"/> -->
 	<status value="active"/>
 	<kind value="operation"/>
-	<date value="2024-02-05"/>
+	<date value="2024-12-12"/>
 	<publisher value="IHE ITI"/>
 	<description value="Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/>
 	<jurisdiction>

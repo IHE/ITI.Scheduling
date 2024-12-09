@@ -5,6 +5,7 @@
     "mode" : "milestone",
     "status" : "trial-use",
     "sequence" : "Publication",
+    "changes" : "issues.html",
     "desc" : "Trial Implementation of the IHE FHIR Scheduling Profile",
     "descmd" : "The IHE FHIR Scheduling Profile is a specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on FHIR Version 4 and specifically the Schedule, Slot, and Appointment resources, and on the previous work of the [Argonaut Project](https://fhir.org/guides/argonaut/scheduling/release1/)",
     "first" : false
