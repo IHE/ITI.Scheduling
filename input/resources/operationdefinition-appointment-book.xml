@@ -7,9 +7,9 @@
 	<!-- <title value="Appointment Availability Operation"/> -->
 	<status value="active"/>
 	<kind value="operation"/>
-	<date value="2024-02-05"/>
+	<date value="2024-12-12"/>
 	<publisher value="IHE ITI"/>
-	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. &#x0A;&#x0A; In addition to the booking an appointment, this operation can also request to modify or cancel an existing appointment. &#x0A;&#x0A;### Book a New Appointment&#x0A; When booking a new appoint, the operation SHALL have either an `appointment-reference` or an `appointment-resource` parameter. If the `appointment-resource` parameter is used, the value of `Appointment.status` SHALL have the value of `pending`.&#x0A;&#x0A;A successful new appointment `$book` operation returns an [IHE ITI Appointment](./StructureDefinition-ihe-sched-appt.html) resource with the the value of `Appointment.status` set to `booked`.&#x0A;&#x0A;### Modify an Existing Appointment&#x0A; When requesting a modification of an existing appointment, the operation SHALL have an `appointment-resource` parameter and the value of `Appointment.status` SHALL have the value of `booked`.&#x0A;&#x0A;A successful request to modify an existing modification returns an [IHE ITI Appointment](./StructureDefinition-ihe-sched-appt.html) resource with the the value of `Appointment.status` set to `booked` and the changes that were requested correspondingly reflected in the resource.&#x0A;&#x0A;### Cancel an Existing Appointment  &#x0A; When requesting a cancelation of an existing appointment, the operation SHALL have an `appointment-resource` parameter and the value of `Appointment.status` SHALL have the value of `cancelled`.&#x0A;&#x0A;A successful request to cancel an existing modification returns an [IHE ITI Appointment](./StructureDefinition-ihe-sched-appt.html) resource with the the value of `Appointment.status` set to `cancelled`&#x0A;&#x0A;	"/>
+	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions.  This operation completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. &#x0A;&#x0A; In addition to the booking an appointment, this operation can also request to modify or cancel an existing appointment. &#x0A;&#x0A;### Book a New Appointment&#x0A; When booking a new appoint, the operation SHALL have either an `appointment-reference` or an `appointment-resource` parameter. If the `appointment-resource` parameter is used, the value of `Appointment.status` SHALL have the value of `pending`.&#x0A;&#x0A;A successful new appointment `$book` operation returns an [IHE ITI Appointment](./StructureDefinition-ihe-sched-appt.html) resource with the the value of `Appointment.status` set to `booked`.&#x0A;&#x0A;### Modify an Existing Appointment&#x0A; When requesting a modification of an existing appointment, the operation SHALL have an `appointment-resource` parameter and the value of `Appointment.status` SHALL have the value of `booked`.&#x0A;&#x0A;A successful request to modify an existing modification returns an [IHE ITI Appointment](./StructureDefinition-ihe-sched-appt.html) resource with the the value of `Appointment.status` set to `booked` and the changes that were requested correspondingly reflected in the resource.&#x0A;&#x0A;### Cancel an Existing Appointment  &#x0A; When requesting a cancellation of an existing appointment, the operation SHALL have an `appointment-resource` parameter and the value of `Appointment.status` SHALL have the value of `cancelled`.&#x0A;&#x0A;A successful request to cancel an existing modification returns an [IHE ITI Appointment](./StructureDefinition-ihe-sched-appt.html) resource with the the value of `Appointment.status` set to `cancelled`&#x0A;&#x0A;	"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -39,7 +39,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="The full appointment resource is needed for appontment change requests"/>
+		<documentation value="The full appointment resource is needed for appointment change requests"/>
 		<type value="Appointment"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt" />
 	</parameter>
@@ -48,16 +48,17 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The Patient resource type is used to provide the patient information as known to the Schecduling client at the time of booking of the appointment."/>
+		<documentation value="The Patient resource type is used to provide the patient information as known to the Scheduling client at the time of booking of the appointment."/>
 		<type value="Patient"/>
-		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
+<!--		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>  -->
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
 	</parameter>
 	<parameter>
 		<name value="comment"/>
 		<use value="in"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="The optional comment can be added for additional notes that could be useful for booking, canceling, or modfying an appointment" />
+		<documentation value="The optional comment can be added for additional notes that could be useful for booking, canceling, or modifying an appointment" />
 		<type value="string"/>
 	</parameter>
 	<parameter>
@@ -65,7 +66,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and MAY also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;booked&quot; if a new appointmet is booked or an existing appointment is modified, or status of &quot;cancelled&quot; if an appointment is cancelled or not created."/>
+		<documentation value="An [IHE ITI Scheduling Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html)  of type `searchset` consisting of the requested booked Appointment resource and MAY also contain an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of &quot;booked&quot; if a new appointment is booked or an existing appointment is modified, or status of &quot;cancelled&quot; if an appointment is cancelled or not created."/>
 		<type value="Bundle"/>
 		<targetProfile value="https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle" />
 	</parameter>

@@ -21,7 +21,7 @@ Usage: #example
 * agent[server].network.type = http://hl7.org/fhir/network-type#5 "URI"
 * entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[patient].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity[patient].what = Reference(Patient/ex-patient)
+* entity[patient].what = Reference(Patient/pat1)
 * entity[data].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[data].role = http://terminology.hl7.org/CodeSystem/object-role#4 "Domain Resource"
 * entity[data].what = Reference(Appointment/appt1-1)
@@ -49,7 +49,7 @@ Usage: #example
 * agent[client].network.type = http://hl7.org/fhir/network-type#2 "IP Address"
 * entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[patient].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity[patient].what = Reference(Patient/ex-patient)
+* entity[patient].what = Reference(Patient/pat1)
 * entity[data].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[data].role = http://terminology.hl7.org/CodeSystem/object-role#4 "Domain Resource"
 * entity[data].what = Reference(Appointment/appt1-1)

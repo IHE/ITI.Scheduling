@@ -80,7 +80,7 @@
 	<concept>
 		<code value="needs-tests"/>
 		<display value="Patient Needs Tests"/>
-		<definition value="An appointment for a patient was cancelled by the patient because the patient did not have the prequisite diagnostic tests performed."/>
+		<definition value="An appointment for a patient was cancelled by the patient because the patient did not have the prerequisite diagnostic tests performed."/>
 	</concept>
 	<concept>
 		<code value="new-provider"/>
@@ -120,7 +120,7 @@
 	<concept>
 		<code value="prep-incomplete"/>
 		<display value="Preparatory Requirements or Medications Incomplete"/>
-		<definition value="An appointment for a patient was cancelled by the provider because needed preparatory insructions and/or medications not completed."/>
+		<definition value="An appointment for a patient was cancelled by the provider because needed preparatory instructions and/or medications not completed."/>
 	</concept>
 	<concept>
 		<code value="prep-unavail"/>

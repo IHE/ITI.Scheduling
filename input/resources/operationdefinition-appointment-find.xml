@@ -7,7 +7,7 @@
 	<!-- <title value="Appointment Availability Operation"/> -->
 	<status value="active"/>
 	<kind value="operation"/>
-	<date value="2024-02-05"/>
+	<date value="2024-12-12"/>
 	<publisher value="IHE ITI"/>
 	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameters further refine the search and include  practitioner references, specialties, visit type, locations, patient and referral information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equipment) are needed for the visit, and provides proposed appointments for the time slots where all required resources are available."/>
 	<jurisdiction>
@@ -75,7 +75,8 @@
 		<max value="*"/>
 		<documentation value="The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. 'Practitioner/123'.   If multiple practitioner references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
 		<type value="Reference"/>
-		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-practitioner" />
+<!--		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-practitioner" /> -->
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
 	</parameter>
 	<parameter>
 		<name value="organization"/>
@@ -109,18 +110,20 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that could be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
+		<documentation value="A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that could be important for availability searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Reference"/>
-		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient" />
+<!--		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>  -->
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
 	</parameter>
 	<parameter>
 		<name value="patient-resource"/>
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="This parameter uses the Patient resource type instead of a simple reference because it is possible for the patient record to not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It is based on the [IPA Patient Profile](http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient) and includes demographics and patient preferences that could be important for availaiblilty searches. If the appointment is for a new patient, the patient record SHOULD NOT be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
+		<documentation value="This parameter uses the Patient resource type instead of a simple reference because it is possible for the patient record to not exist when performing availability searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  If the appointment is for a new patient, the patient record SHOULD NOT be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Patient"/>
-		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>
+<!--		<targetProfile value="http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-patient"/>  -->
+		<targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
 	</parameter>
 	<parameter>
 		<name value="reason"/>

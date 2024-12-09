@@ -27,17 +27,13 @@ IHE Transactions can be found in the Technical Frameworks General Introduction [
 Both appendices are located at <https://profiles.ihe.net/GeneralIntro/>.
 
 - Actors
-
   - [Scheduling Client](#client)
   - [Scheduling Server](#server)
-
 - Transactions
-
   - Find Potential Appointments [ITI_115](ITI-115.html)
   - Hold Appointment [ITI-116](ITI-116.html)
   - Book Appointment [ITI-177](ITI-117.html)
   - Find Existing Appointments [ITI-118](ITI-118.html)
-
 
 The figure below shows the actors directly involved in the Scheduling Profile and the relevant transactions between them.
 
@@ -46,7 +42,6 @@ The figure below shows the actors directly involved in the Scheduling Profile an
 <figcaption><strong>Figure 1:55.1-1: Scheduling Actor Diagram</strong></figcaption>
 </figure>
 <br clear="all">
-
 
 Table 1:55.1-1: Profile Acronym Profile - Actors and Transactions
 
@@ -63,6 +58,7 @@ Table 1:55.1-1: Profile Acronym Profile - Actors and Transactions
 {: .grid}
 
 ### 1:55.1.1 Actors
+
 The actors in this profile are described in more detail in the sections below.
 
 <a name="client"> </a>
@@ -89,6 +85,7 @@ The Scheduling Server provides services for providing a list of available appoin
 Please see the FHIR Capability Statement for [Server](CapabilityStatement-IHE.Scheduling.server.html).
 
 ### 1:55.1.2 Transaction Descriptions 
+
 The transactions in this profile are summarized in the sections below.
 
 #### 1:55.1.2.1 Find Potential Appointments [ITI-115]
@@ -127,6 +124,7 @@ There are currently no options for these actors.
 <a name="required-groupings"> </a>
 
 ## 1:55.3 Scheduling Required Actor Groupings
+
 There are no required groupings for this profile.
 
 <a name="overview"> </a>
@@ -148,6 +146,7 @@ There is wide variety of appointments that pertain to the healthcare domain. A c
 For example, the Scheduling server may modify existing appointments in order to free up time for an urgent appointment. While this may change the existing `Schedule` and `Slot` resources on the server, the Scheduling Client that is attempting to book the urgent appointment only needs to know that a new appointment can be booked. Any changes to existing appointments can be detected using the [\[ITI-118\]](./ITI-118.html) transaction, or, if the ITI Scheduling profile is implemented in an environment with an existing FHIR Subscription infrastructure, via a `SubscriptionNotification` for the changed appointment(s).
 
 The overall functionality covered by this profile is as follows:
+
 1. The Scheduling Client identifies the patient or patients for whom the appointment will be scheduled
 2. The Scheduling Client determines the available parameters for requesting a list of available appointments
 3. The Find Appointments transaction is completed.
@@ -161,6 +160,7 @@ The overall functionality covered by this profile is as follows:
 ##### 1:55.4.2.1.1 Post-discharge PCP Visit
 
 ###### 1:55.4.2.1.1.1 Post-discharge PCP Visit Use Case Description
+
 Ms. Philips is being discharged from Green Valley General Hospital. One of the steps of the discharge process incudes scheduling a follow-up appointment with Dr. Spears, Ms. Philip's primary care provider. Dr. Spears' practice is part of a different healthcare organization, which necessitates cross-organizational scheduling of the follow-up appointment.
 
 Without the availability of the ITI Scheduling functionality, the hospital staff would have to contact Dr. Spears' practice to negotiate an appointment for the patient, or leave it to Ms. Philips to schedule the appointment by herself. This makes it likely that the follow-up appointment may not occur in a timely manner, or at all.
@@ -176,6 +176,7 @@ The ITI Scheduling profile would allow the two systems to communicate the reques
 <br clear="all">
 
 ###### 1:55.4.2.1.2.1 Specialty Visit Scheduling Use Case Description
+
 Dr. Brown detects that a radiology examination is recommended to proceed with the
 treatment of her Patient Mr. White. Dr. Brown opens the radiology examination
 scheduling in her clinical information systems and selects a radiology facility
@@ -229,21 +230,24 @@ dialog of the patient portal.
 
 Actors are expected to follow the recommendations and requirements found in [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
-The resources exchanged in this profile could contain information which pose a privacy risk, or in some cases, a safety risk, to providers and other personnel, as well as patients. For example, practitioner or patient phone numbers and home addresses could be conveyed. Implementers need to determine what data will be exposed by the system and what level of public access there will be if any.
+The resources exchanged in this profile could contain information which pose a privacy risk, or in some cases, a safety risk, to providers and other personnel, as well as patients. For example, practitioner or patient phone numbers and home addresses could be conveyed. Implementers need to determine what data will be exposed by the system and what level of public access there will be if any. Therefore the [Audit Trails and Node Authentication (ATNA)](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Profile is required. This mandates Access Controls, Secure Communications, and an Audit Trail capability. The use of [Basic Audit Log Patterns](https://profiles.ihe.net/ITI/BALP/index.html) is foundational to the AuditEvent profiles defined in this Implementation Guide.
 
-Implementers need to consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc.
+Implementers need to consider Privacy and Security when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc.
 
 There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the Scheduling Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
 
-User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. Implementers SHOULD implement the [SMART on FHIR IG](http://hl7.org/fhir/smart-app-launch/) for the corresponding use cases (patient-facing or provider-facing). The network communication security and user authentication are layered in the HTTP transport layer.
+User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including [Internet User Authentication (IUA)](https://profiles.ihe.net/ITI/TF/Volume1/ch-34.html) for REST-based authentication with [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) "STX: HTTPS IUA Option" that uses OAuth for client authentication while using TLS server authentication. Implementers SHOULD implement the [SMART on FHIR IG](http://hl7.org/fhir/smart-app-launch/) for the corresponding use cases (patient-facing or provider-facing). The network communication security and user authentication are layered in the HTTP transport layer.
 
 <a name="other-grouping"> </a>
 
 ## 1:55.6 Scheduling Cross-Profile Considerations
+
 The Scheduling Profile is intended to be used in varied settings and to satisfy multiple use cases. Some of these uses will benefit from using the Scheduling Profile together with other IHE profiles. The following cross-profile descriptions are not exclusive or exhaustive, and the list can be updated in the future.
 
 ### 1:55.6.1 mCSD - Mobile Care Services Discovery
+
 When a patient needs to schedule an appointment outside their usual care providing environment, they could need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [ITI-90 Find Matching Care Services](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
 
 ### 1:55.6.2 360X - 360 Exchange Closed Loop Referral
+
 The [360X Profile](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_360X.pdf) describes cross-organizations referral workflows, and it has a scheduling option, which is not required. The ITI Scheduling Profile can be used instead of the 360X Scheduling Option when there are appropriate business agreements that allow cross-organizational scheduling. The referral and patient identifiers used in the 360X transactions must be used in the corresponding parameters of the Find Appointments transaction in order to provide the necessary link between the appointment and the referral.
