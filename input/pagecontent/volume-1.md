@@ -47,14 +47,14 @@ The figure below shows the actors directly involved in the Scheduling Profile an
 
 | Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
 |-------------------|----------------------------|------------------------|-----------------|----------------|
-| Scheduling Client | Find Potential Appointments [\[ITI-115\]] | Initiator              | R               | ITI TF-2: 3.115 |
-|                   | Hold Appointment [\[ITI-116\]]  | Initiator              | O               | ITI TF-2: 3.116 |
-|                   | Book Appointment [\[ITI-117\]]  | Initiator              | R               | ITI TF-2: 3.117 |
-|                   | Find Existing Appointment [\[ITI-118\]]  | Initiator              | O               | ITI TF-2: 3.118 |
-| Scheduling Server | Find Appointments [\[ITI-115\]] | Responder              | R               | ITI TF-2: 3.115 |
-|                   | Hold Appointment [\[ITI-116\]]  | Responder              | O               | ITI TF-2: 3.116 |
-|                   | Book Appointment [\[ITI-117\]]  | Responder              | R               | ITI TF-2: 3.117 |
-|                   | Find Existing Appointment [\[ITI-118\]]  | Responder              | O               | ITI TF-2: 3.118 |
+| Scheduling Client | Find Potential Appointments [\[ITI-115\]](ITI-115.html) | Initiator              | R               | ITI TF-2: 3.115 |
+|                   | Hold Appointment [\[ITI-116\]](ITI-116.html)  | Initiator              | O               | ITI TF-2: 3.116 |
+|                   | Book Appointment [\[ITI-117\]](ITI-117.html)  | Initiator              | R               | ITI TF-2: 3.117 |
+|                   | Find Existing Appointment [\[ITI-118\]](ITI-118.html)  | Initiator              | O               | ITI TF-2: 3.118 |
+| Scheduling Server | Find Appointments [\[ITI-115\]](ITI-115.html) | Responder              | R               | ITI TF-2: 3.115 |
+|                   | Hold Appointment [\[ITI-116\]](ITI-116.html)  | Responder              | O               | ITI TF-2: 3.116 |
+|                   | Book Appointment [\[ITI-117\]](ITI-117.html)  | Responder              | R               | ITI TF-2: 3.117 |
+|                   | Find Existing Appointment [\[ITI-118\]](ITI-118.html)  | Responder              | O               | ITI TF-2: 3.118 |
 {: .grid}
 
 ### 1:55.1.1 Actors
