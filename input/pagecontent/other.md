@@ -10,8 +10,8 @@ This section contains modifications to other IHE publications and profiles and i
 
 | Actor                         | Definition                                                                                |
 | ----------------------------- | ------------------------------------------------------------------------------------------|
-| Scheduling Client | A system which can request information about existing appointments, about potential appointments, and can request the creation, modification or cancellation of an appointment. |
-| Scheduling Server | A system which manages existing appointments and provides an API for clients to query, create, modify, or cancel an appointment. |
+| Scheduling Client | Requests information about appointments and requests the creation, modification or cancellation of an appointment. |
+| Scheduling Server | Manages appointments and provides an API for clients to query, create, modify, or cancel an appointment. |
 {:.grid .table-striped}
 
 
