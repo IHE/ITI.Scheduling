@@ -1,7 +1,7 @@
 
-The Scheduling Profile is a vendor agnostic specification providing FHIR APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users, including cross-organizational workflows. This specification is based on [FHIR Version 4.0.1](https://hl7.org/fhir/R4/), and references the [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources.
+The Scheduling Profile is a vendor agnostic specification providing FHIR APIs and guidance for access to, and booking of, appointments for patients by both patient and practitioner end users, including cross-organizational workflows. This specification is based on [FHIR Version 4.0.1](https://hl7.org/fhir/R4/), and references the [Schedule]({{site.data.fhir.path}}schedule.html), [Slot]({{site.data.fhir.path}}slot.html), and [Appointment]({{site.data.fhir.path}}appointment.html) resources.
 
-This workflow profile defines transactions that allow a scheduling client to obtain information about possible appointment opportunities based on specific parameters, and, based on that information, allow the client to book an appointment.
+This workflow profile defines transactions that allow a scheduling client to obtain information about possible appointment opportunities based on specific parameters and based on that information, allow the client to book an appointment.
 
 <blockquote class="impl-note">
 <p><strong>History and Acknowledgment:</strong></p>
@@ -30,10 +30,10 @@ Both appendices are located at <https://profiles.ihe.net/GeneralIntro/>.
   - [Scheduling Client](#client)
   - [Scheduling Server](#server)
 - Transactions
-  - Find Potential Appointments [ITI_115](ITI-115.html)
-  - Hold Appointment [ITI-116](ITI-116.html)
-  - Book Appointment [ITI-177](ITI-117.html)
-  - Find Existing Appointments [ITI-118](ITI-118.html)
+  - Find Potential Appointments [\[ITI-115\]](ITI-115.html)
+  - Hold Appointment [\[ITI-116\]](ITI-116.html)
+  - Book Appointment [\[ITI-117\]](ITI-117.html)
+  - Find Existing Appointments [\[ITI-118\]](ITI-118.html)
 
 The figure below shows the actors directly involved in the Scheduling Profile and the relevant transactions between them.
 
@@ -43,18 +43,18 @@ The figure below shows the actors directly involved in the Scheduling Profile an
 </figure>
 <br clear="all">
 
-Table 1:55.1-1: Profile Acronym Profile - Actors and Transactions
+<p id ="t1:55.1-1" class="tableTitle"><strong>Table 1:55.1-1: Scheduling Profile - Actors and Transactions</strong></p>
 
 | Actors            | Transactions               | Initiator or Responder | Optionality     | Reference      |
 |-------------------|----------------------------|------------------------|-----------------|----------------|
-| Scheduling Client | Find Potential Appointments [ITI-115] | Initiator              | R               | ITI TF-2: 3.115 |
-|                   | Hold Appointment [ITI-116]  | Initiator              | O               | ITI TF-2: 3.116 |
-|                   | Book Appointment [ITI-117]  | Initiator              | R               | ITI TF-2: 3.117 |
-|                   | Find Existing Appointment [ITI-118]  | Initiator              | O               | ITI TF-2: 3.118 |
-| Scheduling Server | Find Appointments [ITI-115] | Responder              | R               | ITI TF-2: 3.115 |
-|                   | Hold Appointment [ITI-116]  | Responder              | O               | ITI TF-2: 3.116 |
-|                   | Book Appointment [ITI-117]  | Responder              | R               | ITI TF-2: 3.117 |
-|                   | Find Existing Appointment [ITI-118]  | Responder              | O               | ITI TF-2: 3.118 |
+| Scheduling Client | Find Potential Appointments [\[ITI-115\]] | Initiator              | R               | ITI TF-2: 3.115 |
+|                   | Hold Appointment [\[ITI-116\]]  | Initiator              | O               | ITI TF-2: 3.116 |
+|                   | Book Appointment [\[ITI-117\]]  | Initiator              | R               | ITI TF-2: 3.117 |
+|                   | Find Existing Appointment [\[ITI-118\]]  | Initiator              | O               | ITI TF-2: 3.118 |
+| Scheduling Server | Find Appointments [\[ITI-115\]] | Responder              | R               | ITI TF-2: 3.115 |
+|                   | Hold Appointment [\[ITI-116\]]  | Responder              | O               | ITI TF-2: 3.116 |
+|                   | Book Appointment [\[ITI-117\]]  | Responder              | R               | ITI TF-2: 3.117 |
+|                   | Find Existing Appointment [\[ITI-118\]]  | Responder              | O               | ITI TF-2: 3.118 |
 {: .grid}
 
 ### 1:55.1.1 Actors
@@ -149,9 +149,9 @@ The overall functionality covered by this profile is as follows:
 
 1. The Scheduling Client identifies the patient or patients for whom the appointment will be scheduled
 2. The Scheduling Client determines the available parameters for requesting a list of available appointments
-3. The Find Appointments transaction is completed.
-4. (Optionally) The Hold Appointment transaction is completed.
-5. The Book Appointment Transaction is completed.
+3. The Find Appointments transaction is completed
+4. (Optionally) The Hold Appointment transaction is completed
+5. The Book Appointment Transaction is completed
 
 ### 1:55.4.2 Use Cases
 
@@ -161,7 +161,7 @@ The overall functionality covered by this profile is as follows:
 
 ###### 1:55.4.2.1.1.1 Post-discharge PCP Visit Use Case Description
 
-Ms. Philips is being discharged from Green Valley General Hospital. One of the steps of the discharge process incudes scheduling a follow-up appointment with Dr. Spears, Ms. Philip's primary care provider. Dr. Spears' practice is part of a different healthcare organization, which necessitates cross-organizational scheduling of the follow-up appointment.
+Ms. Philips is being discharged from Green Valley General Hospital. One of the steps of the discharge process includes scheduling a follow-up appointment with Dr. Spears, Ms. Philip's primary care provider. Dr. Spears' practice is part of a different healthcare organization, which necessitates cross-organizational scheduling of the follow-up appointment.
 
 Without the availability of the ITI Scheduling functionality, the hospital staff would have to contact Dr. Spears' practice to negotiate an appointment for the patient, or leave it to Ms. Philips to schedule the appointment by herself. This makes it likely that the follow-up appointment may not occur in a timely manner, or at all.
 
@@ -180,9 +180,9 @@ The ITI Scheduling profile would allow the two systems to communicate the reques
 Dr. Brown detects that a radiology examination is recommended to proceed with the
 treatment of her Patient Mr. White. Dr. Brown opens the radiology examination
 scheduling in her clinical information systems and selects a radiology facility
-for the examination. She asks the system to show the existing appointments for the patient, and then asks for potential appointment slots for the radiology procedure.
+for the examination. She asks the system to show the existing appointments for the patient and then asks for potential appointment slots for the radiology procedure.
 
-From the list of available time slots presented in the clinical information system Dr. Brown selects an appropriate time slot for the
+From the list of available time slots presented in the clinical information system, Dr. Brown selects an appropriate time slot for the
 examination of Mr. White. Dr. Brown records the booking details
 (e.g., Mr. White demographics, treatment, body part to examine, etc.) in the
 booking details dialog of the clinical information system. Dr. Brown confirms
@@ -203,14 +203,14 @@ information system.
 
 ###### 1:55.4.2.2.1.1 Use Case Description
 
-Mr. White feels sick on holidays in a foreign country and wants to visit
+Mr. White feels sick on holiday in a foreign country and wants to visit
 a healthcare provider for an examination. Mr. White opens the local patient portal
 and searches for a healthcare provider using search criteria
 (e.g., distance, opening hours, supported languages).
-Mr. White selects a Dr. Brown's practice as healthcare provider and opens the
+Mr. White selects Dr. Brown's practice as the healthcare provider and opens the
 appointments view in the patient portal.
 
-From the list of available time slots presented in the patient portal Mr. White
+From the list of available time slots presented in the patient portal, Mr. White
 selects an appropriate time slot for the visit. Mr. White records the booking details
 (e.g., demographics, symptoms, etc.) in the booking details dialog in the patient
 portal. Mr. White confirms the records and books the examination in the confirm
@@ -246,7 +246,7 @@ The Scheduling Profile is intended to be used in varied settings and to satisfy 
 
 ### 1:55.6.1 mCSD - Mobile Care Services Discovery
 
-When a patient needs to schedule an appointment outside their usual care providing environment, they could need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [ITI-90 Find Matching Care Services](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
+When a patient needs to schedule an appointment outside their usual care providing environment, they could need to initially find the endpoint of the healthcare or service provider where an appointment can be requested. The [Find Matching Care Services [ITI-117\]](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction from the mCSD profile can be used for endpoint discovery prior to the use of the Find Appointments transaction.
 
 ### 1:55.6.2 360X - 360 Exchange Closed Loop Referral
 
