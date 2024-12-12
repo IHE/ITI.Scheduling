@@ -23,7 +23,7 @@ This guide is organized into the following sections:
    1. [Find Potential Appointments \[ITI-115\]](ITI-115.html)
    1. [Hold Appointment \[ITI-116\]](ITI-116.html)
    1. [Book Appointment \[ITI-117\]](ITI-117.html)
-   1. [Search Patient Appointments \[ITI-118\]](ITI-118.html)
+   1. [Find Existing Appointments \[ITI-118\]](ITI-118.html)
 
 3. Other
    1. [Changes to Other IHE Specifications](other.html)
