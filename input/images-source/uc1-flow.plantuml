@@ -4,7 +4,7 @@ skinparam svgDimensionStyle false
 hide footbox
 
 actor "Hospital User" as User #FFFFFF
-participant "Hospital Discharge Systen \n (Scheduling Client)" as RequestingActor
+participant "Hospital Discharge System \n (Scheduling Client)" as RequestingActor
 participant "Practice Scheduling System \n (Scheduling Server)" as RespondingActor
 
 autonumber 1 1 "<b>[00]"
