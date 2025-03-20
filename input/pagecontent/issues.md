@@ -7,7 +7,7 @@ None, this is the first published revision.
 
 ### Submit an Issue
 IHE welcomes [New Issues](https://github.com/IHE/ITI.Scheduling/issues/new/choose) from the GitHub community. 
-For those without GitHub access, issues can be submitted to the [PCC Public Comment form](https://www.ihe.net/PCC_Public_Comments/).
+For those without GitHub access, issues can be submitted to the [ITI Public Comment form](https://www.ihe.net/resources/public_comment/#ITI).
 
 As issues are submitted they will be managed on the [ITI.Scheduling GitHub Issues](https://github.com/IHE/ITI.Scheduling/issues), where discussion and workarounds can be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
